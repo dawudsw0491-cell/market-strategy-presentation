@@ -5,27 +5,27 @@ import Section from "@/components/ui/section";
 const steps = [
   {
     number: "01",
-    title: "Mengumpulkan Informasi",
+    title: "Memahami Kondisi Saat Ini",
     description:
-      "Mengidentifikasi kondisi wilayah, karakteristik pasar, dan peluang yang tersedia sebagai dasar pengambilan keputusan.",
+      "Tahap pertama adalah mengumpulkan informasi mengenai kondisi pasar, karakteristik wilayah, aktivitas pelanggan, dan peluang yang tersedia sebagai dasar penyusunan strategi.",
   },
   {
     number: "02",
-    title: "Menganalisis Potensi",
+    title: "Menentukan Prioritas",
     description:
-      "Membandingkan berbagai wilayah dan segmen pasar menggunakan kriteria yang sama agar hasil analisis lebih objektif.",
+      "Setelah kondisi dipahami, setiap wilayah dan peluang dibandingkan menggunakan kriteria yang sama sehingga dapat ditentukan prioritas yang paling layak untuk dikembangkan.",
   },
   {
     number: "03",
-    title: "Menentukan Prioritas",
+    title: "Menyusun Strategi",
     description:
-      "Memilih wilayah dan segmen yang memberikan peluang terbesar dengan mempertimbangkan sumber daya yang dimiliki perusahaan.",
+      "Strategi disusun berdasarkan prioritas yang telah ditetapkan agar setiap program memiliki tujuan yang jelas serta dapat dijalankan sesuai kemampuan perusahaan.",
   },
   {
     number: "04",
-    title: "Menyusun Implementasi",
+    title: "Melaksanakan dan Mengevaluasi",
     description:
-      "Mengubah strategi menjadi rencana kerja yang dapat dilaksanakan, dipantau, dan dievaluasi secara berkala.",
+      "Implementasi dilakukan secara bertahap kemudian dievaluasi secara berkala agar strategi dapat disempurnakan mengikuti perkembangan kondisi pasar.",
   },
 ];
 
@@ -34,18 +34,18 @@ export default function StrategyApproach() {
     <Section background="gradient">
       <Container>
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="mb-4 inline-flex rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700">
-            Pendekatan Strategi
+          <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
+            Pendekatan Yang Digunakan
           </span>
 
-          <h2 className="mb-6 text-4xl font-bold text-slate-900">
-            Strategi Dibangun Melalui Tahapan Yang Terstruktur
+          <h2 className="mt-6">
+            Strategi Dibangun Melalui Empat Tahapan Yang Sederhana
           </h2>
 
-          <p className="text-lg leading-8 text-slate-600">
-            Pendekatan ini memastikan setiap keputusan tidak hanya berdasarkan
-            intuisi, tetapi melalui proses analisis yang sistematis sehingga
-            strategi yang dihasilkan lebih terarah dan mudah diterapkan.
+          <p className="mt-8 text-lg text-slate-600">
+            Pendekatan ini dirancang agar proses pengambilan keputusan mudah
+            dipahami, dapat diterapkan secara bertahap, dan memiliki dasar yang
+            jelas pada setiap langkahnya.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export default function StrategyApproach() {
           {steps.map((step) => (
             <Card
               key={step.number}
-              className="relative"
+              className="h-full"
             >
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-emerald-500 text-xl font-bold text-white">
                 {step.number}
@@ -68,6 +68,18 @@ export default function StrategyApproach() {
               </p>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-16 rounded-3xl border border-emerald-100 bg-emerald-50 p-8 lg:p-10">
+          <h3 className="text-2xl font-bold text-slate-900">
+            Hasil Yang Diharapkan
+          </h3>
+
+          <p className="mt-4 leading-8 text-slate-700">
+            Melalui pendekatan ini, setiap keputusan pengembangan pasar memiliki
+            dasar yang jelas, lebih mudah diprioritaskan, dan dapat diterapkan
+            secara bertahap sesuai kondisi perusahaan.
+          </p>
         </div>
       </Container>
     </Section>
