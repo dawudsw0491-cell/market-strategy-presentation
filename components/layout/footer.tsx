@@ -25,17 +25,17 @@ const menus = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="container-app py-16">
-        <div className="grid gap-12 lg:grid-cols-3">
+    <footer className="border-t border-slate-200/80 bg-white">
+      <div className="container-app py-14 lg:py-16">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <div className="mb-5 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-sky-500 to-emerald-500 text-xl font-bold text-white">
-                S
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-sky-500 to-emerald-500 text-lg font-bold text-white shadow-lg">
+                SS
               </div>
 
               <div>
-                <h2 className="font-bold text-slate-900">
+                <h2 className="text-lg font-bold text-slate-900">
                   Strategi Pengembangan Pasar
                 </h2>
 
@@ -45,15 +45,15 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="max-w-sm leading-7 text-slate-600">
-              Website presentasi interaktif yang menjelaskan pendekatan,
-              metode, serta rencana implementasi strategi pengembangan pasar
-              secara sederhana, terstruktur, dan mudah dipahami.
+            <p className="max-w-md leading-8 text-slate-600">
+              Website presentasi yang menyampaikan pendekatan, strategi, dan
+              rencana implementasi pengembangan pasar secara sederhana,
+              sistematis, dan mudah dipahami.
             </p>
           </div>
 
           <div>
-            <h3 className="mb-5 font-semibold text-slate-900">
+            <h3 className="mb-5 text-base font-semibold text-slate-900">
               Navigasi
             </h3>
 
@@ -62,7 +62,7 @@ export default function Footer() {
                 <li key={menu.href}>
                   <Link
                     href={menu.href}
-                    className="text-slate-600 transition hover:text-blue-600"
+                    className="transition duration-200 hover:text-blue-600"
                   >
                     {menu.title}
                   </Link>
@@ -72,20 +72,26 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-5 font-semibold text-slate-900">
-              Tujuan Website
+            <h3 className="mb-5 text-base font-semibold text-slate-900">
+              Tujuan Presentasi
             </h3>
 
-            <p className="leading-7 text-slate-600">
-              Menyampaikan strategi pengembangan pasar melalui pendekatan
-              visual yang modern sehingga mudah dipahami oleh manajemen,
-              pimpinan perusahaan, maupun pihak yang berkepentingan.
+            <p className="leading-8 text-slate-600">
+              Memberikan gambaran mengenai pendekatan yang digunakan dalam
+              menentukan prioritas pengembangan pasar sehingga keputusan dapat
+              diambil secara lebih terarah dan bertahap.
             </p>
           </div>
         </div>
 
-        <div className="mt-16 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
-          © {new Date().getFullYear()} PT Sakti Setia Sentosa · Strategy Presentation
+        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-slate-200 pt-6 text-sm text-slate-500 md:flex-row">
+          <p>
+            © {new Date().getFullYear()} PT Sakti Setia Sentosa
+          </p>
+
+          <p>
+            Market Strategy Presentation • Version 1.0.0
+          </p>
         </div>
       </div>
     </footer>
