@@ -6,26 +6,11 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navigation = [
-  {
-    title: "Beranda",
-    href: "/",
-  },
-  {
-    title: "Analisis Kondisi",
-    href: "/analisis-kondisi",
-  },
-  {
-    title: "Strategi",
-    href: "/strategi-pengembangan",
-  },
-  {
-    title: "Implementasi",
-    href: "/rencana-implementasi",
-  },
-  {
-    title: "Rekomendasi",
-    href: "/rekomendasi",
-  },
+  { title: "Beranda", href: "/" },
+  { title: "Analisis Kondisi", href: "/analisis-kondisi" },
+  { title: "Strategi", href: "/strategi-pengembangan" },
+  { title: "Implementasi", href: "/rencana-implementasi" },
+  { title: "Rekomendasi", href: "/rekomendasi" },
 ];
 
 export default function Navbar() {
@@ -33,22 +18,22 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/60 bg-white/72 backdrop-blur-2xl">
-      <div className="container-app flex h-20 items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-white/60 bg-white/80 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/70">
+      <div className="container-app flex h-[72px] items-center justify-between lg:h-20">
         <Link
           href="/"
-          className="flex items-center gap-4"
+          className="flex items-center gap-3"
         >
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-sky-500 to-emerald-500 text-base font-bold text-white shadow-lg shadow-blue-500/20">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 via-sky-500 to-emerald-500 text-sm font-bold text-white shadow-lg shadow-blue-500/20 lg:h-12 lg:w-12 lg:text-base">
             SS
           </div>
 
           <div className="leading-tight">
-            <div className="text-base font-semibold tracking-tight text-slate-900">
+            <div className="text-sm font-semibold tracking-tight text-slate-900 lg:text-base">
               Strategi Pengembangan Pasar
             </div>
 
-            <div className="mt-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
+            <div className="mt-0.5 text-[11px] uppercase tracking-[0.18em] text-slate-500 lg:text-xs">
               PT Sakti Setia Sentosa
             </div>
           </div>
@@ -65,7 +50,7 @@ export default function Navbar() {
                 className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
                   active
                     ? "bg-gradient-to-r from-blue-600 to-sky-500 text-white shadow-lg shadow-blue-500/20"
-                    : "text-slate-600 hover:bg-white hover:text-slate-900 hover:shadow-md"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
                 }`}
               >
                 {item.title}
@@ -76,15 +61,20 @@ export default function Navbar() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="rounded-2xl border border-slate-200 bg-white p-3 transition duration-300 hover:border-blue-200 hover:bg-blue-50 xl:hidden"
+          aria-label="Toggle navigation"
+          className="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white transition hover:border-blue-200 hover:bg-slate-50 xl:hidden"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      {open && (
-        <div className="border-t border-slate-200/70 bg-white/95 backdrop-blur-xl xl:hidden">
-          <div className="container-app flex flex-col gap-2 py-5">
+      <div
+        className={`overflow-hidden transition-all duration-300 xl:hidden ${
+          open ? "max-h-96 border-t border-slate-200" : "max-h-0"
+        }`}
+      >
+        <nav className="container-app bg-white py-4">
+          <div className="space-y-2">
             {navigation.map((item) => {
               const active = pathname === item.href;
 
@@ -93,7 +83,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`rounded-2xl px-5 py-3 text-sm font-medium transition ${
+                  className={`flex min-h-[48px] items-center rounded-2xl px-4 text-sm font-medium transition ${
                     active
                       ? "bg-gradient-to-r from-blue-600 to-sky-500 text-white"
                       : "text-slate-700 hover:bg-slate-100"
@@ -104,8 +94,8 @@ export default function Navbar() {
               );
             })}
           </div>
-        </div>
-      )}
+        </nav>
+      </div>
     </header>
   );
 }
