@@ -12,43 +12,56 @@ export default function AnalisisKondisiPage() {
       <Navbar />
 
       <main>
-        <Section background="gradient">
+        {/* Hero */}
+        <Section
+          background="gradient"
+          className="pt-14 lg:pt-20"
+        >
           <Container>
             <div className="max-w-4xl">
-              <span className="mb-5 inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+              <span className="inline-flex rounded-full border border-blue-200 bg-white/80 px-5 py-2 text-sm font-semibold text-blue-700 shadow-sm backdrop-blur">
                 Analisis Kondisi
               </span>
 
-              <h1 className="text-5xl font-extrabold leading-tight text-slate-900 lg:text-6xl">
-                Memahami Kondisi Pasar Sebelum Menentukan Strategi
+              <h1 className="mt-6 max-w-4xl">
+                Memahami Kondisi Pasar Sebelum
+                <span className="gradient-text">
+                  {" "}Menentukan Strategi
+                </span>
               </h1>
 
-              <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-600">
+              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 lg:text-lg">
                 Strategi yang baik selalu diawali dengan memahami kondisi
-                lapangan. Halaman ini menjelaskan informasi apa saja yang perlu
+                lapangan. Halaman ini menjelaskan informasi yang perlu
                 dikumpulkan sebelum perusahaan menentukan wilayah prioritas
-                pengembangan pasar.
+                pengembangan pasar sehingga setiap keputusan memiliki dasar
+                yang jelas.
               </p>
             </div>
           </Container>
         </Section>
 
+        {/* Content */}
         <Section background="white">
           <Container>
-            <div className="mb-14 max-w-3xl">
-              <h2 className="text-4xl font-bold text-slate-900">
+            <div className="mx-auto mb-14 max-w-3xl text-center">
+              <span className="inline-flex rounded-full bg-sky-100 px-5 py-2 text-sm font-semibold text-sky-700">
+                Fokus Analisis
+              </span>
+
+              <h2 className="mt-5 font-semibold">
                 Informasi Yang Perlu Dipahami
               </h2>
 
-              <p className="mt-5 text-lg leading-8 text-slate-600">
+              <p className="mt-6 text-lg leading-8 text-slate-600">
                 Pengambilan keputusan tidak hanya melihat jumlah outlet atau
                 luas wilayah. Diperlukan pemahaman yang menyeluruh mengenai
-                karakteristik pasar agar strategi yang dipilih benar-benar
+                karakteristik pasar sehingga strategi yang dipilih benar-benar
                 sesuai dengan kondisi di lapangan.
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid gap-8 lg:grid-cols-2">
               <Card
                 title="Karakteristik Wilayah"
                 description="Memahami kondisi geografis, kepadatan penduduk, akses transportasi, pusat aktivitas ekonomi, serta perkembangan wilayah."
@@ -72,19 +85,24 @@ export default function AnalisisKondisiPage() {
           </Container>
         </Section>
 
+        {/* Summary */}
         <Section>
           <Container>
-            <div className="rounded-[36px] bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 p-10 text-white lg:p-14">
+            <div className="rounded-3xl bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 p-8 text-white lg:p-12">
               <div className="max-w-3xl">
-                <h2 className="text-4xl font-bold">
+                <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-sm font-semibold tracking-wide text-white backdrop-blur">
+                  Ringkasan
+                </span>
+
+                <h2 className="mt-5 font-semibold text-white">
                   Hasil Analisis Menjadi Dasar Penyusunan Strategi
                 </h2>
 
                 <p className="mt-6 text-lg leading-8 text-blue-50">
                   Setelah seluruh informasi dikumpulkan dan dianalisis,
                   perusahaan dapat menentukan prioritas wilayah, memilih
-                  pendekatan yang sesuai, dan menyusun rencana implementasi
-                  secara bertahap.
+                  pendekatan yang sesuai, serta menyusun rencana implementasi
+                  secara bertahap sesuai kondisi perusahaan.
                 </p>
 
                 <div className="mt-10">
