@@ -6,32 +6,32 @@ const pillars = [
   {
     icon: "🗺️",
     title: "Analisis Wilayah",
-    description:
-      "Menentukan wilayah prioritas berdasarkan karakteristik pasar, akses distribusi, kepadatan aktivitas ekonomi, dan peluang pertumbuhan.",
+    focus: "Memahami potensi setiap wilayah.",
+    result: "Prioritas wilayah menjadi lebih objektif dan mudah dipertanggungjawabkan.",
   },
   {
     icon: "🏪",
     title: "Pengembangan Outlet",
-    description:
-      "Menentukan outlet yang perlu dipertahankan, dikembangkan, atau diperluas berdasarkan kondisi lapangan dan potensi pasar di sekitarnya.",
+    focus: "Meningkatkan kualitas dan jangkauan outlet.",
+    result: "Pelayanan lebih merata dan peluang pasar semakin luas.",
   },
   {
     icon: "🏫",
     title: "Pengembangan Institusi",
-    description:
-      "Mengidentifikasi peluang kerja sama dengan sekolah, perguruan tinggi, instansi pemerintah, rumah sakit, dan perusahaan.",
+    focus: "Membangun kerja sama dengan berbagai institusi.",
+    result: "Terbentuk hubungan jangka panjang yang lebih stabil.",
   },
   {
     icon: "🤝",
     title: "Pengembangan Komunitas",
-    description:
-      "Membangun hubungan dengan komunitas lokal untuk memperluas jangkauan pasar melalui pendekatan yang lebih personal.",
+    focus: "Membangun hubungan dengan komunitas lokal.",
+    result: "Meningkatkan kepercayaan dan memperluas jaringan pasar.",
   },
   {
     icon: "🎯",
     title: "Program Event",
-    description:
-      "Menggunakan kegiatan promosi dan edukasi sebagai media membangun kepercayaan serta meningkatkan peluang penjualan.",
+    focus: "Meningkatkan interaksi langsung dengan calon pelanggan.",
+    result: "Brand semakin dikenal dan peluang penjualan meningkat.",
   },
 ];
 
@@ -40,17 +40,17 @@ export default function StrategyPillars() {
     <Section background="white">
       <Container>
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="mb-4 inline-flex rounded-full bg-amber-100 px-4 py-2 text-sm font-semibold text-amber-700">
+          <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
             Lima Pilar Strategi
           </span>
 
-          <h2 className="mb-6 text-4xl font-bold text-slate-900">
-            Strategi Pengembangan Pasar Dibangun Dari Lima Pilar Utama
+          <h2 className="mt-6">
+            Seluruh Strategi Berpusat Pada Lima Pilar Utama
           </h2>
 
-          <p className="text-lg leading-8 text-slate-600">
-            Kelima pilar saling melengkapi sehingga pengembangan pasar tidak
-            hanya berfokus pada penjualan, tetapi juga pada perluasan jaringan,
+          <p className="mt-8 text-lg text-slate-600">
+            Kelima pilar ini saling mendukung sehingga strategi tidak hanya
+            berorientasi pada penjualan, tetapi juga pada perluasan jaringan,
             peningkatan hubungan dengan pelanggan, dan pertumbuhan yang
             berkelanjutan.
           </p>
@@ -66,13 +66,31 @@ export default function StrategyPillars() {
                 {pillar.icon}
               </div>
 
-              <h3 className="mb-4 text-2xl font-bold text-slate-900">
+              <h3 className="mb-5 text-2xl font-bold text-slate-900">
                 {pillar.title}
               </h3>
 
-              <p className="leading-8 text-slate-600">
-                {pillar.description}
-              </p>
+              <div className="space-y-5">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                    Fokus
+                  </p>
+
+                  <p className="mt-2 leading-7 text-slate-600">
+                    {pillar.focus}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-wide text-emerald-600">
+                    Hasil Yang Diharapkan
+                  </p>
+
+                  <p className="mt-2 leading-7 text-slate-600">
+                    {pillar.result}
+                  </p>
+                </div>
+              </div>
             </Card>
           ))}
         </div>
