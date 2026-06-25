@@ -8,21 +8,22 @@ export default function Hero() {
       <Container>
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="fade-up">
-            <div className="mb-6 inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-5 py-2 text-sm font-semibold text-blue-700">
+            <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
               Presentasi Strategi Pengembangan Pasar
-            </div>
+            </span>
 
-            <h1 className="max-w-3xl text-5xl font-extrabold leading-tight text-slate-900 lg:text-7xl">
-              Membangun
-              <span className="gradient-text"> Pertumbuhan Pasar </span>
-              Secara Terarah dan Berkelanjutan
+            <h1 className="mt-6 max-w-4xl">
+              Strategi Yang Terarah Untuk
+              <span className="gradient-text">
+                {" "}Meningkatkan Penetrasi Pasar
+              </span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg leading-9 text-slate-600">
-              Website ini menjelaskan pendekatan yang digunakan untuk
-              mengidentifikasi potensi wilayah, menentukan prioritas pasar,
-              menyusun strategi pengembangan, hingga menyusun langkah
-              implementasi secara bertahap.
+            <p className="mt-8 max-w-2xl text-lg text-slate-600">
+              Website ini menjelaskan langkah yang diusulkan untuk
+              meningkatkan penetrasi pasar PT Sakti Setia Sentosa melalui
+              analisis kondisi lapangan, penyusunan strategi, dan rencana
+              implementasi yang dilakukan secara bertahap.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
@@ -40,40 +41,38 @@ export default function Hero() {
           </div>
 
           <div className="fade-up">
-            <div className="card rounded-[36px] p-10">
-              <div className="grid gap-6">
-                <div className="rounded-2xl bg-blue-50 p-6">
-                  <h3 className="mb-2 text-lg font-bold text-slate-900">
-                    Memahami Kondisi Pasar
-                  </h3>
+            <div className="card p-8 lg:p-10">
+              <h2 className="text-2xl font-bold text-slate-900">
+                Alur Presentasi
+              </h2>
 
-                  <p className="text-slate-600">
-                    Analisis wilayah menjadi dasar dalam menentukan
-                    peluang pengembangan yang paling potensial.
-                  </p>
-                </div>
+              <div className="mt-8 space-y-6">
+                {[
+                  "1. Memahami kondisi pasar saat ini",
+                  "2. Mengidentifikasi peluang pengembangan",
+                  "3. Menentukan strategi yang tepat",
+                  "4. Menyusun rencana implementasi",
+                  "5. Memberikan rekomendasi tindak lanjut",
+                ].map((step) => (
+                  <div
+                    key={step}
+                    className="flex items-start gap-4"
+                  >
+                    <div className="mt-2 h-3 w-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500" />
 
-                <div className="rounded-2xl bg-emerald-50 p-6">
-                  <h3 className="mb-2 text-lg font-bold text-slate-900">
-                    Menentukan Prioritas
-                  </h3>
+                    <p className="text-slate-700">
+                      {step}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
-                  <p className="text-slate-600">
-                    Setiap wilayah dievaluasi menggunakan kriteria yang
-                    konsisten agar keputusan lebih objektif.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl bg-amber-50 p-6">
-                  <h3 className="mb-2 text-lg font-bold text-slate-900">
-                    Menjalankan Implementasi
-                  </h3>
-
-                  <p className="text-slate-600">
-                    Strategi diterjemahkan menjadi rencana kerja yang
-                    realistis, bertahap, dan mudah dipantau.
-                  </p>
-                </div>
+              <div className="mt-10 rounded-2xl bg-slate-50 p-5">
+                <p className="text-sm leading-7 text-slate-600">
+                  Seluruh isi presentasi menggunakan pendekatan yang mudah
+                  dipahami dan tidak bergantung pada angka atau asumsi yang
+                  belum memiliki dasar data.
+                </p>
               </div>
             </div>
           </div>
