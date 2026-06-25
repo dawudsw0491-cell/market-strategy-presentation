@@ -62,32 +62,59 @@ export default function RencanaImplementasiPage() {
       <Navbar />
 
       <main>
-        <Section background="gradient">
+        {/* Hero */}
+        <Section
+          background="gradient"
+          className="pt-14 lg:pt-20"
+        >
           <Container>
-            <span className="mb-5 inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-              Rencana Implementasi
-            </span>
+            <div className="max-w-4xl">
+              <span className="inline-flex rounded-full border border-blue-200 bg-white/80 px-5 py-2 text-sm font-semibold text-blue-700 shadow-sm backdrop-blur">
+                Rencana Implementasi
+              </span>
 
-            <h1 className="max-w-4xl text-5xl font-extrabold leading-tight text-slate-900 lg:text-6xl">
-              Strategi Akan Berhasil Jika Dilaksanakan Secara Bertahap
-            </h1>
+              <h1 className="mt-6 max-w-4xl">
+                Strategi Akan Berhasil Jika
+                <span className="gradient-text">
+                  {" "}Dilaksanakan Secara Bertahap
+                </span>
+              </h1>
 
-            <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-600">
-              Implementasi disusun menjadi beberapa tahapan agar setiap program
-              memiliki tujuan, fokus, dan indikator keberhasilan yang jelas.
-            </p>
+              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 lg:text-lg">
+                Implementasi disusun menjadi beberapa tahapan agar setiap
+                program memiliki tujuan, fokus, serta indikator keberhasilan
+                yang jelas dan mudah dievaluasi.
+              </p>
+            </div>
           </Container>
         </Section>
 
+        {/* Roadmap */}
         <Section background="white">
           <Container>
+            <div className="mx-auto mb-14 max-w-3xl text-center">
+              <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
+                Tahapan Implementasi
+              </span>
+
+              <h2 className="mt-5 font-semibold">
+                Roadmap Pelaksanaan Strategi
+              </h2>
+
+              <p className="mt-6 text-lg leading-8 text-slate-600">
+                Setiap tahapan memiliki fokus yang berbeda sehingga proses
+                implementasi dapat dilakukan secara bertahap, terukur, dan
+                berkelanjutan.
+              </p>
+            </div>
+
             <div className="grid gap-8">
               {roadmap.map((step) => (
                 <Card
                   key={step.phase}
                   title={`${step.phase} • ${step.title}`}
                 >
-                  <p className="mb-6 font-semibold text-blue-600">
+                  <p className="mb-6 text-sm font-semibold uppercase tracking-wide text-blue-600">
                     {step.duration}
                   </p>
 
@@ -97,7 +124,7 @@ export default function RencanaImplementasiPage() {
                         key={activity}
                         className="flex items-start gap-3"
                       >
-                        <span className="mt-2 h-2 w-2 rounded-full bg-emerald-500" />
+                        <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500" />
 
                         <span className="leading-7 text-slate-600">
                           {activity}
