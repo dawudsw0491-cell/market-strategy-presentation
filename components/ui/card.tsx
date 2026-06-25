@@ -19,27 +19,70 @@ export default function Card({
         group
         relative
         overflow-hidden
-        rounded-[28px]
+        rounded-[30px]
         border
-        border-slate-200/70
-        bg-white/90
+        border-white/70
+        bg-white/78
         p-6
+        backdrop-blur-2xl
+
         shadow-[0_10px_40px_rgba(15,23,42,0.06)]
-        backdrop-blur-xl
+
         transition-all
-        duration-300
+        duration-500
+
         hover:-translate-y-1
-        hover:border-blue-200
-        hover:shadow-[0_20px_60px_rgba(37,99,235,0.12)]
+        hover:border-sky-200
+        hover:shadow-[0_25px_80px_rgba(37,99,235,0.10)]
+
         sm:p-8
+        lg:p-10
+
         ${className}
       `}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-emerald-50/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      {/* Ambient Light */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          opacity-0
+          transition-opacity
+          duration-500
+          group-hover:opacity-100
+        "
+      >
+        <div
+          className="
+            absolute
+            -left-20
+            -top-20
+            h-60
+            w-60
+            rounded-full
+            bg-blue-200/20
+            blur-3xl
+          "
+        />
+
+        <div
+          className="
+            absolute
+            -bottom-20
+            -right-20
+            h-60
+            w-60
+            rounded-full
+            bg-emerald-200/20
+            blur-3xl
+          "
+        />
+      </div>
 
       <div className="relative z-10">
         {title && (
-          <h3 className="mb-4 text-xl font-bold leading-tight text-slate-900 lg:text-2xl">
+          <h3 className="mb-4 text-xl font-semibold tracking-tight text-slate-900 lg:text-2xl">
             {title}
           </h3>
         )}
