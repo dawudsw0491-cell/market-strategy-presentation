@@ -19,26 +19,27 @@ export default function Card({
         group
         relative
         overflow-hidden
-        rounded-3xl
+        rounded-[28px]
         border
         border-slate-200/70
-        bg-white/85
-        p-8
-        shadow-lg
+        bg-white/90
+        p-6
+        shadow-[0_10px_40px_rgba(15,23,42,0.06)]
         backdrop-blur-xl
         transition-all
         duration-300
-        hover:-translate-y-2
+        hover:-translate-y-1
         hover:border-blue-200
-        hover:shadow-2xl
+        hover:shadow-[0_20px_60px_rgba(37,99,235,0.12)]
+        sm:p-8
         ${className}
       `}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-transparent to-emerald-50/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-emerald-50/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       <div className="relative z-10">
         {title && (
-          <h3 className="mb-3 text-2xl font-bold text-slate-900">
+          <h3 className="mb-4 text-xl font-bold leading-tight text-slate-900 lg:text-2xl">
             {title}
           </h3>
         )}
