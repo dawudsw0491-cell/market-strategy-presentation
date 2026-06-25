@@ -1,17 +1,17 @@
 import { ReactNode } from "react";
 
 interface CardProps {
-  children: ReactNode;
-  className?: string;
   title?: string;
   description?: string;
+  children?: ReactNode;
+  className?: string;
 }
 
 export default function Card({
-  children,
-  className = "",
   title,
   description,
+  children,
+  className = "",
 }: CardProps) {
   return (
     <div
@@ -38,18 +38,22 @@ export default function Card({
 
       <div className="relative z-10">
         {title && (
-          <h3 className="mb-2 text-xl font-bold text-slate-900">
+          <h3 className="mb-3 text-2xl font-bold text-slate-900">
             {title}
           </h3>
         )}
 
         {description && (
-          <p className="mb-6 leading-7 text-slate-600">
+          <p className="leading-8 text-slate-600">
             {description}
           </p>
         )}
 
-        {children}
+        {children && (
+          <div className="mt-6">
+            {children}
+          </div>
+        )}
       </div>
     </div>
   );
