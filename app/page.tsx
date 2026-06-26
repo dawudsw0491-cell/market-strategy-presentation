@@ -9,10 +9,16 @@ import StrategyPillars from "@/components/sections/strategy-pillars";
 
 import AreaPriority from "@/components/sections/area-priority";
 import MarketPriorityMatrix from "@/components/sections/market-priority-matrix";
+import MarketOpportunity from "@/components/sections/market-opportunity";
+import MarketCoverage from "@/components/sections/market-coverage";
 import DistributionFlow from "@/components/sections/distribution-flow";
+
 import ChannelSegmentation from "@/components/sections/channel-segmentation";
 import ProductPotential from "@/components/sections/product-potential";
 import InstitutionPriority from "@/components/sections/institution-priority";
+
+import OutletDevelopmentFunnel from "@/components/sections/outlet-development-funnel";
+
 import SuccessIndicators from "@/components/sections/success-indicators";
 
 export default function HomePage() {
@@ -35,6 +41,10 @@ export default function HomePage() {
 
         <MarketPriorityMatrix />
 
+        <MarketOpportunity />
+
+        <MarketCoverage />
+
         <DistributionFlow />
 
         <ChannelSegmentation />
@@ -42,6 +52,8 @@ export default function HomePage() {
         <ProductPotential />
 
         <InstitutionPriority />
+
+        <OutletDevelopmentFunnel />
 
         <SuccessIndicators />
       </main>
