@@ -1,192 +1,153 @@
-import Card from "@/components/ui/card";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
 const channels = [
   {
-    title: "Toko Kelontong",
-    role: "Pemerataan distribusi hingga tingkat lingkungan.",
-    characteristic:
-      "Frekuensi transaksi tinggi dengan kebutuhan produk harian yang berulang.",
-    products: [
-      "Produk kebutuhan harian",
-      "Makanan ringan",
-      "Minuman",
-      "Bumbu dan pelengkap",
-    ],
-    objective:
-      "Meningkatkan ketersediaan produk pada kawasan permukiman serta memperkuat loyalitas outlet.",
+    name: "Kelontong",
+    frequency: "Tinggi",
+    volume: "Sedang",
+    repeat: "Tinggi",
+    priority: 5,
+    strategy: "Perluasan outlet dan peningkatan distribusi produk fast moving.",
   },
   {
-    title: "Grosir & Semi Grosir",
-    role: "Pusat distribusi bagi outlet di wilayah sekitarnya.",
-    characteristic:
-      "Pembelian dalam volume besar dengan perputaran produk yang cepat.",
-    products: [
-      "Produk fast moving",
-      "Produk volume besar",
-      "Produk distribusi ulang",
-      "Produk kebutuhan usaha",
-    ],
-    objective:
-      "Meningkatkan volume distribusi sekaligus memperluas jangkauan pelayanan.",
+    name: "Grosir",
+    frequency: "Sedang",
+    volume: "Sangat Tinggi",
+    repeat: "Tinggi",
+    priority: 5,
+    strategy: "Fokus pada volume penjualan dan distribusi lintas wilayah.",
   },
   {
-    title: "Bakery & Horeca",
-    role: "Mendukung operasional usaha makanan dan minuman.",
-    characteristic:
-      "Membutuhkan pasokan yang stabil dengan pola pembelian berulang.",
-    products: [
-      "Bahan baku",
-      "Bahan pendukung produksi",
-      "Produk operasional",
-      "Produk pelengkap usaha",
-    ],
-    objective:
-      "Membangun hubungan jangka panjang sebagai mitra distribusi utama.",
+    name: "Bakery",
+    frequency: "Tinggi",
+    volume: "Sedang",
+    repeat: "Tinggi",
+    priority: 4,
+    strategy: "Pengembangan produk bakery, dairy, dan bahan pendukung.",
   },
   {
-    title: "UMKM",
-    role: "Mendukung pertumbuhan pelaku usaha lokal.",
-    characteristic:
-      "Membutuhkan produk yang mudah dipasarkan kembali kepada pelanggan.",
-    products: [
-      "Produk ekonomis",
-      "Produk kebutuhan harian",
-      "Produk pendukung usaha",
-      "Produk dengan rotasi tinggi",
-    ],
-    objective:
-      "Memperluas jaringan distribusi melalui pertumbuhan usaha lokal.",
+    name: "Horeca",
+    frequency: "Sedang",
+    volume: "Tinggi",
+    repeat: "Tinggi",
+    priority: 4,
+    strategy: "Memperkuat kerja sama dengan hotel, restoran, café, dan catering.",
   },
   {
-    title: "Institusi",
-    role: "Membangun distribusi jangka panjang.",
-    characteristic:
-      "Pembelian dilakukan secara rutin sesuai kebutuhan operasional institusi.",
-    products: [
-      "Produk konsumsi",
-      "Produk operasional",
-      "Produk kegiatan",
-      "Produk distribusi rutin",
-    ],
-    objective:
-      "Menciptakan hubungan kerja sama yang stabil dan berkelanjutan.",
+    name: "Institusi",
+    frequency: "Rendah",
+    volume: "Sangat Tinggi",
+    repeat: "Tinggi",
+    priority: 5,
+    strategy: "Kerja sama jangka panjang dengan sekolah, rumah sakit, dan instansi.",
   },
   {
-    title: "Event & Komunitas",
-    role: "Meningkatkan penetrasi pasar dan brand awareness.",
-    characteristic:
-      "Distribusi dilakukan melalui aktivitas promosi dan interaksi langsung dengan masyarakat.",
-    products: [
-      "Produk promosi",
-      "Produk sampling",
-      "Produk awareness",
-      "Produk pendukung kegiatan",
-    ],
-    objective:
-      "Memperluas jangkauan pasar sekaligus meningkatkan pengenalan produk.",
+    name: "UMKM",
+    frequency: "Sedang",
+    volume: "Sedang",
+    repeat: "Sedang",
+    priority: 3,
+    strategy: "Mendukung pertumbuhan outlet baru pada wilayah berkembang.",
   },
 ];
 
+function Stars(value: number) {
+  return "★★★★★".slice(0, value);
+}
+
 export default function ChannelSegmentation() {
   return (
-    <Section background="white">
+    <Section background="gradient">
       <Container>
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
-            Segmentasi Distribusi
+          <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
+            Channel Segmentation
           </span>
 
           <h2 className="mt-6">
-            Pengembangan Berdasarkan Karakter Channel
+            Business Channel Analysis
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Setiap channel memiliki karakteristik pembelian, kebutuhan produk,
-            dan pola distribusi yang berbeda sehingga pendekatan pengembangan
-            disusun sesuai dengan karakter masing-masing segmen pasar.
+            Setiap channel memiliki karakteristik yang berbeda sehingga
+            pendekatan distribusi, aktivitas penjualan, dan prioritas
+            pengembangan disesuaikan dengan potensi masing-masing.
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
+        <div className="overflow-auto rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
+          <table className="min-w-full border-separate border-spacing-y-4">
+            <thead>
+              <tr className="text-left text-sm uppercase tracking-wide text-slate-500">
+                <th>Channel</th>
+                <th>Frekuensi</th>
+                <th>Volume</th>
+                <th>Repeat</th>
+                <th>Prioritas</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {channels.map((channel) => (
+                <tr
+                  key={channel.name}
+                  className="rounded-2xl bg-slate-50"
+                >
+                  <td className="rounded-l-2xl px-5 py-5 font-semibold text-slate-900">
+                    {channel.name}
+                  </td>
+
+                  <td className="px-5 py-5 text-slate-600">
+                    {channel.frequency}
+                  </td>
+
+                  <td className="px-5 py-5 text-slate-600">
+                    {channel.volume}
+                  </td>
+
+                  <td className="px-5 py-5 text-slate-600">
+                    {channel.repeat}
+                  </td>
+
+                  <td className="rounded-r-2xl px-5 py-5 font-semibold text-amber-500">
+                    {Stars(channel.priority)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-12 grid gap-6 xl:grid-cols-2">
           {channels.map((channel) => (
-            <Card
-              key={channel.title}
-              className="h-full"
+            <div
+              key={channel.name}
+              className="rounded-3xl border border-slate-200 bg-white p-6"
             >
-              <h3 className="text-xl font-semibold text-slate-900">
-                {channel.title}
+              <h3 className="text-xl font-bold text-slate-900">
+                {channel.name}
               </h3>
 
-              <div className="mt-6 space-y-6">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
-                    Peran
-                  </p>
-
-                  <p className="mt-2 leading-7 text-slate-600">
-                    {channel.role}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600">
-                    Karakteristik
-                  </p>
-
-                  <p className="mt-2 leading-7 text-slate-600">
-                    {channel.characteristic}
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-600">
-                    Kategori Produk
-                  </p>
-
-                  <ul className="mt-3 space-y-2">
-                    {channel.products.map((product) => (
-                      <li
-                        key={product}
-                        className="flex items-start gap-3"
-                      >
-                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500" />
-
-                        <span className="leading-7 text-slate-600">
-                          {product}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="rounded-2xl bg-slate-50 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-600">
-                    Tujuan Pengembangan
-                  </p>
-
-                  <p className="mt-3 leading-7 text-slate-600">
-                    {channel.objective}
-                  </p>
-                </div>
-              </div>
-            </Card>
+              <p className="mt-4 leading-8 text-slate-600">
+                {channel.strategy}
+              </p>
+            </div>
           ))}
         </div>
 
-        <div className="mt-16 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-8 lg:p-10">
+        <div className="mt-12 rounded-3xl border border-blue-100 bg-blue-50 p-8">
           <h3 className="text-2xl font-bold text-slate-900">
-            Mengapa Segmentasi Channel Penting?
+            Executive Insight
           </h3>
 
           <p className="mt-5 leading-8 text-slate-700">
-            Setiap channel memiliki karakteristik kebutuhan, frekuensi
-            transaksi, serta pola distribusi yang berbeda. Oleh karena itu,
-            strategi pengembangan, kategori produk, dan pendekatan penjualan
-            disusun berdasarkan karakter masing-masing channel agar distribusi
-            menjadi lebih efektif, tepat sasaran, dan mampu menghasilkan
-            pertumbuhan pasar yang berkelanjutan.
+            Channel Kelontong, Grosir, dan Institusi menjadi prioritas utama
+            karena memiliki peluang distribusi yang besar serta mampu
+            menghasilkan hubungan bisnis jangka panjang. Bakery dan Horeca
+            berperan sebagai channel pendukung dengan potensi repeat order
+            tinggi, sedangkan UMKM menjadi target pengembangan pada wilayah
+            ekspansi.
           </p>
         </div>
       </Container>
