@@ -3,43 +3,60 @@ import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
 const highlights = [
-  "Menganalisis karakter wilayah, potensi pasar, dan peluang distribusi.",
-  "Menentukan wilayah prioritas berdasarkan hasil pemetaan lapangan.",
-  "Menyusun strategi pengembangan outlet, institusi, dan komunitas.",
-  "Merancang implementasi secara bertahap sesuai prioritas perusahaan.",
-  "Menyusun rekomendasi sebagai dasar pengembangan pasar berkelanjutan.",
+  "Analisis kondisi pasar dan karakteristik wilayah.",
+  "Penentuan prioritas pengembangan wilayah.",
+  "Strategi pengembangan outlet dan distribusi.",
+  "Pengembangan institusi, komunitas, dan event.",
+  "Roadmap implementasi dan rekomendasi strategis.",
+];
+
+const metrics = [
+  {
+    value: "3",
+    label: "Wilayah Prioritas",
+  },
+  {
+    value: "5",
+    label: "Strategi Utama",
+  },
+  {
+    value: "4",
+    label: "Tahapan Implementasi",
+  },
 ];
 
 export default function Hero() {
   return (
-    <Section className="relative overflow-hidden pt-14 lg:pt-20">
+    <Section
+      background="gradient"
+      className="relative overflow-hidden pt-14 lg:pt-20"
+    >
       <Container>
-        <div className="grid items-center gap-12 xl:grid-cols-[1.08fr_0.92fr]">
-          {/* Left */}
-          <div className="fade-up">
-            <span className="inline-flex rounded-full border border-blue-200 bg-white/80 px-5 py-2 text-sm font-semibold text-blue-700 shadow-sm backdrop-blur">
-              Blueprint Strategi Pengembangan Pasar FMCG
+
+        <div className="grid items-center gap-14 xl:grid-cols-[1.1fr_0.9fr]">
+
+          <div>
+
+            <span className="inline-flex rounded-full border border-blue-200 bg-white px-5 py-2 text-sm font-semibold text-blue-700 shadow-sm">
+              Executive Presentation
             </span>
 
-            <h1 className="mt-6 max-w-3xl">
-              Pengembangan Pasar
+            <h1 className="mt-7 max-w-4xl">
+              Strategi Pengembangan Pasar
               <span className="gradient-text">
-                {" "}Kabupaten Kediri
+                {" "}PT Sakti Setia Sentosa
               </span>
-              <br />
-              Kota Kediri dan Kabupaten Nganjuk
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 lg:text-lg">
-              Blueprint ini disusun sebagai panduan pengembangan pasar PT Sakti
-              Setia Sentosa dengan fokus pada penguatan jaringan distribusi,
-              pengembangan outlet, peningkatan kualitas SDM, perluasan kerja
-              sama dengan institusi dan komunitas, serta peningkatan penetrasi
-              pasar melalui pendekatan yang terarah sesuai karakter setiap
-              wilayah.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
+              Website ini menyajikan pendekatan analisis kondisi pasar,
+              penentuan prioritas wilayah, strategi pengembangan,
+              roadmap implementasi, serta rekomendasi strategis sebagai
+              dasar pengambilan keputusan pengembangan pasar.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-4">
+
               <Button href="/analisis-kondisi">
                 Mulai Presentasi
               </Button>
@@ -50,70 +67,86 @@ export default function Hero() {
               >
                 Lihat Strategi
               </Button>
+
             </div>
+
+            <div className="mt-12 grid gap-5 sm:grid-cols-3">
+
+              {metrics.map((metric) => (
+
+                <div
+                  key={metric.label}
+                  className="dashboard-card text-center"
+                >
+                  <div className="metric-value text-blue-600">
+                    {metric.value}
+                  </div>
+
+                  <div className="metric-label">
+                    {metric.label}
+                  </div>
+                </div>
+
+              ))}
+
+            </div>
+
           </div>
 
-          {/* Right */}
-          <div className="fade-up">
-            <div className="card p-7 lg:p-9">
+          <div>
+
+            <div className="card p-8 lg:p-10">
+
               <span className="inline-flex rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700">
                 Ringkasan Presentasi
               </span>
 
-              <h2 className="mt-5 text-2xl font-semibold text-slate-900">
-                Alur Pembahasan
+              <h2 className="mt-6 text-2xl font-bold text-slate-900">
+                Executive Overview
               </h2>
 
-              <div className="mt-7 space-y-6">
+              <div className="mt-8 space-y-6">
+
                 {highlights.map((item, index) => (
+
                   <div
                     key={item}
                     className="flex items-start gap-5"
                   >
-                    <div
-                      className="
-                        mt-1
-                        flex
-                        h-8
-                        w-8
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-gradient-to-br
-                        from-blue-600
-                        to-cyan-500
-                        text-xs
-                        font-semibold
-                        text-white
-                        shadow
-                      "
-                    >
+
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-emerald-500 text-sm font-bold text-white">
                       {index + 1}
                     </div>
 
                     <p className="leading-7 text-slate-700">
                       {item}
                     </p>
+
                   </div>
+
                 ))}
+
               </div>
 
-              <div className="my-8 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+              <div className="my-8 h-px bg-slate-200" />
 
-              <div className="rounded-2xl border border-sky-100 bg-sky-50/80 p-5">
-                <p className="text-sm leading-7 text-slate-600">
-                  Presentasi ini memberikan gambaran menyeluruh mengenai proses
-                  analisis wilayah, penentuan prioritas, pengembangan outlet,
-                  institusi, komunitas, implementasi program, hingga
-                  rekomendasi strategis sebagai dasar pengembangan pasar FMCG
-                  di wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten
-                  Nganjuk.
+              <div className="rounded-2xl border border-blue-100 bg-blue-50 p-5">
+
+                <p className="leading-7 text-slate-600">
+                  Seluruh strategi disusun menggunakan pendekatan yang
+                  sistematis sehingga dapat menjadi dasar diskusi,
+                  presentasi manajemen, maupun implementasi pengembangan
+                  pasar secara bertahap.
                 </p>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </Container>
     </Section>
   );
