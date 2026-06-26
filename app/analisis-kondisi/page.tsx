@@ -6,79 +6,49 @@ import Card from "@/components/ui/card";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
-const marketFactors = [
+const analysis = [
   {
     title: "Karakteristik Wilayah",
-    score: 92,
     description:
-      "Menganalisis perkembangan wilayah, kepadatan penduduk, aktivitas ekonomi, akses distribusi, serta pertumbuhan kawasan.",
+      "Menganalisis kondisi geografis, aktivitas ekonomi, kepadatan penduduk, dan akses distribusi sebagai dasar penentuan wilayah prioritas.",
   },
   {
     title: "Potensi Pasar",
-    score: 95,
     description:
-      "Mengidentifikasi peluang berdasarkan kebutuhan pelanggan, daya beli, dan perkembangan channel distribusi.",
+      "Mengidentifikasi peluang pengembangan berdasarkan kebutuhan pelanggan, pertumbuhan wilayah, dan karakteristik pasar.",
   },
   {
-    title: "Jaringan Distribusi",
-    score: 90,
+    title: "Distribusi",
     description:
-      "Mengukur kesiapan distribusi, jangkauan layanan, efektivitas rute, dan coverage wilayah.",
+      "Menilai kesiapan jaringan distribusi agar perluasan pasar dapat dilakukan secara efektif.",
   },
   {
     title: "Persaingan",
-    score: 84,
     description:
-      "Mengevaluasi tingkat kompetisi untuk menentukan strategi penetrasi yang paling sesuai.",
+      "Memahami kondisi persaingan untuk menentukan pendekatan pengembangan yang sesuai.",
   },
 ];
 
-const opportunities = [
+const priorities = [
   {
     area: "Kabupaten Kediri",
-    focus: "Prioritas Utama",
-    color: "bg-emerald-500",
+    level: "Prioritas Utama",
+    reason:
+      "Potensi pengembangan paling besar dan menjadi fokus utama implementasi.",
   },
   {
     area: "Kota Kediri",
-    focus: "Penguatan",
-    color: "bg-blue-500",
+    level: "Penguatan",
+    reason:
+      "Mengoptimalkan jaringan yang telah berjalan untuk meningkatkan produktivitas.",
   },
   {
     area: "Kabupaten Nganjuk",
-    focus: "Ekspansi Bertahap",
-    color: "bg-amber-500",
+    level: "Pengembangan Bertahap",
+    reason:
+      "Pengembangan dilakukan sesuai hasil evaluasi dan kesiapan implementasi.",
   },
 ];
-
-function Progress({
-  value,
-}: {
-  value: number;
-}) {
-  return (
-    <div className="mt-4">
-      <div className="mb-2 flex justify-between text-sm">
-        <span className="text-slate-500">
-          Opportunity Score
-        </span>
-
-        <span className="font-semibold text-slate-900">
-          {value}%
-        </span>
-      </div>
-
-      <div className="h-3 rounded-full bg-slate-200">
-        <div
-          className="h-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500"
-          style={{
-            width: `${value}%`,
-          }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export default function AnalisisKondisiPage() {
   return (
@@ -87,30 +57,23 @@ export default function AnalisisKondisiPage() {
 
       <main>
 
-        <Section
-          background="gradient"
-          className="pt-14 lg:pt-20"
-        >
+        <Section background="gradient">
           <Container>
 
-            <div className="max-w-4xl">
+            <div className="mx-auto max-w-4xl text-center">
 
-              <span className="inline-flex rounded-full border border-blue-200 bg-white/80 px-5 py-2 text-sm font-semibold text-blue-700">
+              <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
                 Analisis Kondisi
               </span>
 
               <h1 className="mt-6">
-                Business Market
-                <span className="gradient-text">
-                  {" "}Analysis Dashboard
-                </span>
+                Analisis Kondisi Pasar
               </h1>
 
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-                Analisis kondisi dilakukan untuk memahami peluang pasar,
-                kesiapan distribusi, karakteristik wilayah, dan tingkat
-                persaingan sebagai dasar penyusunan strategi pengembangan
-                pasar.
+              <p className="mt-8 text-lg leading-8 text-slate-600">
+                Tahap analisis dilakukan untuk memahami kondisi pasar,
+                peluang pengembangan, kesiapan distribusi, serta
+                karakteristik wilayah sebagai dasar penyusunan strategi.
               </p>
 
             </div>
@@ -124,17 +87,48 @@ export default function AnalisisKondisiPage() {
 
             <div className="grid gap-8 lg:grid-cols-2">
 
-              {marketFactors.map((item) => (
+              {analysis.map((item) => (
 
                 <Card
                   key={item.title}
                   title={item.title}
                 >
+                  <p className="leading-8 text-slate-600">
+                    {item.description}
+                  </p>
+                </Card>
 
-                  <Progress value={item.score} />
+              ))}
+
+            </div>
+
+          </Container>
+
+        </Section>
+
+        <Section>
+
+          <Container>
+
+            <h2 className="mb-12 text-center">
+              Prioritas Wilayah
+            </h2>
+
+            <div className="grid gap-8 lg:grid-cols-3">
+
+              {priorities.map((item) => (
+
+                <Card
+                  key={item.area}
+                  title={item.area}
+                >
+
+                  <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+                    {item.level}
+                  </span>
 
                   <p className="mt-6 leading-8 text-slate-600">
-                    {item.description}
+                    {item.reason}
                   </p>
 
                 </Card>
@@ -151,70 +145,22 @@ export default function AnalisisKondisiPage() {
 
           <Container>
 
-            <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
-
-              <h2 className="mb-10 text-center">
-                Area Opportunity
-              </h2>
-
-              <div className="grid gap-8 lg:grid-cols-3">
-
-                {opportunities.map((item) => (
-
-                  <div
-                    key={item.area}
-                    className="rounded-3xl border border-slate-200 p-8"
-                  >
-
-                    <div
-                      className={`h-5 w-5 rounded-full ${item.color}`}
-                    />
-
-                    <h3 className="mt-5">
-                      {item.area}
-                    </h3>
-
-                    <p className="mt-4 text-lg font-semibold text-blue-600">
-                      {item.focus}
-                    </p>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </div>
-
-          </Container>
-
-        </Section>
-
-        <Section>
-
-          <Container>
-
-            <div className="rounded-[32px] bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 p-10 text-white">
+            <div className="executive-box">
 
               <h2 className="text-white">
-                Executive Insight
+                Kesimpulan Analisis
               </h2>
 
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-blue-50">
-                Hasil analisis menunjukkan Kabupaten Kediri menjadi wilayah
-                utama pengembangan pasar, Kota Kediri difokuskan pada
-                peningkatan produktivitas jaringan yang telah berjalan,
-                sedangkan Kabupaten Nganjuk dikembangkan melalui ekspansi
-                bertahap berdasarkan peluang distribusi dan pembukaan outlet
-                baru.
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
+                Analisis kondisi menunjukkan bahwa pengembangan pasar perlu
+                difokuskan pada wilayah yang memiliki peluang terbesar,
+                didukung oleh distribusi yang efektif serta pendekatan yang
+                sesuai dengan karakteristik masing-masing wilayah.
               </p>
 
               <div className="mt-10">
-                <Button
-                  href="/strategi-pengembangan"
-                  variant="secondary"
-                >
-                  Lanjut ke Strategi Pengembangan
+                <Button href="/strategi-pengembangan">
+                  Lanjut ke Strategi
                 </Button>
               </div>
 
@@ -227,7 +173,6 @@ export default function AnalisisKondisiPage() {
       </main>
 
       <Footer />
-
     </>
   );
 }
