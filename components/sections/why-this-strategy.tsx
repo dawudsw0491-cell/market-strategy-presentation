@@ -1,84 +1,104 @@
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
-const reasons = [
+const drivers = [
   {
-    title: "Karakter Pasar Setiap Wilayah Berbeda",
+    title: "Potensi Pasar",
+    icon: "📈",
     description:
-      "Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk memiliki karakteristik wilayah, pola belanja, jenis outlet, serta potensi pertumbuhan yang berbeda. Pengembangan pasar memerlukan pemetaan wilayah agar setiap program sesuai dengan kebutuhan dan peluang pada masing-masing area.",
+      "Pertumbuhan wilayah dan aktivitas ekonomi membuka peluang perluasan distribusi serta pengembangan outlet baru.",
   },
   {
-    title: "Pengembangan Outlet Memerlukan Prioritas",
+    title: "Jaringan Distribusi",
+    icon: "🚚",
     description:
-      "Setiap outlet memiliki potensi yang berbeda berdasarkan lokasi, jenis usaha, serta karakter pelanggan. Prioritas pengembangan diarahkan pada peningkatan produktivitas outlet aktif, aktivasi outlet potensial, serta pembukaan outlet baru pada wilayah yang masih memiliki peluang distribusi.",
+      "Distribusi yang efektif menjadi faktor utama dalam meningkatkan coverage dan ketersediaan produk.",
   },
   {
-    title: "Distribusi Tidak Hanya Berfokus Pada Outlet",
+    title: "Institusi",
+    icon: "🏢",
     description:
-      "Pertumbuhan pasar juga didukung melalui pengembangan kerja sama dengan institusi, organisasi, komunitas, serta pelaku usaha lokal yang memiliki kebutuhan produk sesuai dengan karakter distribusi FMCG sehingga jangkauan pasar dapat berkembang lebih luas dan berkelanjutan.",
+      "Kerja sama dengan institusi menciptakan hubungan bisnis jangka panjang dan pasar yang lebih stabil.",
+  },
+  {
+    title: "Komunitas",
+    icon: "🤝",
+    description:
+      "Komunitas membantu meningkatkan awareness, loyalitas pelanggan, dan penyebaran informasi secara organik.",
   },
 ];
 
 export default function WhyThisStrategy() {
   return (
-    <Section background="white">
+    <Section background="gradient">
       <Container>
-        <div className="mx-auto mb-14 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-amber-100 px-5 py-2 text-sm font-semibold text-amber-700">
-            Mengapa Strategi Ini Dibutuhkan
+
+        <div className="mx-auto max-w-3xl text-center">
+
+          <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
+            Business Drivers
           </span>
 
-          <h2 className="mt-5">
-            Pengembangan Pasar Memerlukan Pendekatan Yang Terarah
+          <h2 className="mt-6">
+            Faktor Yang Mendorong Strategi
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Pengembangan pasar tidak hanya bertujuan menambah jumlah outlet,
-            tetapi juga memastikan setiap wilayah, segmen pelanggan, serta
-            potensi distribusi dikembangkan melalui pendekatan yang sesuai
-            sehingga pertumbuhan dapat berlangsung secara berkelanjutan.
+          <p className="mt-8 text-lg leading-8 text-slate-600">
+            Strategi pengembangan pasar disusun berdasarkan faktor-faktor
+            utama yang memberikan pengaruh terhadap pertumbuhan penjualan,
+            perluasan distribusi, dan keberlanjutan bisnis.
           </p>
+
         </div>
 
-        <div className="mx-auto max-w-5xl">
-          {reasons.map((item, index) => (
+        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+          {drivers.map((driver) => (
+
             <div
-              key={item.title}
-              className={`flex gap-5 py-8 ${
-                index !== reasons.length - 1
-                  ? "border-b border-slate-200"
-                  : ""
-              }`}
+              key={driver.title}
+              className="dashboard-card"
             >
-              <div className="mt-2 h-3 w-3 shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500" />
 
-              <div>
-                <h3 className="text-xl font-semibold text-slate-900">
-                  {item.title}
-                </h3>
-
-                <p className="mt-3 leading-8 text-slate-600">
-                  {item.description}
-                </p>
+              <div className="text-5xl">
+                {driver.icon}
               </div>
+
+              <h3 className="mt-6 text-xl font-bold text-slate-900">
+                {driver.title}
+              </h3>
+
+              <p className="mt-4 leading-8 text-slate-600">
+                {driver.description}
+              </p>
+
             </div>
+
           ))}
+
         </div>
 
-        <div className="mt-14 rounded-3xl border border-blue-100 bg-blue-50/70 p-7 lg:p-9">
-          <h3 className="text-xl font-semibold text-slate-900">
-            Kesimpulan
-          </h3>
+        <div className="mt-16 executive-box">
 
-          <p className="mt-4 leading-8 text-slate-700">
-            Strategi pengembangan pasar disusun untuk membangun jaringan
-            distribusi yang lebih kuat melalui pemetaan wilayah, pengembangan
-            outlet, peningkatan kerja sama dengan institusi dan komunitas,
-            serta pemanfaatan sumber daya secara lebih terarah sehingga
-            penetrasi pasar di Kabupaten Kediri, Kota Kediri, dan Kabupaten
-            Nganjuk dapat berkembang secara optimal.
+          <span className="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold">
+            Executive Insight
+          </span>
+
+          <h2 className="mt-6 text-white">
+            Mengapa Strategi Ini Dipilih
+          </h2>
+
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
+            Kombinasi analisis wilayah, distribusi, outlet, institusi,
+            dan komunitas memberikan dasar yang lebih objektif dalam
+            menentukan prioritas pengembangan pasar. Pendekatan ini
+            memungkinkan implementasi dilakukan secara bertahap dengan
+            risiko yang lebih terkendali dan peluang keberhasilan yang
+            lebih tinggi.
           </p>
+
         </div>
+
       </Container>
     </Section>
   );
