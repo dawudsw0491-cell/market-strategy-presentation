@@ -45,26 +45,52 @@ export default function RekomendasiPage() {
       <Navbar />
 
       <main>
-        <Section background="gradient">
+        {/* Hero */}
+        <Section
+          background="gradient"
+          className="pt-14 lg:pt-20"
+        >
           <Container>
-            <span className="mb-5 inline-flex rounded-full bg-amber-100 px-4 py-2 text-sm font-semibold text-amber-700">
-              Rekomendasi Strategis
-            </span>
+            <div className="max-w-4xl">
+              <span className="inline-flex rounded-full border border-amber-200 bg-white/80 px-5 py-2 text-sm font-semibold text-amber-700 shadow-sm backdrop-blur">
+                Rekomendasi Strategis
+              </span>
 
-            <h1 className="max-w-4xl text-5xl font-extrabold leading-tight text-slate-900 lg:text-6xl">
-              Langkah Prioritas Yang Direkomendasikan
-            </h1>
+              <h1 className="mt-6 max-w-4xl">
+                Langkah Prioritas Yang
+                <span className="gradient-text">
+                  {" "}Direkomendasikan
+                </span>
+              </h1>
 
-            <p className="mt-8 max-w-3xl text-xl leading-9 text-slate-600">
-              Berdasarkan pendekatan yang telah dijelaskan, berikut merupakan
-              rekomendasi yang dapat dijadikan acuan dalam menjalankan strategi
-              pengembangan pasar secara bertahap.
-            </p>
+              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 lg:text-lg">
+                Berdasarkan pendekatan yang telah dijelaskan, berikut merupakan
+                rekomendasi yang dapat dijadikan acuan dalam menjalankan strategi
+                pengembangan pasar secara bertahap.
+              </p>
+            </div>
           </Container>
         </Section>
 
+        {/* Recommendation List */}
         <Section background="white">
           <Container>
+            <div className="mx-auto mb-14 max-w-3xl text-center">
+              <span className="inline-flex rounded-full bg-amber-100 px-5 py-2 text-sm font-semibold text-amber-700">
+                Prioritas Strategis
+              </span>
+
+              <h2 className="mt-5 font-semibold">
+                Rekomendasi Pelaksanaan
+              </h2>
+
+              <p className="mt-6 text-lg leading-8 text-slate-600">
+                Rekomendasi berikut disusun berdasarkan keseluruhan pendekatan
+                yang telah dijelaskan sehingga dapat menjadi acuan dalam
+                pelaksanaan strategi secara bertahap.
+              </p>
+            </div>
+
             <div className="grid gap-8">
               {recommendations.map((item) => (
                 <Card
@@ -84,24 +110,31 @@ export default function RekomendasiPage() {
           </Container>
         </Section>
 
+        {/* Closing */}
         <Section>
           <Container>
-            <div className="rounded-[32px] bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 p-12 text-white">
-              <h2 className="text-4xl font-bold">
-                Presentasi Ini Adalah Awal Dari Implementasi
-              </h2>
+            <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 p-8 text-white lg:p-12">
+              <div className="max-w-3xl">
+                <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-sm font-semibold tracking-wide text-white backdrop-blur">
+                  Penutup
+                </span>
 
-              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-                Seluruh pendekatan yang disampaikan pada website ini dapat
-                dikembangkan lebih lanjut menggunakan data lapangan, hasil
-                observasi, dan evaluasi berkala sehingga strategi selalu relevan
-                terhadap kondisi pasar yang sebenarnya.
-              </p>
+                <h2 className="mt-5 font-semibold text-white">
+                  Presentasi Ini Adalah Awal Dari Implementasi
+                </h2>
 
-              <div className="mt-10">
-                <Button href="/">
-                  Kembali ke Beranda
-                </Button>
+                <p className="mt-6 text-lg leading-8 text-slate-200">
+                  Seluruh pendekatan yang disampaikan pada website ini dapat
+                  dikembangkan lebih lanjut menggunakan data lapangan, hasil
+                  observasi, dan evaluasi berkala sehingga strategi selalu
+                  relevan terhadap kondisi pasar yang sebenarnya.
+                </p>
+
+                <div className="mt-10">
+                  <Button href="/">
+                    Kembali ke Beranda
+                  </Button>
+                </div>
               </div>
             </div>
           </Container>
