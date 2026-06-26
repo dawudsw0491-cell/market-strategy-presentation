@@ -1,27 +1,30 @@
-import Card from "@/components/ui/card";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
 const summary = [
   {
-    title: "Tujuan Pengembangan Pasar",
+    title: "Wilayah Prioritas",
+    value: "3",
     description:
-      "Menyusun arah pengembangan pasar PT Sakti Setia Sentosa melalui pendekatan yang terstruktur agar aktivitas distribusi, pengembangan outlet, peningkatan kualitas SDM, serta perluasan kerja sama dapat berjalan selaras dengan karakteristik wilayah Kediri Raya.",
+      "Kabupaten Kediri sebagai prioritas utama, Kota Kediri untuk penguatan, dan Kabupaten Nganjuk sebagai wilayah ekspansi.",
   },
   {
-    title: "Kondisi Yang Menjadi Perhatian",
+    title: "Strategi Utama",
+    value: "5",
     description:
-      "Setiap wilayah memiliki karakter pasar, potensi outlet, institusi, dan komunitas yang berbeda. Tanpa pemetaan yang jelas, pengembangan pasar berisiko tidak tepat sasaran, pemanfaatan sumber daya menjadi kurang optimal, serta peluang pertumbuhan tidak dapat dimanfaatkan secara maksimal.",
+      "Pengembangan wilayah, outlet, institusi, komunitas, dan program event.",
   },
   {
-    title: "Pendekatan Yang Digunakan",
+    title: "Tahapan Implementasi",
+    value: "4",
     description:
-      "Pengembangan pasar diawali dengan memahami kondisi wilayah, memetakan potensi outlet dan segmen pelanggan, menentukan prioritas pengembangan, menyusun strategi berdasarkan karakter pasar, kemudian melaksanakan implementasi secara bertahap dan terukur pada wilayah prioritas.",
+      "Roadmap implementasi dimulai dari analisis hingga evaluasi berkelanjutan.",
   },
   {
-    title: "Hasil Yang Ingin Dicapai",
+    title: "Target Akhir",
+    value: "Growth",
     description:
-      "Terbentuk arah pengembangan pasar yang lebih terfokus, peningkatan kualitas jaringan distribusi, bertambahnya outlet aktif dan kerja sama institusi, peningkatan kompetensi SDM lapangan, serta perluasan penetrasi pasar secara berkelanjutan di wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.",
+      "Mendorong pertumbuhan pasar yang terukur melalui distribusi, outlet, dan kerja sama institusi.",
   },
 ];
 
@@ -29,35 +32,75 @@ export default function ExecutiveSummary() {
   return (
     <Section background="white">
       <Container>
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-sky-100 px-5 py-2 text-sm font-semibold text-sky-700">
-            Ringkasan Eksekutif
+
+        <div className="mx-auto max-w-3xl text-center">
+
+          <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
+            Executive Summary
           </span>
 
           <h2 className="mt-6">
-            Gambaran Umum Strategi Pengembangan Pasar
+            Ringkasan Strategi Pengembangan Pasar
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Ringkasan ini memberikan gambaran mengenai tujuan, kondisi yang
-            menjadi perhatian, pendekatan yang digunakan, serta hasil yang ingin
-            dicapai sebagai dasar pengembangan pasar PT Sakti Setia Sentosa di
-            wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.
+            Seluruh strategi yang disajikan pada website ini merupakan
+            rangkaian proses mulai dari analisis kondisi pasar,
+            penentuan prioritas wilayah, penyusunan strategi,
+            implementasi bertahap, hingga rekomendasi sebagai dasar
+            pengambilan keputusan.
           </p>
+
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
           {summary.map((item) => (
-            <Card
+
+            <div
               key={item.title}
-              title={item.title}
+              className="dashboard-card text-center"
             >
-              <p className="leading-8 text-slate-600">
+
+              <div className="metric-value gradient-text">
+                {item.value}
+              </div>
+
+              <h3 className="mt-5 text-xl font-bold text-slate-900">
+                {item.title}
+              </h3>
+
+              <p className="mt-4 leading-7 text-slate-600">
                 {item.description}
               </p>
-            </Card>
+
+            </div>
+
           ))}
+
         </div>
+
+        <div className="mt-16 executive-box">
+
+          <span className="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold">
+            Executive Insight
+          </span>
+
+          <h2 className="mt-6 text-white">
+            Fokus Pengembangan Pasar
+          </h2>
+
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
+            Strategi difokuskan pada peningkatan coverage distribusi,
+            pengembangan outlet, perluasan kerja sama institusi,
+            penguatan komunitas, serta implementasi program pemasaran
+            secara bertahap sehingga perusahaan memiliki arah
+            pengembangan pasar yang lebih terukur, realistis, dan
+            berkelanjutan.
+          </p>
+
+        </div>
+
       </Container>
     </Section>
   );
