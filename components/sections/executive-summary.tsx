@@ -4,24 +4,24 @@ import Section from "@/components/ui/section";
 
 const summary = [
   {
-    title: "Tujuan Presentasi",
+    title: "Tujuan Pengembangan Pasar",
     description:
-      "Menyampaikan pendekatan yang digunakan untuk meningkatkan penetrasi pasar melalui analisis kondisi, penentuan prioritas, penyusunan strategi, dan implementasi yang terarah.",
+      "Menyusun arah pengembangan pasar PT Sakti Setia Sentosa melalui pendekatan yang terstruktur agar aktivitas distribusi, pengembangan outlet, peningkatan kualitas SDM, serta perluasan kerja sama dapat berjalan selaras dengan karakteristik wilayah Kediri Raya.",
   },
   {
-    title: "Permasalahan Yang Dihadapi",
+    title: "Kondisi Yang Menjadi Perhatian",
     description:
-      "Peluang pasar belum dipetakan secara menyeluruh sehingga pengembangan wilayah dan program sering kali belum memiliki dasar prioritas yang sama.",
+      "Setiap wilayah memiliki karakter pasar, potensi outlet, institusi, dan komunitas yang berbeda. Tanpa pemetaan yang jelas, pengembangan pasar berisiko tidak tepat sasaran, pemanfaatan sumber daya menjadi kurang optimal, serta peluang pertumbuhan tidak dapat dimanfaatkan secara maksimal.",
   },
   {
     title: "Pendekatan Yang Digunakan",
     description:
-      "Strategi disusun melalui empat tahapan sederhana, yaitu memahami kondisi, menentukan prioritas, menyusun strategi, dan melaksanakan implementasi secara bertahap.",
+      "Pengembangan pasar diawali dengan memahami kondisi wilayah, memetakan potensi outlet dan segmen pelanggan, menentukan prioritas pengembangan, menyusun strategi berdasarkan karakter pasar, kemudian melaksanakan implementasi secara bertahap dan terukur pada wilayah prioritas.",
   },
   {
-    title: "Hasil Yang Diharapkan",
+    title: "Hasil Yang Ingin Dicapai",
     description:
-      "Perusahaan memiliki arah pengembangan pasar yang lebih jelas, pemanfaatan sumber daya yang lebih efektif, serta keputusan yang lebih terukur.",
+      "Terbentuk arah pengembangan pasar yang lebih terfokus, peningkatan kualitas jaringan distribusi, bertambahnya outlet aktif dan kerja sama institusi, peningkatan kompetensi SDM lapangan, serta perluasan penetrasi pasar secara berkelanjutan di wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.",
   },
 ];
 
@@ -35,13 +35,14 @@ export default function ExecutiveSummary() {
           </span>
 
           <h2 className="mt-6">
-            Gambaran Singkat Sebelum Memulai Presentasi
+            Gambaran Umum Strategi Pengembangan Pasar
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Bagian ini memberikan gambaran umum mengenai tujuan, tantangan,
-            pendekatan, dan hasil yang ingin dicapai sehingga pembaca memiliki
-            pemahaman yang sama sebelum memasuki pembahasan yang lebih rinci.
+            Ringkasan ini memberikan gambaran mengenai tujuan, kondisi yang
+            menjadi perhatian, pendekatan yang digunakan, serta hasil yang ingin
+            dicapai sebagai dasar pengembangan pasar PT Sakti Setia Sentosa di
+            wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.
           </p>
         </div>
 

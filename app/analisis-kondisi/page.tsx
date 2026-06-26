@@ -31,11 +31,12 @@ export default function AnalisisKondisiPage() {
               </h1>
 
               <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 lg:text-lg">
-                Strategi yang baik selalu diawali dengan memahami kondisi
-                lapangan. Halaman ini menjelaskan informasi yang perlu
-                dikumpulkan sebelum perusahaan menentukan wilayah prioritas
-                pengembangan pasar sehingga setiap keputusan memiliki dasar
-                yang jelas.
+                Pengembangan pasar diawali dengan memahami karakter wilayah,
+                persebaran outlet, potensi pelanggan, serta peluang distribusi
+                pada Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.
+                Analisis ini menjadi dasar dalam menentukan prioritas
+                pengembangan pasar agar setiap program memiliki arah yang jelas
+                dan sesuai dengan kebutuhan di lapangan.
               </p>
             </div>
           </Container>
@@ -50,36 +51,36 @@ export default function AnalisisKondisiPage() {
               </span>
 
               <h2 className="mt-5 font-semibold">
-                Informasi Yang Perlu Dipahami
+                Informasi Yang Menjadi Dasar Pengembangan Pasar
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Pengambilan keputusan tidak hanya melihat jumlah outlet atau
-                luas wilayah. Diperlukan pemahaman yang menyeluruh mengenai
-                karakteristik pasar sehingga strategi yang dipilih benar-benar
-                sesuai dengan kondisi di lapangan.
+                Analisis dilakukan untuk memahami kondisi wilayah, karakter
+                outlet, peluang distribusi, serta potensi pengembangan pada
+                setiap segmen pasar sehingga strategi yang disusun dapat
+                diterapkan secara lebih terarah.
               </p>
             </div>
 
             <div className="grid gap-8 lg:grid-cols-2">
               <Card
                 title="Karakteristik Wilayah"
-                description="Memahami kondisi geografis, kepadatan penduduk, akses transportasi, pusat aktivitas ekonomi, serta perkembangan wilayah."
+                description="Mengidentifikasi karakter wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk berdasarkan aktivitas perdagangan, pertumbuhan kawasan, akses distribusi, pusat ekonomi, serta potensi pengembangan pasar pada masing-masing area."
               />
 
               <Card
-                title="Potensi Pasar"
-                description="Mengidentifikasi peluang pertumbuhan berdasarkan aktivitas bisnis, daya beli masyarakat, dan kebutuhan pelanggan."
+                title="Potensi Pasar dan Segmen Outlet"
+                description="Menganalisis peluang pengembangan pada outlet tradisional, grosir, semi grosir, bakery, horeca, UMKM, serta institusi untuk menentukan pendekatan distribusi yang sesuai dengan karakter masing-masing segmen."
               />
 
               <Card
                 title="Jaringan Distribusi"
-                description="Mengevaluasi kemudahan distribusi, jangkauan layanan, serta efektivitas jaringan yang telah dimiliki."
+                description="Memahami jangkauan distribusi, persebaran outlet aktif, peluang pembukaan outlet baru, efektivitas kunjungan sales, serta keterjangkauan layanan pada setiap wilayah pengembangan."
               />
 
               <Card
-                title="Persaingan"
-                description="Memahami tingkat persaingan sehingga perusahaan dapat menentukan pendekatan yang paling tepat."
+                title="Peluang Pengembangan"
+                description="Mengidentifikasi peluang kerja sama dengan institusi, organisasi, komunitas, pelaku usaha lokal, serta kategori produk yang memiliki potensi lebih tinggi pada setiap segmen pasar sebagai dasar penyusunan strategi pengembangan."
               />
             </div>
           </Container>
@@ -99,10 +100,11 @@ export default function AnalisisKondisiPage() {
                 </h2>
 
                 <p className="mt-6 text-lg leading-8 text-blue-50">
-                  Setelah seluruh informasi dikumpulkan dan dianalisis,
-                  perusahaan dapat menentukan prioritas wilayah, memilih
-                  pendekatan yang sesuai, serta menyusun rencana implementasi
-                  secara bertahap sesuai kondisi perusahaan.
+                  Hasil analisis memberikan gambaran mengenai wilayah prioritas,
+                  potensi outlet, peluang kerja sama dengan institusi dan
+                  komunitas, serta kategori produk yang sesuai dengan karakter
+                  setiap segmen pasar sehingga strategi pengembangan dapat
+                  dilaksanakan secara bertahap, terarah, dan berkelanjutan.
                 </p>
 
                 <div className="mt-10">

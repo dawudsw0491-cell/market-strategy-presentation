@@ -3,11 +3,11 @@ import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
 const highlights = [
-  "Memahami kondisi dan karakteristik pasar.",
-  "Menentukan prioritas wilayah pengembangan.",
-  "Menyusun strategi yang terarah dan realistis.",
-  "Merancang implementasi secara bertahap.",
-  "Menyajikan rekomendasi sebagai dasar pengambilan keputusan.",
+  "Menganalisis karakter wilayah, potensi pasar, dan peluang distribusi.",
+  "Menentukan wilayah prioritas berdasarkan hasil pemetaan lapangan.",
+  "Menyusun strategi pengembangan outlet, institusi, dan komunitas.",
+  "Merancang implementasi secara bertahap sesuai prioritas perusahaan.",
+  "Menyusun rekomendasi sebagai dasar pengembangan pasar berkelanjutan.",
 ];
 
 export default function Hero() {
@@ -18,24 +18,25 @@ export default function Hero() {
           {/* Left */}
           <div className="fade-up">
             <span className="inline-flex rounded-full border border-blue-200 bg-white/80 px-5 py-2 text-sm font-semibold text-blue-700 shadow-sm backdrop-blur">
-              Presentasi Strategi Pengembangan Pasar
+              Blueprint Strategi Pengembangan Pasar FMCG
             </span>
 
             <h1 className="mt-6 max-w-3xl">
-              Menentukan Prioritas
+              Pengembangan Pasar
               <span className="gradient-text">
-                {" "}Pengembangan Pasar
+                {" "}Kabupaten Kediri
               </span>
               <br />
-              Secara Lebih Terarah
+              Kota Kediri dan Kabupaten Nganjuk
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 lg:text-lg">
-              Presentasi ini menggambarkan pendekatan yang digunakan untuk
-              memahami kondisi pasar, menentukan prioritas pengembangan,
-              menyusun strategi, dan merencanakan implementasi sehingga setiap
-              keputusan memiliki dasar yang jelas dan dapat dilaksanakan secara
-              bertahap.
+              Blueprint ini disusun sebagai panduan pengembangan pasar PT Sakti
+              Setia Sentosa dengan fokus pada penguatan jaringan distribusi,
+              pengembangan outlet, peningkatan kualitas SDM, perluasan kerja
+              sama dengan institusi dan komunitas, serta peningkatan penetrasi
+              pasar melalui pendekatan yang terarah sesuai karakter setiap
+              wilayah.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-4">
@@ -102,15 +103,18 @@ export default function Hero() {
 
               <div className="rounded-2xl border border-sky-100 bg-sky-50/80 p-5">
                 <p className="text-sm leading-7 text-slate-600">
-                  Seluruh strategi dalam presentasi ini disusun menggunakan
-                  pendekatan yang sistematis sehingga mudah dipahami sebagai
-                  dasar diskusi maupun pengambilan keputusan.
+                  Presentasi ini memberikan gambaran menyeluruh mengenai proses
+                  analisis wilayah, penentuan prioritas, pengembangan outlet,
+                  institusi, komunitas, implementasi program, hingga
+                  rekomendasi strategis sebagai dasar pengembangan pasar FMCG
+                  di wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten
+                  Nganjuk.
                 </p>
               </div>
             </div>
           </div>
         </div>
-            </Container>
+      </Container>
     </Section>
   );
 }

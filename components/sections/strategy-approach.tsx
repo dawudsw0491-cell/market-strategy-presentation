@@ -5,27 +5,27 @@ import Section from "@/components/ui/section";
 const steps = [
   {
     number: "01",
-    title: "Memahami Kondisi Saat Ini",
+    title: "Analisis Wilayah dan Potensi Pasar",
     description:
-      "Tahap pertama adalah mengumpulkan informasi mengenai kondisi pasar, karakteristik wilayah, aktivitas pelanggan, dan peluang yang tersedia sebagai dasar penyusunan strategi.",
+      "Tahap awal difokuskan pada pemetaan wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk untuk memahami karakter pasar, persebaran outlet, aktivitas ekonomi, potensi institusi, komunitas, serta peluang pengembangan distribusi pada setiap area.",
   },
   {
     number: "02",
-    title: "Menentukan Prioritas",
+    title: "Menentukan Prioritas Pengembangan",
     description:
-      "Setelah kondisi dipahami, setiap wilayah dan peluang dibandingkan menggunakan kriteria yang sama sehingga dapat ditentukan prioritas yang paling layak untuk dikembangkan.",
+      "Hasil analisis digunakan untuk menentukan wilayah prioritas, segmen outlet, institusi, dan komunitas yang memiliki peluang pengembangan terbesar sehingga sumber daya perusahaan dapat difokuskan pada area dengan potensi pertumbuhan yang lebih tinggi.",
   },
   {
     number: "03",
-    title: "Menyusun Strategi",
+    title: "Menyusun Strategi Pengembangan",
     description:
-      "Strategi disusun berdasarkan prioritas yang telah ditetapkan agar setiap program memiliki tujuan yang jelas serta dapat dijalankan sesuai kemampuan perusahaan.",
+      "Strategi disusun berdasarkan karakter masing-masing wilayah dengan mengintegrasikan pengembangan outlet, peningkatan kompetensi SDM, perluasan kerja sama institusi, penguatan hubungan dengan komunitas, serta pemilihan kategori produk yang sesuai dengan kebutuhan setiap segmen pasar.",
   },
   {
     number: "04",
-    title: "Melaksanakan dan Mengevaluasi",
+    title: "Implementasi, Monitoring, dan Evaluasi",
     description:
-      "Implementasi dilakukan secara bertahap kemudian dievaluasi secara berkala agar strategi dapat disempurnakan mengikuti perkembangan kondisi pasar.",
+      "Program dijalankan secara bertahap melalui pengembangan outlet, pembukaan pasar baru, peningkatan aktivitas distribusi, serta evaluasi berkala terhadap pencapaian setiap wilayah sehingga strategi dapat terus disempurnakan mengikuti perkembangan pasar.",
   },
 ];
 
@@ -39,13 +39,14 @@ export default function StrategyApproach() {
           </span>
 
           <h2 className="mt-6">
-            Strategi Dibangun Melalui Empat Tahapan Yang Sederhana
+            Strategi Pengembangan Pasar Dilaksanakan Melalui Empat Tahapan
           </h2>
 
-          <p className="mt-8 text-lg text-slate-600">
-            Pendekatan ini dirancang agar proses pengambilan keputusan mudah
-            dipahami, dapat diterapkan secara bertahap, dan memiliki dasar yang
-            jelas pada setiap langkahnya.
+          <p className="mt-8 text-lg leading-8 text-slate-600">
+            Pendekatan ini memberikan arah yang sistematis mulai dari memahami
+            kondisi pasar, menentukan prioritas pengembangan, menyusun strategi
+            berdasarkan karakter wilayah, hingga melaksanakan implementasi yang
+            dapat dievaluasi secara berkelanjutan.
           </p>
         </div>
 
@@ -76,9 +77,12 @@ export default function StrategyApproach() {
           </h3>
 
           <p className="mt-4 leading-8 text-slate-700">
-            Melalui pendekatan ini, setiap keputusan pengembangan pasar memiliki
-            dasar yang jelas, lebih mudah diprioritaskan, dan dapat diterapkan
-            secara bertahap sesuai kondisi perusahaan.
+            Setiap keputusan pengembangan pasar memiliki dasar yang jelas,
+            wilayah prioritas dapat ditentukan secara lebih objektif,
+            pengembangan outlet dan institusi berjalan lebih terarah,
+            peningkatan kompetensi SDM mendukung aktivitas distribusi, serta
+            penetrasi pasar di Kabupaten Kediri, Kota Kediri, dan Kabupaten
+            Nganjuk dapat berkembang secara bertahap dan berkelanjutan.
           </p>
         </div>
       </Container>

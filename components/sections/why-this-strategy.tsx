@@ -3,19 +3,19 @@ import Section from "@/components/ui/section";
 
 const reasons = [
   {
-    title: "Pasar Terus Berubah",
+    title: "Karakter Pasar Setiap Wilayah Berbeda",
     description:
-      "Perubahan perilaku pelanggan, pertumbuhan wilayah, dan persaingan menuntut perusahaan untuk selalu menyesuaikan strategi pengembangan pasar.",
+      "Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk memiliki karakteristik wilayah, pola belanja, jenis outlet, serta potensi pertumbuhan yang berbeda. Pengembangan pasar memerlukan pemetaan wilayah agar setiap program sesuai dengan kebutuhan dan peluang pada masing-masing area.",
   },
   {
-    title: "Sumber Daya Harus Tepat Sasaran",
+    title: "Pengembangan Outlet Memerlukan Prioritas",
     description:
-      "Tenaga kerja, waktu, dan anggaran perlu difokuskan pada wilayah dan program yang memberikan peluang pertumbuhan terbesar.",
+      "Setiap outlet memiliki potensi yang berbeda berdasarkan lokasi, jenis usaha, serta karakter pelanggan. Prioritas pengembangan diarahkan pada peningkatan produktivitas outlet aktif, aktivasi outlet potensial, serta pembukaan outlet baru pada wilayah yang masih memiliki peluang distribusi.",
   },
   {
-    title: "Keputusan Perlu Dasar Yang Jelas",
+    title: "Distribusi Tidak Hanya Berfokus Pada Outlet",
     description:
-      "Setiap keputusan sebaiknya didukung oleh analisis kondisi lapangan sehingga langkah yang diambil lebih terukur dan mudah dipertanggungjawabkan.",
+      "Pertumbuhan pasar juga didukung melalui pengembangan kerja sama dengan institusi, organisasi, komunitas, serta pelaku usaha lokal yang memiliki kebutuhan produk sesuai dengan karakter distribusi FMCG sehingga jangkauan pasar dapat berkembang lebih luas dan berkelanjutan.",
   },
 ];
 
@@ -29,13 +29,14 @@ export default function WhyThisStrategy() {
           </span>
 
           <h2 className="mt-5">
-            Setiap Strategi Yang Baik Selalu Diawali Dengan Memahami Permasalahan
+            Pengembangan Pasar Memerlukan Pendekatan Yang Terarah
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Sebelum menentukan langkah pengembangan, perusahaan perlu memahami
-            tantangan yang dihadapi agar strategi yang disusun benar-benar
-            menjawab kebutuhan di lapangan.
+            Pengembangan pasar tidak hanya bertujuan menambah jumlah outlet,
+            tetapi juga memastikan setiap wilayah, segmen pelanggan, serta
+            potensi distribusi dikembangkan melalui pendekatan yang sesuai
+            sehingga pertumbuhan dapat berlangsung secara berkelanjutan.
           </p>
         </div>
 
@@ -70,10 +71,12 @@ export default function WhyThisStrategy() {
           </h3>
 
           <p className="mt-4 leading-8 text-slate-700">
-            Strategi pengembangan pasar bukan hanya tentang memperluas wilayah,
-            tetapi juga menentukan prioritas yang tepat, memanfaatkan sumber
-            daya secara efektif, dan menjalankan program yang memberikan dampak
-            nyata bagi pertumbuhan perusahaan.
+            Strategi pengembangan pasar disusun untuk membangun jaringan
+            distribusi yang lebih kuat melalui pemetaan wilayah, pengembangan
+            outlet, peningkatan kerja sama dengan institusi dan komunitas,
+            serta pemanfaatan sumber daya secara lebih terarah sehingga
+            penetrasi pasar di Kabupaten Kediri, Kota Kediri, dan Kabupaten
+            Nganjuk dapat berkembang secara optimal.
           </p>
         </div>
       </Container>

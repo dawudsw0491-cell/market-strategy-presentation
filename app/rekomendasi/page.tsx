@@ -9,33 +9,33 @@ import Section from "@/components/ui/section";
 const recommendations = [
   {
     priority: "Prioritas 1",
-    title: "Fokus Pada Wilayah Dengan Peluang Terbesar",
+    title: "Fokus Pada Wilayah Prioritas Pengembangan",
     description:
-      "Alokasikan sumber daya pada wilayah yang menunjukkan peluang pertumbuhan terbaik berdasarkan hasil analisis sehingga investasi memberikan dampak yang lebih optimal.",
+      "Pengembangan diawali pada wilayah yang memiliki potensi distribusi terbesar di Kabupaten Kediri, kemudian diperluas ke Kota Kediri dan Kabupaten Nganjuk berdasarkan hasil analisis wilayah, karakter pasar, serta peluang pertumbuhan outlet.",
   },
   {
     priority: "Prioritas 2",
-    title: "Perkuat Outlet Yang Sudah Berjalan",
+    title: "Perkuat Jaringan Outlet",
     description:
-      "Sebelum membuka outlet baru, tingkatkan produktivitas outlet yang sudah ada melalui pelayanan, promosi, dan penguatan hubungan dengan pelanggan.",
+      "Mengoptimalkan outlet aktif, mengembangkan outlet potensial, serta membuka outlet baru pada area yang belum terjangkau. Pendekatan dilakukan sesuai karakter masing-masing segmen seperti kelontong, grosir, semi grosir, bakery, horeca, dan UMKM agar distribusi menjadi lebih merata.",
   },
   {
     priority: "Prioritas 3",
-    title: "Bangun Kemitraan Dengan Institusi",
+    title: "Perluas Kerja Sama Dengan Institusi",
     description:
-      "Perluas kerja sama dengan sekolah, kampus, instansi pemerintah, rumah sakit, dan perusahaan untuk menciptakan pasar yang lebih stabil.",
+      "Mengembangkan hubungan jangka panjang dengan sekolah, perguruan tinggi, pondok pesantren, rumah sakit, instansi pemerintah, perusahaan, dan lembaga lainnya sebagai bagian dari penguatan jaringan distribusi di luar jalur perdagangan tradisional.",
   },
   {
     priority: "Prioritas 4",
-    title: "Perkuat Hubungan Dengan Komunitas",
+    title: "Bangun Hubungan Dengan Komunitas",
     description:
-      "Komunitas menjadi media yang efektif untuk meningkatkan kepercayaan masyarakat serta memperluas penyebaran informasi secara alami.",
+      "Melibatkan komunitas UMKM, komunitas kuliner, bakery, organisasi masyarakat, serta komunitas lokal sebagai mitra dalam memperluas jaringan, meningkatkan kedekatan dengan pelanggan, dan mendukung aktivitas pengembangan pasar.",
   },
   {
     priority: "Prioritas 5",
-    title: "Lakukan Evaluasi Secara Berkala",
+    title: "Laksanakan Monitoring dan Evaluasi",
     description:
-      "Seluruh program perlu dievaluasi secara berkala agar strategi dapat disesuaikan dengan perkembangan kondisi pasar.",
+      "Melakukan evaluasi secara berkala terhadap perkembangan wilayah, outlet, institusi, komunitas, serta efektivitas pelaksanaan program sehingga strategi dapat terus disesuaikan dengan kondisi pasar dan kebutuhan distribusi.",
   },
 ];
 
@@ -64,9 +64,10 @@ export default function RekomendasiPage() {
               </h1>
 
               <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 lg:text-lg">
-                Berdasarkan pendekatan yang telah dijelaskan, berikut merupakan
-                rekomendasi yang dapat dijadikan acuan dalam menjalankan strategi
-                pengembangan pasar secara bertahap.
+                Rekomendasi ini disusun sebagai arah pelaksanaan pengembangan
+                pasar berdasarkan hasil analisis wilayah, strategi
+                pengembangan, serta tahapan implementasi yang telah dijelaskan
+                pada bagian sebelumnya.
               </p>
             </div>
           </Container>
@@ -81,13 +82,13 @@ export default function RekomendasiPage() {
               </span>
 
               <h2 className="mt-5 font-semibold">
-                Rekomendasi Pelaksanaan
+                Rekomendasi Pelaksanaan Pengembangan Pasar
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Rekomendasi berikut disusun berdasarkan keseluruhan pendekatan
-                yang telah dijelaskan sehingga dapat menjadi acuan dalam
-                pelaksanaan strategi secara bertahap.
+                Seluruh rekomendasi saling melengkapi untuk memperkuat jaringan
+                distribusi, meningkatkan kualitas pengembangan wilayah, serta
+                mendukung pertumbuhan pasar secara berkelanjutan.
               </p>
             </div>
 
@@ -120,14 +121,16 @@ export default function RekomendasiPage() {
                 </span>
 
                 <h2 className="mt-5 font-semibold text-white">
-                  Presentasi Ini Adalah Awal Dari Implementasi
+                  Pengembangan Pasar Dilaksanakan Secara Berkelanjutan
                 </h2>
 
                 <p className="mt-6 text-lg leading-8 text-slate-200">
-                  Seluruh pendekatan yang disampaikan pada website ini dapat
-                  dikembangkan lebih lanjut menggunakan data lapangan, hasil
-                  observasi, dan evaluasi berkala sehingga strategi selalu
-                  relevan terhadap kondisi pasar yang sebenarnya.
+                  Pengembangan pasar merupakan proses yang dilakukan secara
+                  bertahap melalui analisis wilayah, penguatan jaringan outlet,
+                  pengembangan institusi dan komunitas, serta evaluasi yang
+                  berkelanjutan sehingga perusahaan mampu memperluas distribusi
+                  dan membangun pertumbuhan pasar yang lebih kuat di wilayah
+                  Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.
                 </p>
 
                 <div className="mt-10">

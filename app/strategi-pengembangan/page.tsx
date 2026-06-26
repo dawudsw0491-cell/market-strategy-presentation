@@ -10,37 +10,37 @@ const strategies = [
   {
     title: "Pengembangan Wilayah",
     objective:
-      "Menentukan wilayah yang paling layak menjadi prioritas pengembangan.",
+      "Menentukan wilayah prioritas berdasarkan karakter pasar, potensi distribusi, serta peluang pertumbuhan di Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.",
     explanation:
-      "Wilayah dipilih berdasarkan hasil analisis kondisi lapangan, akses distribusi, aktivitas ekonomi, dan peluang pertumbuhan pasar.",
+      "Pengembangan wilayah diawali melalui pemetaan area, identifikasi potensi outlet, aktivitas ekonomi, institusi, komunitas, serta akses distribusi sehingga setiap wilayah memperoleh pendekatan yang sesuai dengan karakter pasarnya.",
   },
   {
     title: "Pengembangan Outlet",
     objective:
-      "Meningkatkan produktivitas outlet yang sudah ada sekaligus membuka peluang outlet baru.",
+      "Meningkatkan produktivitas outlet aktif sekaligus memperluas jaringan distribusi melalui outlet potensial dan outlet baru.",
     explanation:
-      "Fokus pada peningkatan kualitas pelayanan, pemerataan jangkauan, dan pemanfaatan peluang di wilayah yang belum terlayani.",
+      "Pendekatan disesuaikan dengan karakter setiap segmen seperti kelontong, grosir, semi grosir, bakery, horeca, dan UMKM. Setiap segmen memiliki kebutuhan kategori produk yang berbeda sehingga pengembangan dilakukan secara lebih terarah dan berkelanjutan.",
   },
   {
     title: "Pengembangan Institusi",
     objective:
-      "Membangun hubungan kerja sama jangka panjang dengan berbagai institusi.",
+      "Membangun hubungan kerja sama jangka panjang dengan institusi yang memiliki kebutuhan distribusi secara berkelanjutan.",
     explanation:
-      "Meliputi sekolah, perguruan tinggi, instansi pemerintah, rumah sakit, perusahaan, dan organisasi lainnya.",
+      "Fokus pengembangan meliputi sekolah, perguruan tinggi, pondok pesantren, rumah sakit, instansi pemerintah, perusahaan, dan lembaga lainnya melalui pendekatan yang disesuaikan dengan karakter kebutuhan masing-masing institusi.",
   },
   {
     title: "Pengembangan Komunitas",
     objective:
-      "Mendekatkan perusahaan dengan masyarakat melalui kegiatan komunitas.",
+      "Meningkatkan keterlibatan perusahaan bersama komunitas sebagai bagian dari penguatan hubungan dengan pasar lokal.",
     explanation:
-      "Komunitas menjadi media untuk memperluas jaringan, membangun kepercayaan, dan memperkenalkan produk secara lebih personal.",
+      "Pengembangan dilakukan melalui komunitas UMKM, komunitas kuliner, bakery, organisasi masyarakat, serta komunitas lokal yang berpotensi mendukung perluasan jaringan distribusi dan memperkuat hubungan jangka panjang dengan pelanggan.",
   },
   {
-    title: "Program Event",
+    title: "Program Aktivasi Pasar",
     objective:
-      "Meningkatkan interaksi langsung dengan calon pelanggan.",
+      "Meningkatkan interaksi langsung dengan outlet, institusi, komunitas, dan pelanggan melalui berbagai aktivitas pemasaran lapangan.",
     explanation:
-      "Kegiatan promosi, seminar, pameran, gathering, maupun aktivasi lapangan digunakan untuk memperkenalkan produk dan membangun hubungan yang lebih kuat.",
+      "Program meliputi promosi, edukasi produk, gathering pelanggan, kegiatan komunitas, serta event wilayah yang mendukung peningkatan hubungan dengan pelanggan sekaligus memperkuat penetrasi pasar pada area prioritas.",
   },
 ];
 
@@ -69,9 +69,10 @@ export default function StrategiPengembanganPage() {
               </h1>
 
               <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 lg:text-lg">
-                Strategi disusun agar setiap aktivitas pengembangan memiliki
-                tujuan yang jelas, mudah dipahami, serta dapat dilaksanakan
-                secara bertahap sesuai prioritas perusahaan.
+                Strategi pengembangan pasar disusun untuk memperkuat jaringan
+                distribusi, meningkatkan produktivitas outlet, memperluas kerja
+                sama dengan institusi dan komunitas, serta mendukung
+                pengembangan pasar FMCG secara bertahap pada wilayah prioritas.
               </p>
             </div>
           </Container>
@@ -90,9 +91,10 @@ export default function StrategiPengembanganPage() {
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Setiap strategi memiliki tujuan yang berbeda, namun seluruhnya
-                saling mendukung dalam memperluas pasar serta meningkatkan
-                pertumbuhan perusahaan secara berkelanjutan.
+                Seluruh strategi saling mendukung untuk membangun pertumbuhan
+                pasar melalui pengembangan wilayah, penguatan jaringan outlet,
+                peningkatan kerja sama dengan institusi, keterlibatan
+                komunitas, serta aktivitas pemasaran yang berkesinambungan.
               </p>
             </div>
 
@@ -139,14 +141,15 @@ export default function StrategiPengembanganPage() {
                 </span>
 
                 <h2 className="mt-5 font-semibold text-white">
-                  Strategi Harus Dapat Dilaksanakan
+                  Strategi Menjadi Dasar Pelaksanaan Program
                 </h2>
 
                 <p className="mt-6 text-lg leading-8 text-blue-50">
-                  Setelah strategi ditentukan, langkah berikutnya adalah
-                  menyusun rencana implementasi yang realistis, bertahap,
-                  memiliki target yang jelas, serta dapat dipantau secara
-                  berkala.
+                  Setiap strategi diterjemahkan ke dalam rencana implementasi
+                  yang bertahap, terukur, dan sesuai dengan karakter wilayah,
+                  sehingga pengembangan outlet, institusi, komunitas, serta
+                  aktivitas distribusi dapat berjalan secara lebih efektif dan
+                  berkelanjutan.
                 </p>
 
                 <div className="mt-10">

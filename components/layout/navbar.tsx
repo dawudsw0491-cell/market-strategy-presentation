@@ -39,6 +39,7 @@ export default function Navbar() {
           </div>
         </Link>
 
+        {/* Desktop */}
         <nav className="hidden items-center gap-2 xl:flex">
           {navigation.map((item) => {
             const active = pathname === item.href;
@@ -59,6 +60,7 @@ export default function Navbar() {
           })}
         </nav>
 
+        {/* Mobile Button */}
         <button
           onClick={() => setOpen(!open)}
           aria-label="Toggle navigation"
@@ -68,12 +70,13 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* Mobile Navigation */}
       <div
         className={`overflow-hidden transition-all duration-300 xl:hidden ${
-          open ? "max-h-96 border-t border-slate-200" : "max-h-0"
+          open ? "max-h-[600px] border-t border-slate-200" : "max-h-0"
         }`}
       >
-        <nav className="container-app bg-white py-4">
+        <nav className="container-app bg-white py-5">
           <div className="space-y-2">
             {navigation.map((item) => {
               const active = pathname === item.href;
@@ -83,7 +86,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`flex min-h-[48px] items-center rounded-2xl px-4 text-sm font-medium transition ${
+                  className={`flex min-h-[50px] items-center rounded-2xl px-4 text-sm font-medium transition ${
                     active
                       ? "bg-gradient-to-r from-blue-600 to-sky-500 text-white"
                       : "text-slate-700 hover:bg-slate-100"
@@ -93,6 +96,18 @@ export default function Navbar() {
                 </Link>
               );
             })}
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-blue-100 bg-blue-50/70 p-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+              Fokus Pengembangan
+            </p>
+
+            <p className="mt-3 leading-7 text-slate-600">
+              Blueprint pengembangan pasar FMCG yang berfokus pada wilayah
+              Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk melalui
+              penguatan outlet, institusi, komunitas, serta jaringan distribusi.
+            </p>
           </div>
         </nav>
       </div>

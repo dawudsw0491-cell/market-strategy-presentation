@@ -8,50 +8,50 @@ import Card from "@/components/ui/card";
 const roadmap = [
   {
     phase: "Tahap 1",
-    title: "Memahami Kondisi Saat Ini",
+    title: "Analisis dan Pemetaan Wilayah",
     duration: "0 – 30 Hari",
     activities: [
-      "Mengumpulkan data wilayah",
-      "Memetakan outlet yang telah berjalan",
-      "Mengidentifikasi institusi potensial",
-      "Mengidentifikasi komunitas aktif",
-      "Menyusun prioritas awal",
+      "Memetakan wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.",
+      "Mengidentifikasi outlet aktif, outlet potensial, dan wilayah yang belum terjangkau.",
+      "Memetakan institusi, organisasi, komunitas, serta pelaku usaha yang berpotensi menjadi mitra distribusi.",
+      "Mengidentifikasi kategori produk yang sesuai dengan karakter setiap segmen pasar.",
+      "Menetapkan prioritas wilayah dan rencana pengembangan awal.",
     ],
   },
   {
     phase: "Tahap 2",
-    title: "Menjalankan Program Prioritas",
+    title: "Pelaksanaan Program Prioritas",
     duration: "30 – 90 Hari",
     activities: [
-      "Pengembangan outlet prioritas",
-      "Pendekatan institusi",
-      "Aktivasi komunitas",
-      "Pelaksanaan event",
-      "Evaluasi hasil awal",
+      "Mengembangkan outlet prioritas dan mengaktivasi outlet potensial.",
+      "Melaksanakan pendekatan kepada sekolah, rumah sakit, perusahaan, dan institusi lainnya.",
+      "Membangun hubungan dengan komunitas UMKM, kuliner, bakery, serta organisasi lokal.",
+      "Melaksanakan program promosi dan aktivitas lapangan pada wilayah prioritas.",
+      "Melakukan evaluasi awal terhadap efektivitas setiap program.",
     ],
   },
   {
     phase: "Tahap 3",
-    title: "Perluasan Pasar",
+    title: "Perluasan Distribusi",
     duration: "3 – 6 Bulan",
     activities: [
-      "Ekspansi wilayah",
-      "Penambahan outlet",
-      "Perluasan kerja sama",
-      "Peningkatan aktivitas promosi",
-      "Penguatan hubungan pelanggan",
+      "Memperluas cakupan distribusi ke wilayah yang memiliki potensi pertumbuhan.",
+      "Menambah outlet baru berdasarkan hasil evaluasi tahap sebelumnya.",
+      "Mengembangkan kerja sama dengan institusi dan komunitas yang telah menunjukkan potensi.",
+      "Meningkatkan intensitas aktivitas promosi dan hubungan dengan pelanggan.",
+      "Meningkatkan pemerataan distribusi pada seluruh wilayah prioritas.",
     ],
   },
   {
     phase: "Tahap 4",
-    title: "Evaluasi dan Penyempurnaan",
+    title: "Evaluasi dan Pengembangan Berkelanjutan",
     duration: "6 – 12 Bulan",
     activities: [
-      "Evaluasi seluruh program",
-      "Mengukur capaian",
-      "Menentukan strategi lanjutan",
-      "Perbaikan proses",
-      "Menyiapkan roadmap tahun berikutnya",
+      "Melakukan evaluasi terhadap seluruh program pengembangan pasar.",
+      "Mengukur perkembangan outlet, institusi, komunitas, dan wilayah distribusi.",
+      "Menentukan prioritas pengembangan berikutnya berdasarkan hasil implementasi.",
+      "Menyempurnakan pendekatan distribusi sesuai perkembangan kondisi pasar.",
+      "Menyusun rencana pengembangan berkelanjutan sebagai dasar implementasi tahun berikutnya.",
     ],
   },
 ];
@@ -81,9 +81,10 @@ export default function RencanaImplementasiPage() {
               </h1>
 
               <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 lg:text-lg">
-                Implementasi disusun menjadi beberapa tahapan agar setiap
-                program memiliki tujuan, fokus, serta indikator keberhasilan
-                yang jelas dan mudah dievaluasi.
+                Implementasi dilakukan secara bertahap agar setiap program
+                memiliki fokus yang jelas, mudah dikendalikan, serta mampu
+                menghasilkan pengembangan pasar yang berkelanjutan pada wilayah
+                prioritas.
               </p>
             </div>
           </Container>
@@ -98,13 +99,14 @@ export default function RencanaImplementasiPage() {
               </span>
 
               <h2 className="mt-5 font-semibold">
-                Roadmap Pelaksanaan Strategi
+                Roadmap Pelaksanaan Strategi Pengembangan
               </h2>
 
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Setiap tahapan memiliki fokus yang berbeda sehingga proses
-                implementasi dapat dilakukan secara bertahap, terukur, dan
-                berkelanjutan.
+                Setiap tahapan memiliki tujuan yang saling berkaitan sehingga
+                pengembangan wilayah, outlet, institusi, komunitas, dan
+                aktivitas distribusi dapat berkembang secara bertahap dan
+                berkesinambungan.
               </p>
             </div>
 

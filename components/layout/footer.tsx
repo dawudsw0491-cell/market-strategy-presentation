@@ -27,7 +27,7 @@ export default function Footer() {
   return (
     <footer className="mt-20 border-t border-slate-200/70 bg-white/70 backdrop-blur-xl">
       <div className="container-app py-14 lg:py-16">
-        <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr]">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-4">
@@ -46,12 +46,46 @@ export default function Footer() {
               </div>
             </div>
 
-            <p className="mt-6 max-w-xl leading-8 text-slate-600">
-              Website presentasi yang menyampaikan pendekatan analisis,
-              penyusunan strategi, rencana implementasi, serta rekomendasi
-              pengembangan pasar secara sistematis sebagai dasar pengambilan
-              keputusan.
+            <p className="mt-6 max-w-2xl leading-8 text-slate-600">
+              Blueprint pengembangan pasar FMCG yang disusun sebagai acuan dalam
+              melakukan analisis wilayah, pengembangan outlet, peningkatan
+              kualitas SDM, perluasan kerja sama dengan institusi dan komunitas,
+              serta penyusunan strategi implementasi untuk mendukung pertumbuhan
+              distribusi di wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten
+              Nganjuk.
             </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl border border-slate-200 bg-white/70 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  Fokus Wilayah
+                </p>
+
+                <p className="mt-2 font-semibold text-slate-900">
+                  Kediri Raya
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white/70 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  Sektor
+                </p>
+
+                <p className="mt-2 font-semibold text-slate-900">
+                  Distribusi FMCG
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white/70 p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  Ruang Lingkup
+                </p>
+
+                <p className="mt-2 font-semibold text-slate-900">
+                  Outlet • Institusi • Komunitas
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Navigation */}
@@ -72,6 +106,18 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-10 rounded-2xl border border-blue-100 bg-blue-50/70 p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+                Tujuan Blueprint
+              </p>
+
+              <p className="mt-3 leading-7 text-slate-600">
+                Menjadi acuan dalam menentukan prioritas pengembangan pasar,
+                memperkuat jaringan distribusi, serta mendukung pertumbuhan
+                bisnis yang berkelanjutan melalui pendekatan yang terstruktur.
+              </p>
+            </div>
           </div>
         </div>
 

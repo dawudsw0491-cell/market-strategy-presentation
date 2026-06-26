@@ -6,37 +6,42 @@ const pillars = [
   {
     icon: "🗺️",
     title: "Analisis Wilayah",
-    focus: "Memahami potensi setiap wilayah.",
+    focus:
+      "Memetakan karakter wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk berdasarkan potensi pasar, persebaran outlet, aktivitas ekonomi, institusi, serta komunitas yang dapat menjadi sasaran pengembangan distribusi.",
     result:
-      "Prioritas wilayah menjadi lebih objektif dan mudah dipertanggungjawabkan.",
+      "Perusahaan memiliki dasar yang lebih jelas dalam menentukan wilayah prioritas sehingga pengembangan pasar dilakukan secara lebih terarah dan sesuai dengan potensi masing-masing area.",
   },
   {
     icon: "🏪",
     title: "Pengembangan Outlet",
-    focus: "Meningkatkan kualitas dan jangkauan outlet.",
+    focus:
+      "Mengembangkan outlet aktif, mengaktivasi outlet potensial, serta membuka outlet baru melalui pendekatan yang disesuaikan dengan karakter setiap segmen, seperti kelontong, grosir, semi grosir, bakery, horeca, dan pelaku UMKM.",
     result:
-      "Pelayanan lebih merata dan peluang pasar semakin luas.",
+      "Jaringan distribusi menjadi lebih luas, hubungan dengan outlet semakin kuat, serta peluang peningkatan distribusi berbagai kategori produk FMCG dapat berkembang secara berkelanjutan.",
   },
   {
     icon: "🏫",
     title: "Pengembangan Institusi",
-    focus: "Membangun kerja sama dengan berbagai institusi.",
+    focus:
+      "Membangun kerja sama dengan sekolah, perguruan tinggi, pondok pesantren, rumah sakit, instansi pemerintah, perusahaan, dan lembaga lainnya melalui pendekatan yang sesuai dengan kebutuhan masing-masing institusi.",
     result:
-      "Terbentuk hubungan jangka panjang yang lebih stabil.",
+      "Terbentuk hubungan kerja sama yang lebih stabil, memperluas peluang distribusi, serta menciptakan pasar jangka panjang di luar outlet perdagangan tradisional.",
   },
   {
     icon: "🤝",
     title: "Pengembangan Komunitas",
-    focus: "Membangun hubungan dengan komunitas lokal.",
+    focus:
+      "Meningkatkan keterlibatan perusahaan bersama komunitas UMKM, komunitas kuliner, bakery, organisasi masyarakat, dan komunitas lokal sebagai bagian dari penguatan hubungan dengan pasar.",
     result:
-      "Meningkatkan kepercayaan dan memperluas jaringan pasar.",
+      "Kepercayaan masyarakat meningkat, jaringan pemasaran berkembang lebih luas, serta tercipta peluang distribusi baru melalui hubungan yang berkelanjutan dengan komunitas.",
   },
   {
     icon: "🎯",
-    title: "Program Event",
-    focus: "Meningkatkan interaksi langsung dengan calon pelanggan.",
+    title: "Program Aktivasi Pasar",
+    focus:
+      "Melaksanakan kegiatan promosi, edukasi produk, event, gathering pelanggan, serta aktivitas lapangan yang mendukung pengembangan outlet, institusi, dan komunitas sesuai karakter wilayah pengembangan.",
     result:
-      "Brand semakin dikenal dan peluang penjualan meningkat.",
+      "Kesadaran terhadap produk meningkat, hubungan dengan pelanggan menjadi lebih kuat, serta mendukung percepatan penetrasi pasar pada wilayah prioritas.",
   },
 ];
 
@@ -48,7 +53,9 @@ function PillarCard({
 }: (typeof pillars)[number]) {
   return (
     <Card className="h-full">
-      <div className="mb-5 text-4xl">{icon}</div>
+      <div className="mb-5 text-4xl">
+        {icon}
+      </div>
 
       <h3 className="mb-5 text-xl font-semibold text-slate-900">
         {title}
@@ -67,7 +74,7 @@ function PillarCard({
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600">
-            Hasil yang Diharapkan
+            Hasil Yang Diharapkan
           </p>
 
           <p className="mt-2 leading-7 text-slate-600">
@@ -89,13 +96,14 @@ export default function StrategyPillars() {
           </span>
 
           <h2 className="mt-5">
-            Seluruh Strategi Berpusat Pada Lima Pilar Utama
+            Strategi Pengembangan Pasar Dibangun Melalui Lima Pilar Utama
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Kelima pilar saling mendukung sehingga strategi yang disusun
-            tidak hanya berorientasi pada peningkatan penjualan, tetapi juga
-            pada pertumbuhan pasar yang berkelanjutan.
+            Kelima pilar saling melengkapi untuk mendukung pengembangan pasar,
+            memperkuat jaringan distribusi, meningkatkan kualitas hubungan
+            dengan outlet dan institusi, serta memperluas penetrasi pasar di
+            wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.
           </p>
         </div>
 
@@ -103,7 +111,10 @@ export default function StrategyPillars() {
         <div className="hidden xl:block">
           <div className="flex justify-center gap-8">
             {pillars.slice(0, 3).map((pillar) => (
-              <div key={pillar.title} className="w-full max-w-sm">
+              <div
+                key={pillar.title}
+                className="w-full max-w-sm"
+              >
                 <PillarCard {...pillar} />
               </div>
             ))}
@@ -111,7 +122,10 @@ export default function StrategyPillars() {
 
           <div className="mt-8 flex justify-center gap-8">
             {pillars.slice(3).map((pillar) => (
-              <div key={pillar.title} className="w-full max-w-sm">
+              <div
+                key={pillar.title}
+                className="w-full max-w-sm"
+              >
                 <PillarCard {...pillar} />
               </div>
             ))}
