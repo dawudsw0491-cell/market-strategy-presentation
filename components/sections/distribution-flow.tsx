@@ -2,12 +2,30 @@ import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
 const channels = [
-  "Kelontong",
-  "Grosir",
-  "Bakery",
-  "Horeca",
-  "Institusi",
-  "UMKM",
+  {
+    title: "Kelontong",
+    desc: "Distribusi harian dengan frekuensi kunjungan tinggi.",
+  },
+  {
+    title: "Grosir",
+    desc: "Volume pembelian besar sebagai pusat distribusi lokal.",
+  },
+  {
+    title: "Bakery",
+    desc: "Potensi produk bakery, dairy, dan pendukung produksi.",
+  },
+  {
+    title: "Horeca",
+    desc: "Hotel, restoran, café, dan catering dengan repeat order.",
+  },
+  {
+    title: "Institusi",
+    desc: "Sekolah, rumah sakit, kantor, dan instansi pemerintah.",
+  },
+  {
+    title: "UMKM",
+    desc: "Usaha lokal yang berkembang sebagai channel baru.",
+  },
 ];
 
 export default function DistributionFlow() {
@@ -15,7 +33,7 @@ export default function DistributionFlow() {
     <Section background="gradient">
       <Container>
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-sky-100 px-5 py-2 text-sm font-semibold text-sky-700">
+          <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
             Distribution Flow
           </span>
 
@@ -24,64 +42,81 @@ export default function DistributionFlow() {
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Strategi distribusi dimulai dari pusat distribusi perusahaan,
-            dilanjutkan oleh tim penjualan menuju berbagai channel utama,
-            kemudian diteruskan kepada pelanggan akhir pada wilayah prioritas.
+            Distribusi dikembangkan melalui jalur yang terstruktur sehingga
+            setiap aktivitas penjualan menghasilkan perluasan outlet,
+            peningkatan coverage, serta hubungan jangka panjang dengan
+            pelanggan.
           </p>
         </div>
 
-        <div className="rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
+        <div className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm">
 
           <div className="flex flex-col items-center">
 
-            <div className="rounded-2xl bg-gradient-to-r from-blue-600 to-sky-500 px-8 py-4 text-center text-white shadow-lg">
+            <div className="rounded-2xl bg-gradient-to-r from-blue-600 to-sky-500 px-8 py-4 text-white shadow-lg">
               <h3 className="text-xl font-bold">
-                Principal / Supplier
+                Distribution Center
               </h3>
             </div>
 
-            <div className="my-4 h-12 w-1 rounded bg-blue-300" />
+            <div className="h-12 w-px bg-slate-300" />
 
-            <div className="rounded-2xl border border-blue-100 bg-blue-50 px-8 py-4 text-center">
+            <div className="rounded-2xl border border-blue-100 bg-blue-50 px-8 py-4">
               <h3 className="text-lg font-semibold text-slate-900">
-                Warehouse / Distribution Center
+                Area Sales Coordinator
               </h3>
             </div>
 
-            <div className="my-4 h-12 w-1 rounded bg-blue-300" />
+            <div className="h-12 w-px bg-slate-300" />
 
-            <div className="rounded-2xl border border-emerald-100 bg-emerald-50 px-8 py-4 text-center">
-              <h3 className="text-lg font-semibold text-slate-900">
-                Sales Team
-              </h3>
+            <div className="grid w-full gap-6 lg:grid-cols-3">
+
+              {["Sales Area Barat", "Sales Area Tengah", "Sales Area Timur"].map(
+                (sales) => (
+                  <div
+                    key={sales}
+                    className="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-center"
+                  >
+                    <h3 className="text-lg font-bold text-slate-900">
+                      {sales}
+                    </h3>
+
+                    <div className="mt-5 space-y-2 text-sm text-slate-600">
+                      <p>Weekly Visit</p>
+                      <p>Outlet Development</p>
+                      <p>Institution Visit</p>
+                      <p>Community Engagement</p>
+                    </div>
+                  </div>
+                )
+              )}
+
             </div>
 
-            <div className="my-4 h-12 w-1 rounded bg-blue-300" />
+            <div className="my-10 h-px w-full bg-slate-200" />
 
-          </div>
+            <div className="grid w-full gap-6 md:grid-cols-2 xl:grid-cols-3">
 
-          <div className="grid gap-5 md:grid-cols-3 xl:grid-cols-6">
+              {channels.map((channel) => (
+                <div
+                  key={channel.title}
+                  className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
+                >
+                  <h3 className="text-lg font-semibold text-slate-900">
+                    {channel.title}
+                  </h3>
 
-            {channels.map((channel) => (
-              <div
-                key={channel}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center"
-              >
-                <h3 className="text-base font-semibold text-slate-900">
-                  {channel}
-                </h3>
-              </div>
-            ))}
+                  <p className="mt-4 leading-7 text-slate-600">
+                    {channel.desc}
+                  </p>
+                </div>
+              ))}
 
-          </div>
+            </div>
 
-          <div className="mt-6 flex justify-center">
-            <div className="h-12 w-1 rounded bg-blue-300" />
-          </div>
+            <div className="mt-10 h-12 w-px bg-slate-300" />
 
-          <div className="flex justify-center">
-
-            <div className="rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 px-10 py-5 text-center text-white shadow-lg">
+            <div className="rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 px-10 py-5 text-white shadow-lg">
               <h3 className="text-xl font-bold">
                 End Customer
               </h3>
@@ -91,39 +126,45 @@ export default function DistributionFlow() {
 
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 lg:grid-cols-4">
 
           <div className="rounded-3xl border border-slate-200 bg-white p-6">
-            <h3 className="text-lg font-semibold text-slate-900">
-              Peran Sales
-            </h3>
+            <div className="text-3xl font-bold text-blue-600">
+              40+
+            </div>
 
-            <p className="mt-4 leading-8 text-slate-600">
-              Menjalankan aktivitas survey, pendekatan, pembukaan outlet,
-              pengembangan institusi, serta menjaga hubungan dengan pelanggan.
+            <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
+              Target Weekly Visit
             </p>
           </div>
 
           <div className="rounded-3xl border border-slate-200 bg-white p-6">
-            <h3 className="text-lg font-semibold text-slate-900">
-              Peran Channel
-            </h3>
+            <div className="text-3xl font-bold text-emerald-600">
+              6
+            </div>
 
-            <p className="mt-4 leading-8 text-slate-600">
-              Menjadi media distribusi yang menghubungkan perusahaan dengan
-              berbagai segmen pelanggan sesuai karakter masing-masing wilayah.
+            <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
+              Channel Distribusi
             </p>
           </div>
 
           <div className="rounded-3xl border border-slate-200 bg-white p-6">
-            <h3 className="text-lg font-semibold text-slate-900">
+            <div className="text-3xl font-bold text-amber-600">
+              3
+            </div>
+
+            <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
+              Fokus Wilayah
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200 bg-white p-6">
+            <div className="text-3xl font-bold text-cyan-600">
+              1
+            </div>
+
+            <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
               Tujuan Akhir
-            </h3>
-
-            <p className="mt-4 leading-8 text-slate-600">
-              Meningkatkan coverage distribusi, memperkuat hubungan dengan
-              outlet, serta memastikan produk tersedia secara konsisten pada
-              wilayah prioritas.
             </p>
           </div>
 

@@ -1,174 +1,154 @@
-import Card from "@/components/ui/card";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
-const mapping = [
+const channels = [
+  "Kelontong",
+  "Grosir",
+  "Bakery",
+  "Horeca",
+  "Institusi",
+];
+
+const products = [
   {
-    channel: "Toko Kelontong",
-    categories: [
-      "Produk kebutuhan harian",
-      "Minuman",
-      "Makanan ringan",
-      "Bumbu dan pelengkap",
-    ],
-    customer:
-      "Rumah tangga dan pelanggan dengan kebutuhan harian.",
-    strategy:
-      "Menjaga ketersediaan produk fast moving agar outlet mampu memenuhi kebutuhan pelanggan setiap hari.",
+    name: "Daily Needs",
+    values: [5, 5, 2, 2, 3],
   },
   {
-    channel: "Grosir & Semi Grosir",
-    categories: [
-      "Produk volume besar",
-      "Produk fast moving",
-      "Produk distribusi ulang",
-      "Produk kebutuhan usaha",
-    ],
-    customer:
-      "Reseller, toko kelontong, dan pelaku usaha.",
-    strategy:
-      "Mendorong peningkatan volume distribusi melalui pembelian dalam jumlah besar dan hubungan jangka panjang.",
+    name: "Snack",
+    values: [5, 4, 2, 3, 2],
   },
   {
-    channel: "Bakery & Horeca",
-    categories: [
-      "Bahan baku",
-      "Produk pendukung produksi",
-      "Produk operasional",
-      "Produk pelengkap usaha",
-    ],
-    customer:
-      "Bakery, café, restoran, hotel, dan usaha makanan.",
-    strategy:
-      "Menjadi mitra distribusi yang mampu menyediakan pasokan secara konsisten sesuai kebutuhan operasional usaha.",
+    name: "Beverage",
+    values: [5, 5, 3, 4, 4],
   },
   {
-    channel: "UMKM",
-    categories: [
-      "Produk ekonomis",
-      "Produk kebutuhan usaha",
-      "Produk dengan rotasi tinggi",
-      "Produk konsumsi",
-    ],
-    customer:
-      "Pelaku usaha mikro, kecil, dan menengah.",
-    strategy:
-      "Mendukung pertumbuhan UMKM melalui produk yang mudah dipasarkan kembali serta memiliki tingkat permintaan yang stabil.",
+    name: "Bakery Ingredients",
+    values: [1, 3, 5, 4, 1],
   },
   {
-    channel: "Institusi",
-    categories: [
-      "Produk konsumsi",
-      "Produk operasional",
-      "Produk kegiatan",
-      "Produk distribusi rutin",
-    ],
-    customer:
-      "Sekolah, rumah sakit, perusahaan, dan instansi.",
-    strategy:
-      "Membangun kerja sama distribusi jangka panjang melalui kebutuhan operasional yang berulang.",
+    name: "Food Service",
+    values: [1, 2, 3, 5, 4],
   },
   {
-    channel: "Event & Komunitas",
-    categories: [
-      "Produk promosi",
-      "Produk sampling",
-      "Produk awareness",
-      "Produk pendukung kegiatan",
-    ],
-    customer:
-      "Komunitas, organisasi, dan peserta kegiatan.",
-    strategy:
-      "Meningkatkan penetrasi pasar melalui aktivitas lapangan yang memperluas pengenalan produk kepada calon pelanggan.",
+    name: "Bulk Product",
+    values: [2, 5, 4, 5, 4],
   },
 ];
 
+function Cell({ value }: { value: number }) {
+  const colors = [
+    "bg-slate-100",
+    "bg-sky-100",
+    "bg-sky-200",
+    "bg-cyan-300",
+    "bg-blue-500",
+    "bg-emerald-500",
+  ];
+
+  return (
+    <div
+      className={`flex h-12 items-center justify-center rounded-xl font-semibold text-white ${
+        value >= 4 ? colors[value] : colors[value]
+      } ${value >= 4 ? "text-white" : "text-slate-700"}`}
+    >
+      {value}
+    </div>
+  );
+}
+
 export default function ProductPotential() {
   return (
-    <Section background="gradient">
+    <Section background="white">
       <Container>
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
-            Potensi Produk
+          <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
+            Product Potential
           </span>
 
           <h2 className="mt-6">
-            Kesesuaian Produk Dengan Channel Distribusi
+            Product × Channel Opportunity Matrix
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Pengembangan produk tidak dilakukan secara seragam. Setiap channel
-            memiliki karakter pelanggan dan pola pembelian yang berbeda sehingga
-            kategori produk disesuaikan dengan kebutuhan masing-masing segmen.
+            Setiap channel memiliki karakteristik yang berbeda sehingga
+            penempatan kategori produk perlu disesuaikan dengan potensi
+            penjualan, frekuensi pembelian, dan pola distribusi.
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {mapping.map((item) => (
-            <Card
-              key={item.channel}
-              className="h-full"
-            >
-              <h3 className="text-xl font-semibold text-slate-900">
-                {item.channel}
-              </h3>
+        <div className="overflow-auto rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
+          <table className="min-w-full border-separate border-spacing-3">
+            <thead>
+              <tr>
+                <th className="text-left text-sm font-semibold uppercase tracking-wide text-slate-500">
+                  Produk
+                </th>
 
-              <div className="mt-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
-                  Target Pelanggan
-                </p>
+                {channels.map((channel) => (
+                  <th
+                    key={channel}
+                    className="text-center text-sm font-semibold uppercase tracking-wide text-slate-500"
+                  >
+                    {channel}
+                  </th>
+                ))}
+              </tr>
+            </thead>
 
-                <p className="mt-2 leading-7 text-slate-600">
-                  {item.customer}
-                </p>
-              </div>
+            <tbody>
+              {products.map((product) => (
+                <tr key={product.name}>
+                  <td className="py-3 pr-6 font-semibold text-slate-900">
+                    {product.name}
+                  </td>
 
-              <div className="mt-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600">
-                  Kategori Produk
-                </p>
-
-                <ul className="mt-3 space-y-2">
-                  {item.categories.map((category) => (
-                    <li
-                      key={category}
-                      className="flex items-start gap-3"
-                    >
-                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500" />
-
-                      <span className="leading-7 text-slate-600">
-                        {category}
-                      </span>
-                    </li>
+                  {product.values.map((value, index) => (
+                    <td key={index}>
+                      <Cell value={value} />
+                    </td>
                   ))}
-                </ul>
-              </div>
-
-              <div className="mt-8 rounded-2xl bg-slate-50 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-600">
-                  Strategi Distribusi
-                </p>
-
-                <p className="mt-3 leading-7 text-slate-600">
-                  {item.strategy}
-                </p>
-              </div>
-            </Card>
-          ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
-        <div className="mt-16 rounded-3xl border border-blue-100 bg-blue-50/70 p-8 lg:p-10">
-          <h3 className="text-2xl font-bold text-slate-900">
-            Prinsip Pengembangan Produk
-          </h3>
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-6">
+            <h3 className="text-lg font-bold text-slate-900">
+              Potensi Tinggi
+            </h3>
 
-          <p className="mt-5 leading-8 text-slate-700">
-            Penempatan kategori produk mengikuti karakter channel distribusi,
-            pola pembelian pelanggan, dan kebutuhan operasional masing-masing
-            segmen sehingga peluang peningkatan distribusi menjadi lebih besar
-            serta hubungan dengan pelanggan dapat berkembang secara
-            berkelanjutan.
-          </p>
+            <p className="mt-4 leading-8 text-slate-600">
+              Daily Needs, Beverage, dan Snack memiliki peluang terbesar pada
+              channel Kelontong serta Grosir karena frekuensi transaksi yang
+              tinggi.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-blue-200 bg-blue-50 p-6">
+            <h3 className="text-lg font-bold text-slate-900">
+              Potensi Menengah
+            </h3>
+
+            <p className="mt-4 leading-8 text-slate-600">
+              Bakery dan Horeca lebih sesuai untuk kategori Bakery
+              Ingredients, Food Service, dan Bulk Product.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-amber-200 bg-amber-50 p-6">
+            <h3 className="text-lg font-bold text-slate-900">
+              Strategi Penempatan
+            </h3>
+
+            <p className="mt-4 leading-8 text-slate-600">
+              Fokuskan produk fast moving pada channel dengan volume tinggi,
+              sedangkan produk spesifik diarahkan pada institusi dan Horeca
+              untuk meningkatkan nilai transaksi.
+            </p>
+          </div>
         </div>
       </Container>
     </Section>
