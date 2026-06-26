@@ -1,174 +1,102 @@
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
-const channels = [
+const flow = [
   {
-    title: "Kelontong",
-    desc: "Distribusi harian dengan frekuensi kunjungan tinggi.",
+    title: "Gudang Distribusi",
+    description:
+      "Seluruh produk didistribusikan dari gudang sebagai pusat pengelolaan persediaan dan pengiriman.",
   },
   {
-    title: "Grosir",
-    desc: "Volume pembelian besar sebagai pusat distribusi lokal.",
+    title: "Koordinator Area",
+    description:
+      "Mengatur wilayah distribusi, jadwal kunjungan, serta koordinasi aktivitas pengembangan pasar.",
   },
   {
-    title: "Bakery",
-    desc: "Potensi produk bakery, dairy, dan pendukung produksi.",
+    title: "Saluran Distribusi",
+    description:
+      "Produk disalurkan melalui outlet, grosir, institusi, bakery, horeca, dan pelanggan bisnis lainnya sesuai karakteristik wilayah.",
   },
   {
-    title: "Horeca",
-    desc: "Hotel, restoran, café, dan catering dengan repeat order.",
-  },
-  {
-    title: "Institusi",
-    desc: "Sekolah, rumah sakit, kantor, dan instansi pemerintah.",
-  },
-  {
-    title: "UMKM",
-    desc: "Usaha lokal yang berkembang sebagai channel baru.",
+    title: "Pelanggan",
+    description:
+      "Produk diterima oleh pelanggan akhir melalui saluran distribusi yang telah ditetapkan.",
   },
 ];
 
 export default function DistributionFlow() {
   return (
-    <Section background="gradient">
+    <Section background="white">
       <Container>
+
         <div className="mx-auto mb-16 max-w-3xl text-center">
+
           <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
-            Distribution Flow
+            Alur Distribusi
           </span>
 
           <h2 className="mt-6">
-            Alur Distribusi Pengembangan Pasar
+            Gambaran Alur Penyaluran Produk
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Distribusi dikembangkan melalui jalur yang terstruktur sehingga
-            setiap aktivitas penjualan menghasilkan perluasan outlet,
-            peningkatan coverage, serta hubungan jangka panjang dengan
-            pelanggan.
+            Alur distribusi menggambarkan proses penyaluran produk mulai dari
+            pusat distribusi hingga diterima oleh pelanggan melalui saluran
+            distribusi yang sesuai dengan karakteristik pasar.
           </p>
+
         </div>
 
-        <div className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-sm">
+        <div className="grid gap-8 lg:grid-cols-4">
 
-          <div className="flex flex-col items-center">
+          {flow.map((item, index) => (
 
-            <div className="rounded-2xl bg-gradient-to-r from-blue-600 to-sky-500 px-8 py-4 text-white shadow-lg">
-              <h3 className="text-xl font-bold">
-                Distribution Center
+            <div
+              key={item.title}
+              className="card relative p-8"
+            >
+
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 text-lg font-bold text-white">
+                {index + 1}
+              </div>
+
+              <h3 className="text-xl font-bold text-slate-900">
+                {item.title}
               </h3>
-            </div>
 
-            <div className="h-12 w-px bg-slate-300" />
+              <p className="mt-5 leading-8 text-slate-600">
+                {item.description}
+              </p>
 
-            <div className="rounded-2xl border border-blue-100 bg-blue-50 px-8 py-4">
-              <h3 className="text-lg font-semibold text-slate-900">
-                Area Sales Coordinator
-              </h3>
-            </div>
-
-            <div className="h-12 w-px bg-slate-300" />
-
-            <div className="grid w-full gap-6 lg:grid-cols-3">
-
-              {["Sales Area Barat", "Sales Area Tengah", "Sales Area Timur"].map(
-                (sales) => (
-                  <div
-                    key={sales}
-                    className="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-center"
-                  >
-                    <h3 className="text-lg font-bold text-slate-900">
-                      {sales}
-                    </h3>
-
-                    <div className="mt-5 space-y-2 text-sm text-slate-600">
-                      <p>Weekly Visit</p>
-                      <p>Outlet Development</p>
-                      <p>Institution Visit</p>
-                      <p>Community Engagement</p>
-                    </div>
-                  </div>
-                )
+              {index < flow.length - 1 && (
+                <div className="absolute -right-4 top-10 hidden h-0.5 w-8 bg-blue-300 lg:block" />
               )}
 
             </div>
 
-            <div className="my-10 h-px w-full bg-slate-200" />
-
-            <div className="grid w-full gap-6 md:grid-cols-2 xl:grid-cols-3">
-
-              {channels.map((channel) => (
-                <div
-                  key={channel.title}
-                  className="rounded-3xl border border-slate-200 bg-slate-50 p-6"
-                >
-                  <h3 className="text-lg font-semibold text-slate-900">
-                    {channel.title}
-                  </h3>
-
-                  <p className="mt-4 leading-7 text-slate-600">
-                    {channel.desc}
-                  </p>
-                </div>
-              ))}
-
-            </div>
-
-            <div className="mt-10 h-12 w-px bg-slate-300" />
-
-            <div className="rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 px-10 py-5 text-white shadow-lg">
-              <h3 className="text-xl font-bold">
-                End Customer
-              </h3>
-            </div>
-
-          </div>
+          ))}
 
         </div>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-4">
+        <div className="mt-16 executive-box">
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-6">
-            <div className="text-3xl font-bold text-blue-600">
-              40+
-            </div>
+          <span className="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold">
+            Kesimpulan
+          </span>
 
-            <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
-              Target Weekly Visit
-            </p>
-          </div>
+          <h2 className="mt-6 text-white">
+            Prinsip Distribusi
+          </h2>
 
-          <div className="rounded-3xl border border-slate-200 bg-white p-6">
-            <div className="text-3xl font-bold text-emerald-600">
-              6
-            </div>
-
-            <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
-              Channel Distribusi
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200 bg-white p-6">
-            <div className="text-3xl font-bold text-amber-600">
-              3
-            </div>
-
-            <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
-              Fokus Wilayah
-            </p>
-          </div>
-
-          <div className="rounded-3xl border border-slate-200 bg-white p-6">
-            <div className="text-3xl font-bold text-cyan-600">
-              1
-            </div>
-
-            <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-500">
-              Tujuan Akhir
-            </p>
-          </div>
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
+            Distribusi diarahkan agar setiap wilayah memperoleh layanan yang
+            konsisten melalui saluran yang paling sesuai. Pendekatan ini
+            mendukung perluasan pasar sekaligus menjaga efektivitas operasional
+            distribusi.
+          </p>
 
         </div>
+
       </Container>
     </Section>
   );
