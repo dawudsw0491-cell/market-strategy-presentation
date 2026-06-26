@@ -12,13 +12,18 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Website presentasi strategi pengembangan pasar PT Sakti Setia Sentosa yang menjelaskan analisis kondisi, penyusunan strategi, rencana implementasi, dan rekomendasi secara sistematis.",
+    "Website presentasi strategi pengembangan pasar PT Sakti Setia Sentosa yang menyajikan analisis kondisi, strategi pengembangan, rencana implementasi, serta rekomendasi sebagai dasar pengambilan keputusan.",
+
+  applicationName: "Strategi Pengembangan Pasar",
 
   keywords: [
     "Strategi Pengembangan Pasar",
-    "Market Development",
     "Market Strategy",
-    "Presentasi",
+    "Market Development",
+    "Presentasi Strategi",
+    "Distribusi",
+    "Outlet",
+    "Institusi",
     "PT Sakti Setia Sentosa",
   ],
 
@@ -28,17 +33,41 @@ export const metadata: Metadata = {
     },
   ],
 
+  creator: "Dawud",
+
+  publisher: "PT Sakti Setia Sentosa",
+
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
   },
 
   openGraph: {
     title: "Strategi Pengembangan Pasar",
     description:
       "Presentasi strategi pengembangan pasar PT Sakti Setia Sentosa.",
-    type: "website",
+
+    url: "https://market-strategy-presentation.vercel.app",
+
+    siteName: "Strategi Pengembangan Pasar",
+
     locale: "id_ID",
+
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Strategi Pengembangan Pasar",
+    description:
+      "Presentasi strategi pengembangan pasar PT Sakti Setia Sentosa.",
   },
 };
 
