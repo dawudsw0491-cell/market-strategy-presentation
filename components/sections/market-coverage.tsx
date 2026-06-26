@@ -1,81 +1,51 @@
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
-const coverage = [
+const areas = [
   {
     area: "Kabupaten Kediri",
-    focus: "Prioritas Utama",
-    color: "emerald",
-    metrics: [
-      { label: "Outlet", value: 92 },
-      { label: "Institusi", value: 90 },
-      { label: "Komunitas", value: 86 },
-      { label: "Distribusi", value: 94 },
+    priority: "Prioritas Utama",
+    focus: [
+      "Perluasan outlet.",
+      "Penguatan distribusi.",
+      "Kerja sama institusi.",
+      "Pengembangan komunitas.",
+    ],
+    reason: [
+      "Aktivitas ekonomi relatif tinggi.",
+      "Distribusi lebih mudah dijangkau.",
+      "Potensi pertumbuhan pasar masih besar.",
     ],
   },
   {
     area: "Kota Kediri",
-    focus: "Penguatan",
-    color: "blue",
-    metrics: [
-      { label: "Outlet", value: 86 },
-      { label: "Institusi", value: 88 },
-      { label: "Komunitas", value: 78 },
-      { label: "Distribusi", value: 89 },
+    priority: "Penguatan",
+    focus: [
+      "Optimalisasi outlet.",
+      "Peningkatan pelayanan.",
+      "Pengembangan pelanggan existing.",
+    ],
+    reason: [
+      "Jaringan telah tersedia.",
+      "Lebih efektif meningkatkan produktivitas daripada ekspansi.",
+      "Mendukung distribusi wilayah sekitar.",
     ],
   },
   {
     area: "Kabupaten Nganjuk",
-    focus: "Ekspansi",
-    color: "amber",
-    metrics: [
-      { label: "Outlet", value: 71 },
-      { label: "Institusi", value: 69 },
-      { label: "Komunitas", value: 66 },
-      { label: "Distribusi", value: 74 },
+    priority: "Pengembangan Bertahap",
+    focus: [
+      "Identifikasi outlet baru.",
+      "Pengembangan institusi.",
+      "Perluasan distribusi.",
+    ],
+    reason: [
+      "Masih tersedia peluang pengembangan.",
+      "Perlu validasi pasar secara bertahap.",
+      "Dilaksanakan sesuai kesiapan perusahaan.",
     ],
   },
 ];
-
-function Progress({
-  label,
-  value,
-  color,
-}: {
-  label: string;
-  value: number;
-  color: string;
-}) {
-  const gradient =
-    color === "emerald"
-      ? "from-emerald-500 to-green-600"
-      : color === "blue"
-      ? "from-blue-600 to-sky-500"
-      : "from-amber-500 to-orange-500";
-
-  return (
-    <div>
-      <div className="mb-2 flex items-center justify-between">
-        <span className="text-sm font-medium text-slate-600">
-          {label}
-        </span>
-
-        <span className="text-sm font-bold text-slate-900">
-          {value}%
-        </span>
-      </div>
-
-      <div className="h-3 rounded-full bg-slate-200">
-        <div
-          className={`h-3 rounded-full bg-gradient-to-r ${gradient}`}
-          style={{
-            width: `${value}%`,
-          }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export default function MarketCoverage() {
   return (
@@ -85,62 +55,91 @@ export default function MarketCoverage() {
         <div className="mx-auto mb-16 max-w-3xl text-center">
 
           <span className="inline-flex rounded-full bg-sky-100 px-5 py-2 text-sm font-semibold text-sky-700">
-            Market Coverage
+            Cakupan Wilayah
           </span>
 
           <h2 className="mt-6">
-            Dashboard Coverage Pengembangan Wilayah
+            Fokus Pengembangan Setiap Wilayah
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Coverage digunakan untuk melihat kesiapan setiap wilayah dalam
-            mendukung pengembangan outlet, institusi, komunitas, dan
-            distribusi secara berkelanjutan.
+            Setiap wilayah memiliki karakteristik yang berbeda sehingga
+            fokus pengembangannya juga disesuaikan dengan kondisi pasar,
+            jaringan distribusi, dan peluang yang tersedia.
           </p>
 
         </div>
 
         <div className="grid gap-8 xl:grid-cols-3">
 
-          {coverage.map((item) => (
+          {areas.map((item) => (
 
             <div
               key={item.area}
               className="card p-8"
             >
 
-              <div className="flex items-center justify-between">
+              <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+                {item.priority}
+              </span>
 
-                <div>
+              <h3 className="mt-6 text-2xl font-bold text-slate-900">
+                {item.area}
+              </h3>
 
-                  <h3 className="text-2xl font-bold text-slate-900">
-                    {item.area}
-                  </h3>
+              <div className="mt-8">
 
-                  <div className="mt-3 inline-flex rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">
-                    {item.focus}
-                  </div>
+                <h4 className="font-semibold text-slate-900">
+                  Fokus Pengembangan
+                </h4>
 
-                </div>
+                <ul className="mt-4 space-y-3">
 
-                <div className="text-4xl">
-                  📍
-                </div>
+                  {item.focus.map((focus) => (
+
+                    <li
+                      key={focus}
+                      className="flex items-start gap-3"
+                    >
+                      <span className="mt-2 h-2.5 w-2.5 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500" />
+
+                      <span className="leading-7 text-slate-600">
+                        {focus}
+                      </span>
+
+                    </li>
+
+                  ))}
+
+                </ul>
 
               </div>
 
-              <div className="mt-8 space-y-6">
+              <div className="mt-8">
 
-                {item.metrics.map((metric) => (
+                <h4 className="font-semibold text-slate-900">
+                  Pertimbangan
+                </h4>
 
-                  <Progress
-                    key={metric.label}
-                    label={metric.label}
-                    value={metric.value}
-                    color={item.color}
-                  />
+                <ul className="mt-4 space-y-3">
 
-                ))}
+                  {item.reason.map((reason) => (
+
+                    <li
+                      key={reason}
+                      className="flex items-start gap-3"
+                    >
+                      <span className="mt-2 h-2.5 w-2.5 rounded-full bg-slate-400" />
+
+                      <span className="leading-7 text-slate-600">
+                        {reason}
+                      </span>
+
+                    </li>
+
+                  ))}
+
+                </ul>
 
               </div>
 
@@ -150,19 +149,22 @@ export default function MarketCoverage() {
 
         </div>
 
-        <div className="mt-14 rounded-3xl border border-sky-100 bg-sky-50 p-8">
+        <div className="mt-16 executive-box">
 
-          <h3 className="text-2xl font-bold text-slate-900">
-            Executive Insight
-          </h3>
+          <span className="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold">
+            Kesimpulan
+          </span>
 
-          <p className="mt-5 leading-8 text-slate-700">
-            Kabupaten Kediri menjadi wilayah dengan tingkat kesiapan tertinggi
-            sehingga difokuskan sebagai pusat pengembangan pasar. Kota Kediri
-            diarahkan untuk meningkatkan produktivitas jaringan yang telah
-            berjalan, sedangkan Kabupaten Nganjuk menjadi target perluasan
-            coverage melalui pembukaan outlet baru dan pengembangan institusi
-            secara bertahap.
+          <h2 className="mt-6 text-white">
+            Arah Pengembangan Wilayah
+          </h2>
+
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
+            Kabupaten Kediri menjadi fokus utama pengembangan pasar.
+            Kota Kediri diarahkan untuk meningkatkan produktivitas jaringan
+            yang telah berjalan, sedangkan Kabupaten Nganjuk dikembangkan
+            secara bertahap berdasarkan hasil evaluasi dan kesiapan
+            implementasi.
           </p>
 
         </div>
