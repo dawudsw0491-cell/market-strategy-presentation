@@ -1,90 +1,87 @@
-import Card from "@/components/ui/card";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
 const steps = [
   {
-    number: "01",
-    title: "Analisis Wilayah dan Potensi Pasar",
+    title: "Analisis Kondisi",
     description:
-      "Tahap awal difokuskan pada pemetaan wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk untuk memahami karakter pasar, persebaran outlet, aktivitas ekonomi, potensi institusi, komunitas, serta peluang pengembangan distribusi pada setiap area.",
+      "Mengidentifikasi kondisi pasar, karakteristik wilayah, jaringan distribusi, dan peluang pengembangan.",
   },
   {
-    number: "02",
-    title: "Menentukan Prioritas Pengembangan",
+    title: "Penentuan Prioritas",
     description:
-      "Hasil analisis digunakan untuk menentukan wilayah prioritas, segmen outlet, institusi, dan komunitas yang memiliki peluang pengembangan terbesar sehingga sumber daya perusahaan dapat difokuskan pada area dengan potensi pertumbuhan yang lebih tinggi.",
+      "Menetapkan wilayah, saluran distribusi, serta institusi yang menjadi fokus pengembangan.",
   },
   {
-    number: "03",
-    title: "Menyusun Strategi Pengembangan",
+    title: "Penyusunan Strategi",
     description:
-      "Strategi disusun berdasarkan karakter masing-masing wilayah dengan mengintegrasikan pengembangan outlet, peningkatan kompetensi SDM, perluasan kerja sama institusi, penguatan hubungan dengan komunitas, serta pemilihan kategori produk yang sesuai dengan kebutuhan setiap segmen pasar.",
+      "Merumuskan strategi pengembangan berdasarkan hasil analisis dan prioritas yang telah ditetapkan.",
   },
   {
-    number: "04",
-    title: "Implementasi, Monitoring, dan Evaluasi",
+    title: "Implementasi Bertahap",
     description:
-      "Program dijalankan secara bertahap melalui pengembangan outlet, pembukaan pasar baru, peningkatan aktivitas distribusi, serta evaluasi berkala terhadap pencapaian setiap wilayah sehingga strategi dapat terus disempurnakan mengikuti perkembangan pasar.",
+      "Melaksanakan program pengembangan sesuai urutan prioritas dan kesiapan sumber daya.",
+  },
+  {
+    title: "Evaluasi",
+    description:
+      "Melakukan pemantauan pelaksanaan sebagai dasar penyempurnaan strategi berikutnya.",
   },
 ];
 
 export default function StrategyApproach() {
   return (
-    <Section background="gradient">
+    <Section background="white">
       <Container>
+
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
-            Pendekatan Yang Digunakan
+
+          <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
+            Pendekatan Strategi
           </span>
 
           <h2 className="mt-6">
-            Strategi Pengembangan Pasar Dilaksanakan Melalui Empat Tahapan
+            Tahapan Penyusunan Strategi
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Pendekatan ini memberikan arah yang sistematis mulai dari memahami
-            kondisi pasar, menentukan prioritas pengembangan, menyusun strategi
-            berdasarkan karakter wilayah, hingga melaksanakan implementasi yang
-            dapat dievaluasi secara berkelanjutan.
+            Penyusunan strategi dilakukan melalui tahapan yang sistematis,
+            dimulai dari analisis kondisi hingga evaluasi implementasi.
           </p>
+
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {steps.map((step) => (
-            <Card
-              key={step.number}
-              className="h-full"
+        <div className="space-y-8">
+
+          {steps.map((step, index) => (
+
+            <div
+              key={step.title}
+              className="card flex flex-col gap-6 p-8 lg:flex-row lg:items-start"
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-emerald-500 text-xl font-bold text-white">
-                {step.number}
+
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 text-xl font-bold text-white">
+                {index + 1}
               </div>
 
-              <h3 className="mb-4 text-2xl font-bold text-slate-900">
-                {step.title}
-              </h3>
+              <div>
 
-              <p className="leading-8 text-slate-600">
-                {step.description}
-              </p>
-            </Card>
+                <h3 className="text-2xl font-bold text-slate-900">
+                  {step.title}
+                </h3>
+
+                <p className="mt-4 leading-8 text-slate-600">
+                  {step.description}
+                </p>
+
+              </div>
+
+            </div>
+
           ))}
+
         </div>
 
-        <div className="mt-16 rounded-3xl border border-emerald-100 bg-emerald-50 p-8 lg:p-10">
-          <h3 className="text-2xl font-bold text-slate-900">
-            Hasil Yang Diharapkan
-          </h3>
-
-          <p className="mt-4 leading-8 text-slate-700">
-            Setiap keputusan pengembangan pasar memiliki dasar yang jelas,
-            wilayah prioritas dapat ditentukan secara lebih objektif,
-            pengembangan outlet dan institusi berjalan lebih terarah,
-            peningkatan kompetensi SDM mendukung aktivitas distribusi, serta
-            penetrasi pasar di Kabupaten Kediri, Kota Kediri, dan Kabupaten
-            Nganjuk dapat berkembang secara bertahap dan berkelanjutan.
-          </p>
-        </div>
       </Container>
     </Section>
   );
