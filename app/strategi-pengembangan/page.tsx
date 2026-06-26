@@ -9,40 +9,74 @@ import Section from "@/components/ui/section";
 const strategies = [
   {
     title: "Pengembangan Wilayah",
+    score: 95,
     objective:
-      "Menentukan wilayah prioritas berdasarkan karakter pasar, potensi distribusi, serta peluang pertumbuhan di Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.",
-    explanation:
-      "Pengembangan wilayah diawali melalui pemetaan area, identifikasi potensi outlet, aktivitas ekonomi, institusi, komunitas, serta akses distribusi sehingga setiap wilayah memperoleh pendekatan yang sesuai dengan karakter pasarnya.",
+      "Menentukan wilayah prioritas berdasarkan peluang pasar dan kesiapan distribusi.",
+    impact:
+      "Mempercepat penetrasi pasar pada area dengan potensi pertumbuhan tertinggi.",
   },
   {
     title: "Pengembangan Outlet",
+    score: 92,
     objective:
-      "Meningkatkan produktivitas outlet aktif sekaligus memperluas jaringan distribusi melalui outlet potensial dan outlet baru.",
-    explanation:
-      "Pendekatan disesuaikan dengan karakter setiap segmen seperti kelontong, grosir, semi grosir, bakery, horeca, dan UMKM. Setiap segmen memiliki kebutuhan kategori produk yang berbeda sehingga pengembangan dilakukan secara lebih terarah dan berkelanjutan.",
+      "Meningkatkan produktivitas outlet existing dan memperluas outlet baru.",
+    impact:
+      "Meningkatkan coverage distribusi dan ketersediaan produk.",
   },
   {
     title: "Pengembangan Institusi",
+    score: 90,
     objective:
-      "Membangun hubungan kerja sama jangka panjang dengan institusi yang memiliki kebutuhan distribusi secara berkelanjutan.",
-    explanation:
-      "Fokus pengembangan meliputi sekolah, perguruan tinggi, pondok pesantren, rumah sakit, instansi pemerintah, perusahaan, dan lembaga lainnya melalui pendekatan yang disesuaikan dengan karakter kebutuhan masing-masing institusi.",
+      "Membangun kerja sama jangka panjang dengan institusi strategis.",
+    impact:
+      "Menciptakan pasar yang stabil dan berkelanjutan.",
   },
   {
     title: "Pengembangan Komunitas",
+    score: 84,
     objective:
-      "Meningkatkan keterlibatan perusahaan bersama komunitas sebagai bagian dari penguatan hubungan dengan pasar lokal.",
-    explanation:
-      "Pengembangan dilakukan melalui komunitas UMKM, komunitas kuliner, bakery, organisasi masyarakat, serta komunitas lokal yang berpotensi mendukung perluasan jaringan distribusi dan memperkuat hubungan jangka panjang dengan pelanggan.",
+      "Membangun hubungan dengan komunitas lokal sebagai media penetrasi pasar.",
+    impact:
+      "Meningkatkan awareness, kepercayaan, dan jaringan distribusi.",
   },
   {
-    title: "Program Aktivasi Pasar",
+    title: "Program Event",
+    score: 86,
     objective:
-      "Meningkatkan interaksi langsung dengan outlet, institusi, komunitas, dan pelanggan melalui berbagai aktivitas pemasaran lapangan.",
-    explanation:
-      "Program meliputi promosi, edukasi produk, gathering pelanggan, kegiatan komunitas, serta event wilayah yang mendukung peningkatan hubungan dengan pelanggan sekaligus memperkuat penetrasi pasar pada area prioritas.",
+      "Meningkatkan interaksi langsung dengan pelanggan dan calon pelanggan.",
+    impact:
+      "Meningkatkan eksposur produk dan memperkuat hubungan pasar.",
   },
 ];
+
+function Progress({
+  value,
+}: {
+  value: number;
+}) {
+  return (
+    <div className="mt-5">
+      <div className="mb-2 flex justify-between">
+        <span className="text-sm text-slate-500">
+          Strategy Readiness
+        </span>
+
+        <span className="font-semibold text-slate-900">
+          {value}%
+        </span>
+      </div>
+
+      <div className="h-3 rounded-full bg-slate-200">
+        <div
+          className="h-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500"
+          style={{
+            width: `${value}%`,
+          }}
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function StrategiPengembanganPage() {
   return (
@@ -50,117 +84,116 @@ export default function StrategiPengembanganPage() {
       <Navbar />
 
       <main>
-        {/* Hero */}
+
         <Section
           background="gradient"
           className="pt-14 lg:pt-20"
         >
           <Container>
+
             <div className="max-w-4xl">
-              <span className="inline-flex rounded-full border border-emerald-200 bg-white/80 px-5 py-2 text-sm font-semibold text-emerald-700 shadow-sm backdrop-blur">
+
+              <span className="inline-flex rounded-full border border-emerald-200 bg-white/80 px-5 py-2 text-sm font-semibold text-emerald-700">
                 Strategi Pengembangan
               </span>
 
-              <h1 className="mt-6 max-w-4xl">
-                Lima Strategi Untuk
+              <h1 className="mt-6">
+                Business Strategy
                 <span className="gradient-text">
-                  {" "}Mendorong Pertumbuhan Pasar
+                  {" "}Execution Plan
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 lg:text-lg">
-                Strategi pengembangan pasar disusun untuk memperkuat jaringan
-                distribusi, meningkatkan produktivitas outlet, memperluas kerja
-                sama dengan institusi dan komunitas, serta mendukung
-                pengembangan pasar FMCG secara bertahap pada wilayah prioritas.
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+                Strategi disusun berdasarkan hasil analisis pasar sehingga
+                setiap aktivitas pengembangan memiliki tujuan, prioritas,
+                serta dampak yang dapat diukur.
               </p>
+
             </div>
+
           </Container>
+
         </Section>
 
-        {/* Strategy List */}
         <Section background="white">
+
           <Container>
-            <div className="mx-auto mb-14 max-w-3xl text-center">
-              <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
-                Fokus Strategi
-              </span>
-
-              <h2 className="mt-5 font-semibold">
-                Lima Strategi Pengembangan Pasar
-              </h2>
-
-              <p className="mt-6 text-lg leading-8 text-slate-600">
-                Seluruh strategi saling mendukung untuk membangun pertumbuhan
-                pasar melalui pengembangan wilayah, penguatan jaringan outlet,
-                peningkatan kerja sama dengan institusi, keterlibatan
-                komunitas, serta aktivitas pemasaran yang berkesinambungan.
-              </p>
-            </div>
 
             <div className="grid gap-8 lg:grid-cols-2">
-              {strategies.map((strategy) => (
+
+              {strategies.map((item) => (
+
                 <Card
-                  key={strategy.title}
-                  title={strategy.title}
+                  key={item.title}
+                  title={item.title}
                 >
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-base font-semibold text-slate-900">
-                        Tujuan
-                      </h3>
 
-                      <p className="mt-2 leading-7 text-slate-600">
-                        {strategy.objective}
-                      </p>
-                    </div>
+                  <Progress value={item.score} />
 
-                    <div>
-                      <h3 className="text-base font-semibold text-slate-900">
-                        Pendekatan
-                      </h3>
+                  <div className="mt-8">
 
-                      <p className="mt-2 leading-7 text-slate-600">
-                        {strategy.explanation}
-                      </p>
-                    </div>
+                    <h3 className="text-base font-semibold text-slate-900">
+                      Tujuan
+                    </h3>
+
+                    <p className="mt-3 leading-8 text-slate-600">
+                      {item.objective}
+                    </p>
+
                   </div>
+
+                  <div className="mt-8">
+
+                    <h3 className="text-base font-semibold text-slate-900">
+                      Dampak Yang Diharapkan
+                    </h3>
+
+                    <p className="mt-3 leading-8 text-slate-600">
+                      {item.impact}
+                    </p>
+
+                  </div>
+
                 </Card>
+
               ))}
+
             </div>
+
           </Container>
+
         </Section>
 
-        {/* Summary */}
         <Section>
+
           <Container>
-            <div className="rounded-3xl bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 p-8 text-white lg:p-12">
-              <div className="max-w-3xl">
-                <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-sm font-semibold tracking-wide text-white backdrop-blur">
-                  Ringkasan
-                </span>
 
-                <h2 className="mt-5 font-semibold text-white">
-                  Strategi Menjadi Dasar Pelaksanaan Program
-                </h2>
+            <div className="rounded-[32px] bg-gradient-to-r from-blue-600 via-sky-500 to-emerald-500 p-10 text-white">
 
-                <p className="mt-6 text-lg leading-8 text-blue-50">
-                  Setiap strategi diterjemahkan ke dalam rencana implementasi
-                  yang bertahap, terukur, dan sesuai dengan karakter wilayah,
-                  sehingga pengembangan outlet, institusi, komunitas, serta
-                  aktivitas distribusi dapat berjalan secara lebih efektif dan
-                  berkelanjutan.
-                </p>
+              <h2 className="text-white">
+                Executive Strategy
+              </h2>
 
-                <div className="mt-10">
-                  <Button href="/rencana-implementasi">
-                    Lanjut ke Rencana Implementasi
-                  </Button>
-                </div>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-blue-50">
+                Strategi difokuskan pada pengembangan wilayah prioritas,
+                peningkatan produktivitas outlet, perluasan kerja sama
+                institusi, penguatan komunitas, dan pelaksanaan program
+                pemasaran secara bertahap agar implementasi berjalan efektif.
+              </p>
+
+              <div className="mt-10">
+                <Button href="/rencana-implementasi">
+                  Lanjut ke Rencana Implementasi
+                </Button>
               </div>
+
             </div>
+
           </Container>
+
         </Section>
+
       </main>
 
       <Footer />
