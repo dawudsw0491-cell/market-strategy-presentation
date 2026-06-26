@@ -1,48 +1,42 @@
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
-const kpis = [
+const indicators = [
   {
-    title: "Market Opportunity",
-    value: "92%",
+    title: "Peluang Pasar",
+    status: "Prioritas Utama",
     description:
-      "Potensi pengembangan wilayah berdasarkan analisis pasar, distribusi, dan aktivitas ekonomi.",
-    color: "from-blue-600 to-sky-500",
+      "Wilayah yang memiliki aktivitas ekonomi tinggi, peluang distribusi besar, dan potensi pertumbuhan pasar.",
   },
   {
-    title: "Distribution Readiness",
-    value: "90%",
+    title: "Distribusi",
+    status: "Fokus Penguatan",
     description:
-      "Kesiapan jaringan distribusi untuk mendukung perluasan outlet dan institusi.",
-    color: "from-emerald-500 to-green-600",
+      "Meningkatkan jangkauan distribusi agar produk lebih mudah tersedia pada wilayah prioritas.",
   },
   {
-    title: "Outlet Development",
-    value: "88%",
+    title: "Pengembangan Outlet",
+    status: "Berjalan Bertahap",
     description:
-      "Peluang peningkatan outlet existing serta pembukaan outlet baru.",
-    color: "from-cyan-500 to-blue-600",
+      "Mengoptimalkan outlet yang telah berjalan sekaligus membuka peluang outlet baru pada area potensial.",
   },
   {
-    title: "Institution Development",
-    value: "86%",
+    title: "Pengembangan Institusi",
+    status: "Prioritas Tinggi",
     description:
-      "Potensi kerja sama jangka panjang dengan sekolah, rumah sakit, perusahaan, dan instansi.",
-    color: "from-violet-500 to-indigo-600",
+      "Membangun kerja sama jangka panjang dengan sekolah, rumah sakit, perusahaan, dan instansi.",
   },
   {
-    title: "Community Engagement",
-    value: "81%",
+    title: "Pengembangan Komunitas",
+    status: "Pendukung Strategi",
     description:
-      "Kesiapan komunitas sebagai media penetrasi pasar dan penguatan brand.",
-    color: "from-amber-500 to-orange-500",
+      "Memperkuat hubungan dengan komunitas sebagai media penyebaran informasi dan peningkatan kepercayaan.",
   },
   {
-    title: "Implementation Readiness",
-    value: "89%",
+    title: "Implementasi",
+    status: "Dilaksanakan Bertahap",
     description:
-      "Kesiapan pelaksanaan strategi berdasarkan prioritas wilayah dan channel distribusi.",
-    color: "from-rose-500 to-pink-600",
+      "Seluruh program dijalankan sesuai prioritas wilayah dan dievaluasi secara berkala.",
   },
 ];
 
@@ -50,39 +44,36 @@ export default function SuccessIndicators() {
   return (
     <Section background="white">
       <Container>
-
         <div className="mx-auto mb-16 max-w-3xl text-center">
 
           <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
-            Executive Dashboard
+            Ringkasan Strategi
           </span>
 
           <h2 className="mt-6">
-            Ringkasan Indikator Strategi Pengembangan Pasar
+            Fokus Implementasi Strategi
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Dashboard ini merangkum indikator utama yang menjadi dasar
-            pengambilan keputusan dalam pengembangan pasar, perluasan
-            distribusi, dan implementasi strategi.
+            Ringkasan berikut menggambarkan fokus utama pelaksanaan strategi
+            tanpa menggunakan indikator kuantitatif yang belum didukung data
+            lapangan.
           </p>
 
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-          {kpis.map((item) => (
+          {indicators.map((item) => (
 
             <div
               key={item.title}
-              className="card p-8"
+              className="dashboard-card"
             >
 
-              <div
-                className={`inline-flex rounded-2xl bg-gradient-to-r ${item.color} px-5 py-3 text-3xl font-bold text-white`}
-              >
-                {item.value}
-              </div>
+              <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+                {item.status}
+              </span>
 
               <h3 className="mt-6 text-xl font-bold text-slate-900">
                 {item.title}
@@ -98,44 +89,23 @@ export default function SuccessIndicators() {
 
         </div>
 
-        <div className="mt-16 rounded-[32px] bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 p-10 text-white">
+        <div className="mt-16 executive-box">
 
           <span className="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold">
-            Executive Conclusion
+            Kesimpulan Strategis
           </span>
 
           <h2 className="mt-6 text-white">
-            Prioritas Strategi Pengembangan Pasar
+            Arah Pengembangan Pasar
           </h2>
 
-          <div className="mt-8 grid gap-8 lg:grid-cols-2">
-
-            <div>
-              <h3 className="text-xl font-semibold text-white">
-                Fokus Utama
-              </h3>
-
-              <ul className="mt-5 space-y-4 text-slate-200">
-                <li>• Kabupaten Kediri menjadi prioritas utama pengembangan pasar.</li>
-                <li>• Kota Kediri difokuskan pada penguatan jaringan distribusi.</li>
-                <li>• Kabupaten Nganjuk menjadi wilayah ekspansi bertahap.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-white">
-                Arah Implementasi
-              </h3>
-
-              <ul className="mt-5 space-y-4 text-slate-200">
-                <li>• Memperluas outlet dan channel distribusi prioritas.</li>
-                <li>• Meningkatkan kerja sama dengan institusi potensial.</li>
-                <li>• Memanfaatkan komunitas sebagai media penetrasi pasar.</li>
-                <li>• Melaksanakan implementasi secara bertahap dan terukur.</li>
-              </ul>
-            </div>
-
-          </div>
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
+            Pengembangan pasar difokuskan pada wilayah prioritas,
+            peningkatan kualitas distribusi, penguatan outlet,
+            kerja sama institusi, pengembangan komunitas,
+            serta implementasi yang dilakukan secara bertahap
+            sesuai kondisi lapangan.
+          </p>
 
         </div>
 
