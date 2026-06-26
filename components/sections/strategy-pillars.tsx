@@ -1,146 +1,152 @@
-import Card from "@/components/ui/card";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
 const pillars = [
   {
-    icon: "🗺️",
-    title: "Analisis Wilayah",
-    focus:
-      "Memetakan karakter wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk berdasarkan potensi pasar, persebaran outlet, aktivitas ekonomi, institusi, serta komunitas yang dapat menjadi sasaran pengembangan distribusi.",
-    result:
-      "Perusahaan memiliki dasar yang lebih jelas dalam menentukan wilayah prioritas sehingga pengembangan pasar dilakukan secara lebih terarah dan sesuai dengan potensi masing-masing area.",
+    title: "Pengembangan Wilayah",
+    objective:
+      "Menentukan wilayah prioritas sebagai fokus pengembangan pasar.",
+    reason:
+      "Setiap wilayah memiliki karakteristik, potensi, dan tantangan yang berbeda sehingga diperlukan prioritas implementasi.",
+    outcome:
+      "Pengembangan pasar menjadi lebih terarah dan penggunaan sumber daya lebih efektif.",
   },
   {
-    icon: "🏪",
     title: "Pengembangan Outlet",
-    focus:
-      "Mengembangkan outlet aktif, mengaktivasi outlet potensial, serta membuka outlet baru melalui pendekatan yang disesuaikan dengan karakter setiap segmen, seperti kelontong, grosir, semi grosir, bakery, horeca, dan pelaku UMKM.",
-    result:
-      "Jaringan distribusi menjadi lebih luas, hubungan dengan outlet semakin kuat, serta peluang peningkatan distribusi berbagai kategori produk FMCG dapat berkembang secara berkelanjutan.",
+    objective:
+      "Meningkatkan jumlah dan produktivitas outlet pada wilayah prioritas.",
+    reason:
+      "Outlet merupakan titik utama distribusi yang berpengaruh terhadap ketersediaan produk di pasar.",
+    outcome:
+      "Jangkauan distribusi meningkat dan akses pelanggan terhadap produk menjadi lebih luas.",
   },
   {
-    icon: "🏫",
     title: "Pengembangan Institusi",
-    focus:
-      "Membangun kerja sama dengan sekolah, perguruan tinggi, pondok pesantren, rumah sakit, instansi pemerintah, perusahaan, dan lembaga lainnya melalui pendekatan yang sesuai dengan kebutuhan masing-masing institusi.",
-    result:
-      "Terbentuk hubungan kerja sama yang lebih stabil, memperluas peluang distribusi, serta menciptakan pasar jangka panjang di luar outlet perdagangan tradisional.",
+    objective:
+      "Membangun kerja sama dengan institusi yang memiliki kebutuhan berkelanjutan.",
+    reason:
+      "Institusi memberikan peluang hubungan bisnis jangka panjang dan permintaan yang relatif stabil.",
+    outcome:
+      "Terbentuk kerja sama yang mendukung pertumbuhan penjualan secara berkesinambungan.",
   },
   {
-    icon: "🤝",
     title: "Pengembangan Komunitas",
-    focus:
-      "Meningkatkan keterlibatan perusahaan bersama komunitas UMKM, komunitas kuliner, bakery, organisasi masyarakat, dan komunitas lokal sebagai bagian dari penguatan hubungan dengan pasar.",
-    result:
-      "Kepercayaan masyarakat meningkat, jaringan pemasaran berkembang lebih luas, serta tercipta peluang distribusi baru melalui hubungan yang berkelanjutan dengan komunitas.",
+    objective:
+      "Membangun hubungan yang lebih dekat dengan komunitas di wilayah sasaran.",
+    reason:
+      "Komunitas dapat menjadi media penyebaran informasi dan meningkatkan kepercayaan terhadap perusahaan.",
+    outcome:
+      "Meningkatkan keterlibatan masyarakat serta memperkuat citra perusahaan.",
   },
   {
-    icon: "🎯",
-    title: "Program Aktivasi Pasar",
-    focus:
-      "Melaksanakan kegiatan promosi, edukasi produk, event, gathering pelanggan, serta aktivitas lapangan yang mendukung pengembangan outlet, institusi, dan komunitas sesuai karakter wilayah pengembangan.",
-    result:
-      "Kesadaran terhadap produk meningkat, hubungan dengan pelanggan menjadi lebih kuat, serta mendukung percepatan penetrasi pasar pada wilayah prioritas.",
+    title: "Penguatan Distribusi",
+    objective:
+      "Meningkatkan efektivitas penyaluran produk ke seluruh wilayah layanan.",
+    reason:
+      "Distribusi yang baik memastikan produk tersedia sesuai kebutuhan pelanggan.",
+    outcome:
+      "Pelayanan menjadi lebih konsisten dan mendukung pertumbuhan pasar.",
   },
 ];
 
-function PillarCard({
-  icon,
-  title,
-  focus,
-  result,
-}: (typeof pillars)[number]) {
-  return (
-    <Card className="h-full">
-      <div className="mb-5 text-4xl">
-        {icon}
-      </div>
-
-      <h3 className="mb-5 text-xl font-semibold text-slate-900">
-        {title}
-      </h3>
-
-      <div className="space-y-6">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
-            Fokus
-          </p>
-
-          <p className="mt-2 leading-7 text-slate-600">
-            {focus}
-          </p>
-        </div>
-
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600">
-            Hasil Yang Diharapkan
-          </p>
-
-          <p className="mt-2 leading-7 text-slate-600">
-            {result}
-          </p>
-        </div>
-      </div>
-    </Card>
-  );
-}
-
 export default function StrategyPillars() {
   return (
-    <Section background="white">
+    <Section background="gradient">
       <Container>
-        <div className="mx-auto mb-14 max-w-3xl text-center">
+
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+
           <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
-            Lima Pilar Strategi
+            Pilar Strategi
           </span>
 
-          <h2 className="mt-5">
-            Strategi Pengembangan Pasar Dibangun Melalui Lima Pilar Utama
+          <h2 className="mt-6">
+            Pilar Pengembangan Pasar
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            Kelima pilar saling melengkapi untuk mendukung pengembangan pasar,
-            memperkuat jaringan distribusi, meningkatkan kualitas hubungan
-            dengan outlet dan institusi, serta memperluas penetrasi pasar di
-            wilayah Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.
+          <p className="mt-8 text-lg leading-8 text-slate-600">
+            Pilar strategi menjadi landasan pelaksanaan pengembangan pasar
+            sehingga setiap program memiliki tujuan, alasan, dan hasil yang
+            diharapkan secara jelas.
           </p>
+
         </div>
 
-        {/* Desktop & Laptop */}
-        <div className="hidden xl:block">
-          <div className="flex justify-center gap-8">
-            {pillars.slice(0, 3).map((pillar) => (
-              <div
-                key={pillar.title}
-                className="w-full max-w-sm"
-              >
-                <PillarCard {...pillar} />
-              </div>
-            ))}
-          </div>
+        <div className="grid gap-8 lg:grid-cols-2">
 
-          <div className="mt-8 flex justify-center gap-8">
-            {pillars.slice(3).map((pillar) => (
-              <div
-                key={pillar.title}
-                className="w-full max-w-sm"
-              >
-                <PillarCard {...pillar} />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tablet & Mobile */}
-        <div className="space-y-8 xl:hidden">
           {pillars.map((pillar) => (
-            <PillarCard
+
+            <div
               key={pillar.title}
-              {...pillar}
-            />
+              className="card p-8"
+            >
+
+              <h3 className="text-2xl font-bold text-slate-900">
+                {pillar.title}
+              </h3>
+
+              <div className="mt-8">
+
+                <h4 className="font-semibold text-slate-900">
+                  Tujuan
+                </h4>
+
+                <p className="mt-3 leading-8 text-slate-600">
+                  {pillar.objective}
+                </p>
+
+              </div>
+
+              <div className="mt-8">
+
+                <h4 className="font-semibold text-slate-900">
+                  Alasan
+                </h4>
+
+                <p className="mt-3 leading-8 text-slate-600">
+                  {pillar.reason}
+                </p>
+
+              </div>
+
+              <div className="mt-8">
+
+                <h4 className="font-semibold text-slate-900">
+                  Hasil yang Diharapkan
+                </h4>
+
+                <p className="mt-3 leading-8 text-slate-600">
+                  {pillar.outcome}
+                </p>
+
+              </div>
+
+            </div>
+
           ))}
+
         </div>
+
+        <div className="mt-16 executive-box">
+
+          <span className="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold">
+            Kesimpulan
+          </span>
+
+          <h2 className="mt-6 text-white">
+            Arah Pelaksanaan Strategi
+          </h2>
+
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">
+            Kelima pilar strategi saling melengkapi dalam mendukung
+            pengembangan pasar. Pelaksanaan dilakukan secara bertahap sesuai
+            prioritas wilayah, kapasitas distribusi, serta peluang kerja sama
+            yang tersedia sehingga implementasi dapat berjalan secara
+            terarah dan berkelanjutan.
+          </p>
+
+        </div>
+
       </Container>
     </Section>
   );
