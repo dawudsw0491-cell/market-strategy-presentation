@@ -5,33 +5,87 @@ import Section from "@/components/ui/section";
 const channels = [
   {
     title: "Toko Kelontong",
-    objective: "Memperluas pemerataan distribusi hingga tingkat lingkungan.",
-    products: "Produk kebutuhan harian dengan perputaran tinggi.",
+    role: "Pemerataan distribusi hingga tingkat lingkungan.",
+    characteristic:
+      "Frekuensi transaksi tinggi dengan kebutuhan produk harian yang berulang.",
+    products: [
+      "Produk kebutuhan harian",
+      "Makanan ringan",
+      "Minuman",
+      "Bumbu dan pelengkap",
+    ],
+    objective:
+      "Meningkatkan ketersediaan produk pada kawasan permukiman serta memperkuat loyalitas outlet.",
   },
   {
     title: "Grosir & Semi Grosir",
-    objective: "Meningkatkan volume distribusi pada area perdagangan utama.",
-    products: "Produk dengan kebutuhan pembelian dalam jumlah besar.",
+    role: "Pusat distribusi bagi outlet di wilayah sekitarnya.",
+    characteristic:
+      "Pembelian dalam volume besar dengan perputaran produk yang cepat.",
+    products: [
+      "Produk fast moving",
+      "Produk volume besar",
+      "Produk distribusi ulang",
+      "Produk kebutuhan usaha",
+    ],
+    objective:
+      "Meningkatkan volume distribusi sekaligus memperluas jangkauan pelayanan.",
   },
   {
     title: "Bakery & Horeca",
-    objective: "Membangun distribusi pada sektor usaha makanan dan minuman.",
-    products: "Bahan baku dan produk pendukung operasional usaha.",
+    role: "Mendukung operasional usaha makanan dan minuman.",
+    characteristic:
+      "Membutuhkan pasokan yang stabil dengan pola pembelian berulang.",
+    products: [
+      "Bahan baku",
+      "Bahan pendukung produksi",
+      "Produk operasional",
+      "Produk pelengkap usaha",
+    ],
+    objective:
+      "Membangun hubungan jangka panjang sebagai mitra distribusi utama.",
   },
   {
     title: "UMKM",
-    objective: "Mendukung pertumbuhan pelaku usaha lokal.",
-    products: "Produk yang mudah dipasarkan kembali kepada pelanggan akhir.",
+    role: "Mendukung pertumbuhan pelaku usaha lokal.",
+    characteristic:
+      "Membutuhkan produk yang mudah dipasarkan kembali kepada pelanggan.",
+    products: [
+      "Produk ekonomis",
+      "Produk kebutuhan harian",
+      "Produk pendukung usaha",
+      "Produk dengan rotasi tinggi",
+    ],
+    objective:
+      "Memperluas jaringan distribusi melalui pertumbuhan usaha lokal.",
   },
   {
     title: "Institusi",
-    objective: "Membangun hubungan distribusi jangka panjang.",
-    products: "Produk yang mendukung kebutuhan operasional institusi.",
+    role: "Membangun distribusi jangka panjang.",
+    characteristic:
+      "Pembelian dilakukan secara rutin sesuai kebutuhan operasional institusi.",
+    products: [
+      "Produk konsumsi",
+      "Produk operasional",
+      "Produk kegiatan",
+      "Produk distribusi rutin",
+    ],
+    objective:
+      "Menciptakan hubungan kerja sama yang stabil dan berkelanjutan.",
   },
   {
     title: "Event & Komunitas",
-    objective: "Meningkatkan penetrasi pasar melalui aktivitas lapangan.",
-    products: "Produk promosi serta produk dengan tingkat awareness tinggi.",
+    role: "Meningkatkan penetrasi pasar dan brand awareness.",
+    characteristic:
+      "Distribusi dilakukan melalui aktivitas promosi dan interaksi langsung dengan masyarakat.",
+    products: [
+      "Produk promosi",
+      "Produk sampling",
+      "Produk awareness",
+      "Produk pendukung kegiatan",
+    ],
+    objective:
+      "Memperluas jangkauan pasar sekaligus meningkatkan pengenalan produk.",
   },
 ];
 
@@ -45,13 +99,13 @@ export default function ChannelSegmentation() {
           </span>
 
           <h2 className="mt-6">
-            Fokus Channel Pengembangan Pasar
+            Pengembangan Berdasarkan Karakter Channel
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Setiap channel memiliki karakteristik yang berbeda sehingga
-            pendekatan distribusi dan pengembangan outlet disusun sesuai
-            kebutuhan masing-masing segmen pasar.
+            Setiap channel memiliki karakteristik pembelian, kebutuhan produk,
+            dan pola distribusi yang berbeda sehingga pendekatan pengembangan
+            disusun sesuai dengan karakter masing-masing segmen pasar.
           </p>
         </div>
 
@@ -65,29 +119,75 @@ export default function ChannelSegmentation() {
                 {channel.title}
               </h3>
 
-              <div className="mt-6 space-y-5">
+              <div className="mt-6 space-y-6">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
-                    Fokus
+                    Peran
                   </p>
 
                   <p className="mt-2 leading-7 text-slate-600">
-                    {channel.objective}
+                    {channel.role}
                   </p>
                 </div>
 
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-600">
-                    Produk Potensial
+                    Karakteristik
                   </p>
 
                   <p className="mt-2 leading-7 text-slate-600">
-                    {channel.products}
+                    {channel.characteristic}
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-600">
+                    Kategori Produk
+                  </p>
+
+                  <ul className="mt-3 space-y-2">
+                    {channel.products.map((product) => (
+                      <li
+                        key={product}
+                        className="flex items-start gap-3"
+                      >
+                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500" />
+
+                        <span className="leading-7 text-slate-600">
+                          {product}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="rounded-2xl bg-slate-50 p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-600">
+                    Tujuan Pengembangan
+                  </p>
+
+                  <p className="mt-3 leading-7 text-slate-600">
+                    {channel.objective}
                   </p>
                 </div>
               </div>
             </Card>
           ))}
+        </div>
+
+        <div className="mt-16 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-8 lg:p-10">
+          <h3 className="text-2xl font-bold text-slate-900">
+            Mengapa Segmentasi Channel Penting?
+          </h3>
+
+          <p className="mt-5 leading-8 text-slate-700">
+            Setiap channel memiliki karakteristik kebutuhan, frekuensi
+            transaksi, serta pola distribusi yang berbeda. Oleh karena itu,
+            strategi pengembangan, kategori produk, dan pendekatan penjualan
+            disusun berdasarkan karakter masing-masing channel agar distribusi
+            menjadi lebih efektif, tepat sasaran, dan mampu menghasilkan
+            pertumbuhan pasar yang berkelanjutan.
+          </p>
         </div>
       </Container>
     </Section>
