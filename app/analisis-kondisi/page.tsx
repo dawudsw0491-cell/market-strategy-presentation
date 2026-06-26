@@ -6,6 +6,8 @@ import Card from "@/components/ui/card";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
+import MarketCoverage from "@/components/sections/market-coverage";
+
 const analysis = [
   {
     title: "Karakteristik Wilayah",
@@ -25,28 +27,7 @@ const analysis = [
   {
     title: "Persaingan",
     description:
-      "Memahami kondisi persaingan untuk menentukan pendekatan pengembangan yang sesuai.",
-  },
-];
-
-const priorities = [
-  {
-    area: "Kabupaten Kediri",
-    level: "Prioritas Utama",
-    reason:
-      "Potensi pengembangan paling besar dan menjadi fokus utama implementasi.",
-  },
-  {
-    area: "Kota Kediri",
-    level: "Penguatan",
-    reason:
-      "Mengoptimalkan jaringan yang telah berjalan untuk meningkatkan produktivitas.",
-  },
-  {
-    area: "Kabupaten Nganjuk",
-    level: "Pengembangan Bertahap",
-    reason:
-      "Pengembangan dilakukan sesuai hasil evaluasi dan kesiapan implementasi.",
+      "Memahami kondisi persaingan sebagai dasar penyusunan strategi pengembangan pasar.",
   },
 ];
 
@@ -72,8 +53,8 @@ export default function AnalisisKondisiPage() {
 
               <p className="mt-8 text-lg leading-8 text-slate-600">
                 Tahap analisis dilakukan untuk memahami kondisi pasar,
-                peluang pengembangan, kesiapan distribusi, serta
-                karakteristik wilayah sebagai dasar penyusunan strategi.
+                karakteristik wilayah, kesiapan distribusi, dan peluang
+                pengembangan sebagai dasar penyusunan strategi.
               </p>
 
             </div>
@@ -106,40 +87,7 @@ export default function AnalisisKondisiPage() {
 
         </Section>
 
-        <Section>
-
-          <Container>
-
-            <h2 className="mb-12 text-center">
-              Prioritas Wilayah
-            </h2>
-
-            <div className="grid gap-8 lg:grid-cols-3">
-
-              {priorities.map((item) => (
-
-                <Card
-                  key={item.area}
-                  title={item.area}
-                >
-
-                  <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-                    {item.level}
-                  </span>
-
-                  <p className="mt-6 leading-8 text-slate-600">
-                    {item.reason}
-                  </p>
-
-                </Card>
-
-              ))}
-
-            </div>
-
-          </Container>
-
-        </Section>
+        <MarketCoverage />
 
         <Section>
 
@@ -152,15 +100,15 @@ export default function AnalisisKondisiPage() {
               </h2>
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-                Analisis kondisi menunjukkan bahwa pengembangan pasar perlu
-                difokuskan pada wilayah yang memiliki peluang terbesar,
-                didukung oleh distribusi yang efektif serta pendekatan yang
-                sesuai dengan karakteristik masing-masing wilayah.
+                Berdasarkan hasil analisis, pengembangan pasar difokuskan
+                pada wilayah yang memiliki peluang terbesar dengan tetap
+                mempertimbangkan kesiapan distribusi dan karakteristik
+                masing-masing wilayah.
               </p>
 
               <div className="mt-10">
                 <Button href="/strategi-pengembangan">
-                  Lanjut ke Strategi
+                  Lanjut ke Strategi Pengembangan
                 </Button>
               </div>
 
