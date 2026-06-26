@@ -10,102 +10,42 @@ interface ButtonProps {
 
 export default function Button({
   children,
-  href,
+  href = "#",
   variant = "primary",
   className = "",
 }: ButtonProps) {
   const variants = {
-    primary: `
-      bg-gradient-to-r
-      from-blue-600
-      via-sky-500
-      to-cyan-500
-      text-white
+    primary:
+      "bg-gradient-to-r from-blue-600 to-sky-500 text-white shadow-lg shadow-blue-500/20 hover:-translate-y-0.5 hover:shadow-xl",
 
-      shadow-[0_10px_30px_rgba(37,99,235,.22)]
+    secondary:
+      "bg-white text-slate-900 border border-slate-200 hover:border-sky-200 hover:bg-sky-50",
 
-      hover:-translate-y-0.5
-      hover:shadow-[0_18px_40px_rgba(37,99,235,.28)]
-
-      active:translate-y-0
-    `,
-
-    secondary: `
-      bg-slate-900
-      text-white
-
-      hover:bg-slate-800
-
-      shadow-[0_10px_30px_rgba(15,23,42,.15)]
-    `,
-
-    outline: `
-      border
-      border-slate-200
-
-      bg-white/75
-      backdrop-blur-xl
-
-      text-slate-700
-
-      hover:border-sky-300
-      hover:bg-white
-      hover:text-slate-900
-
-      hover:-translate-y-0.5
-
-      shadow-sm
-      hover:shadow-lg
-    `,
+    outline:
+      "border border-slate-300 bg-transparent text-slate-700 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50",
   };
 
-  const style = `
-    inline-flex
-    items-center
-    justify-center
-
-    min-h-12
-
-    rounded-full
-
-    px-7
-    py-3.5
-
-    text-sm
-    font-semibold
-    tracking-wide
-
-    transition-all
-    duration-300
-
-    focus:outline-none
-    focus:ring-4
-    focus:ring-blue-200
-
-    disabled:pointer-events-none
-    disabled:opacity-50
-
-    ${variants[variant]}
-    ${className}
-  `;
-
-  if (href) {
-    return (
-      <Link
-        href={href}
-        className={style}
-      >
-        {children}
-      </Link>
-    );
-  }
-
   return (
-    <button
-      type="button"
-      className={style}
+    <Link
+      href={href}
+      className={`
+        inline-flex
+        min-h-[52px]
+        items-center
+        justify-center
+        rounded-full
+        px-7
+        lg:px-8
+        text-sm
+        lg:text-base
+        font-semibold
+        transition-all
+        duration-300
+        ${variants[variant]}
+        ${className}
+      `}
     >
       {children}
-    </button>
+    </Link>
   );
 }
