@@ -9,6 +9,9 @@ import StrategyPillars from "@/components/sections/strategy-pillars";
 
 import AreaPriority from "@/components/sections/area-priority";
 import ChannelSegmentation from "@/components/sections/channel-segmentation";
+import ProductPotential from "@/components/sections/product-potential";
+import InstitutionPriority from "@/components/sections/institution-priority";
+import SuccessIndicators from "@/components/sections/success-indicators";
 
 export default function HomePage() {
   return (
@@ -29,6 +32,12 @@ export default function HomePage() {
         <AreaPriority />
 
         <ChannelSegmentation />
+
+        <ProductPotential />
+
+        <InstitutionPriority />
+
+        <SuccessIndicators />
       </main>
 
       <Footer />
