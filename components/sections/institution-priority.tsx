@@ -1,146 +1,191 @@
-import Card from "@/components/ui/card";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
 const institutions = [
   {
-    title: "Sekolah",
+    name: "Sekolah",
+    priority: "Sangat Tinggi",
+    score: 95,
     opportunity:
-      "Memiliki kebutuhan operasional yang berlangsung sepanjang tahun ajaran.",
-    focus: [
-      "Kantin sekolah",
-      "Koperasi sekolah",
-      "Kegiatan pendidikan",
-      "Program promosi edukatif",
-    ],
+      "Program edukasi, kantin, koperasi sekolah, sponsorship, dan kegiatan siswa.",
+    strategy:
+      "Pendekatan kepada kepala sekolah, yayasan, serta koperasi untuk membangun kerja sama berkelanjutan.",
   },
   {
-    title: "Pondok Pesantren",
+    name: "Perguruan Tinggi",
+    priority: "Tinggi",
+    score: 88,
     opportunity:
-      "Memiliki komunitas yang besar dengan kebutuhan distribusi yang berulang.",
-    focus: [
-      "Koperasi pesantren",
-      "Kebutuhan santri",
-      "Kegiatan pesantren",
-      "Distribusi harian",
-    ],
+      "Unit bisnis kampus, koperasi mahasiswa, event akademik, dan organisasi mahasiswa.",
+    strategy:
+      "Kolaborasi dengan biro kemahasiswaan, UKM, dan koperasi kampus.",
   },
   {
-    title: "Perguruan Tinggi",
+    name: "Rumah Sakit",
+    priority: "Sangat Tinggi",
+    score: 91,
     opportunity:
-      "Menjadi pusat aktivitas mahasiswa dengan peluang kerja sama yang luas.",
-    focus: [
-      "Kantin kampus",
-      "Koperasi mahasiswa",
-      "Event kampus",
-      "Organisasi mahasiswa",
-    ],
+      "Kantin, minimarket internal, instalasi gizi, serta kebutuhan operasional.",
+    strategy:
+      "Pendekatan kepada bagian pengadaan dan unit usaha rumah sakit.",
   },
   {
-    title: "Rumah Sakit & Klinik",
+    name: "Instansi Pemerintah",
+    priority: "Tinggi",
+    score: 86,
     opportunity:
-      "Memiliki kebutuhan operasional yang stabil dan berkesinambungan.",
-    focus: [
-      "Kantin",
-      "Pantry",
-      "Kegiatan internal",
-      "Distribusi operasional",
-    ],
+      "Koperasi pegawai, kegiatan resmi, pelatihan, seminar, dan pengadaan.",
+    strategy:
+      "Membangun hubungan dengan bagian umum, koperasi, dan sekretariat.",
   },
   {
-    title: "Instansi Pemerintah",
+    name: "Perusahaan Swasta",
+    priority: "Tinggi",
+    score: 84,
     opportunity:
-      "Mendukung kebutuhan kegiatan pemerintahan serta pelayanan masyarakat.",
-    focus: [
-      "Kegiatan resmi",
-      "Operasional kantor",
-      "Program daerah",
-      "Kemitraan distribusi",
-    ],
+      "Kantin karyawan, pantry, event internal, dan kebutuhan operasional.",
+    strategy:
+      "Pendekatan kepada HRGA, Procurement, dan General Affair.",
   },
   {
-    title: "Perusahaan",
+    name: "Pesantren & Lembaga Keagamaan",
+    priority: "Menengah",
+    score: 80,
     opportunity:
-      "Berpotensi menghasilkan kerja sama distribusi dalam jangka panjang.",
-    focus: [
-      "Pantry perusahaan",
-      "Program karyawan",
-      "Corporate event",
-      "Kebutuhan operasional",
-    ],
+      "Koperasi, kantin, kegiatan santri, dan acara keagamaan.",
+    strategy:
+      "Membangun hubungan dengan pengurus yayasan dan koperasi pondok.",
   },
 ];
+
+function ScoreBar({ value }: { value: number }) {
+  return (
+    <div>
+      <div className="mb-2 flex justify-between">
+        <span className="text-sm text-slate-600">
+          Opportunity Score
+        </span>
+
+        <span className="font-semibold text-slate-900">
+          {value}
+        </span>
+      </div>
+
+      <div className="h-3 rounded-full bg-slate-200">
+        <div
+          className="h-3 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500"
+          style={{
+            width: `${value}%`,
+          }}
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function InstitutionPriority() {
   return (
     <Section background="white">
       <Container>
+
         <div className="mx-auto mb-16 max-w-3xl text-center">
+
           <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
-            Prioritas Institusi
+            Institution Opportunity
           </span>
 
           <h2 className="mt-6">
-            Institusi Dengan Potensi Pengembangan Jangka Panjang
+            Prioritas Pengembangan Institusi
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Institusi menjadi salah satu jalur distribusi yang mampu memberikan
-            stabilitas permintaan sekaligus memperluas hubungan bisnis secara
+            Institusi dipilih berdasarkan peluang kerja sama jangka panjang,
+            potensi distribusi, serta kemampuan menghasilkan transaksi yang
             berkelanjutan.
           </p>
+
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {institutions.map((item) => (
-            <Card
-              key={item.title}
-              className="h-full"
-            >
-              <h3 className="text-xl font-semibold text-slate-900">
-                {item.title}
-              </h3>
+        <div className="grid gap-8 xl:grid-cols-2">
 
-              <p className="mt-5 leading-8 text-slate-600">
-                {item.opportunity}
-              </p>
+          {institutions.map((institution) => (
+
+            <div
+              key={institution.name}
+              className="card p-8"
+            >
+
+              <div className="flex items-start justify-between">
+
+                <div>
+
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    {institution.name}
+                  </h3>
+
+                  <div className="mt-3 inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+                    {institution.priority}
+                  </div>
+
+                </div>
+
+                <div className="text-4xl">
+                  🏢
+                </div>
+
+              </div>
 
               <div className="mt-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">
-                  Fokus Pengembangan
+                <ScoreBar value={institution.score} />
+              </div>
+
+              <div className="mt-8">
+
+                <h4 className="font-semibold text-slate-900">
+                  Peluang
+                </h4>
+
+                <p className="mt-3 leading-8 text-slate-600">
+                  {institution.opportunity}
                 </p>
 
-                <ul className="mt-4 space-y-2">
-                  {item.focus.map((focus) => (
-                    <li
-                      key={focus}
-                      className="flex items-start gap-3"
-                    >
-                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500" />
-
-                      <span className="leading-7 text-slate-600">
-                        {focus}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
               </div>
-            </Card>
+
+              <div className="mt-8">
+
+                <h4 className="font-semibold text-slate-900">
+                  Strategi Pendekatan
+                </h4>
+
+                <p className="mt-3 leading-8 text-slate-600">
+                  {institution.strategy}
+                </p>
+
+              </div>
+
+            </div>
+
           ))}
+
         </div>
 
-        <div className="mt-16 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-8 lg:p-10">
+        <div className="mt-14 rounded-3xl border border-emerald-100 bg-emerald-50 p-8">
+
           <h3 className="text-2xl font-bold text-slate-900">
-            Arah Pengembangan
+            Executive Insight
           </h3>
 
           <p className="mt-5 leading-8 text-slate-700">
-            Pengembangan institusi diarahkan untuk membangun hubungan jangka
-            panjang yang mampu mendukung kestabilan distribusi, memperluas
-            jaringan pelanggan, serta meningkatkan kehadiran perusahaan pada
-            berbagai sektor aktivitas masyarakat.
+            Sekolah, rumah sakit, perguruan tinggi, instansi pemerintah,
+            dan perusahaan merupakan target utama karena memiliki aktivitas
+            operasional yang berkelanjutan. Pendekatan pada institusi ini
+            diharapkan mampu menciptakan hubungan bisnis jangka panjang,
+            meningkatkan stabilitas distribusi, serta memperkuat penetrasi
+            pasar di Kabupaten Kediri, Kota Kediri, dan Kabupaten Nganjuk.
           </p>
+
         </div>
+
       </Container>
     </Section>
   );
