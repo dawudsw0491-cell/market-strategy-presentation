@@ -12,48 +12,84 @@ const channels = [
 const products = [
   {
     name: "Daily Needs",
-    values: [5, 5, 2, 2, 3],
+    suitability: [
+      "Sangat Sesuai",
+      "Sangat Sesuai",
+      "Pendukung",
+      "Pendukung",
+      "Sesuai",
+    ],
   },
   {
     name: "Snack",
-    values: [5, 4, 2, 3, 2],
+    suitability: [
+      "Sangat Sesuai",
+      "Sesuai",
+      "Pendukung",
+      "Pendukung",
+      "Pendukung",
+    ],
   },
   {
-    name: "Beverage",
-    values: [5, 5, 3, 4, 4],
+    name: "Minuman",
+    suitability: [
+      "Sangat Sesuai",
+      "Sangat Sesuai",
+      "Sesuai",
+      "Sesuai",
+      "Sesuai",
+    ],
   },
   {
-    name: "Bakery Ingredients",
-    values: [1, 3, 5, 4, 1],
+    name: "Bahan Bakery",
+    suitability: [
+      "Pendukung",
+      "Sesuai",
+      "Sangat Sesuai",
+      "Sesuai",
+      "Pendukung",
+    ],
   },
   {
-    name: "Food Service",
-    values: [1, 2, 3, 5, 4],
+    name: "Produk Food Service",
+    suitability: [
+      "Pendukung",
+      "Pendukung",
+      "Sesuai",
+      "Sangat Sesuai",
+      "Sesuai",
+    ],
   },
   {
-    name: "Bulk Product",
-    values: [2, 5, 4, 5, 4],
+    name: "Produk Volume Besar",
+    suitability: [
+      "Pendukung",
+      "Sangat Sesuai",
+      "Sesuai",
+      "Sangat Sesuai",
+      "Sesuai",
+    ],
   },
 ];
 
-function Cell({ value }: { value: number }) {
-  const colors = [
-    "bg-slate-100",
-    "bg-sky-100",
-    "bg-sky-200",
-    "bg-cyan-300",
-    "bg-blue-500",
-    "bg-emerald-500",
-  ];
+function Badge({
+  value,
+}: {
+  value: string;
+}) {
+  const style =
+    value === "Sangat Sesuai"
+      ? "bg-emerald-100 text-emerald-700"
+      : value === "Sesuai"
+      ? "bg-blue-100 text-blue-700"
+      : "bg-slate-100 text-slate-600";
 
   return (
-    <div
-      className={`flex h-12 items-center justify-center rounded-xl font-semibold text-white ${
-        value >= 4 ? colors[value] : colors[value]
-      } ${value >= 4 ? "text-white" : "text-slate-700"}`}
+    <span
+      className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${style}`}
     >
       {value}
-    </div>
+    </span>
   );
 }
 
@@ -61,95 +97,128 @@ export default function ProductPotential() {
   return (
     <Section background="white">
       <Container>
+
         <div className="mx-auto mb-16 max-w-3xl text-center">
+
           <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
-            Product Potential
+            Potensi Produk
           </span>
 
           <h2 className="mt-6">
-            Product × Channel Opportunity Matrix
+            Kesesuaian Produk Dengan Saluran Distribusi
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Setiap channel memiliki karakteristik yang berbeda sehingga
-            penempatan kategori produk perlu disesuaikan dengan potensi
-            penjualan, frekuensi pembelian, dan pola distribusi.
+            Matriks ini digunakan untuk menunjukkan kecenderungan
+            kesesuaian setiap kelompok produk terhadap saluran distribusi.
+            Klasifikasi ini merupakan dasar penyusunan strategi dan bukan
+            ukuran kuantitatif penjualan.
           </p>
+
         </div>
 
         <div className="overflow-auto rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm">
-          <table className="min-w-full border-separate border-spacing-3">
+
+          <table className="table-modern min-w-full">
+
             <thead>
+
               <tr>
-                <th className="text-left text-sm font-semibold uppercase tracking-wide text-slate-500">
-                  Produk
+
+                <th className="text-left">
+                  Kelompok Produk
                 </th>
 
                 {channels.map((channel) => (
+
                   <th
                     key={channel}
-                    className="text-center text-sm font-semibold uppercase tracking-wide text-slate-500"
+                    className="text-center"
                   >
                     {channel}
                   </th>
+
                 ))}
+
               </tr>
+
             </thead>
 
             <tbody>
+
               {products.map((product) => (
+
                 <tr key={product.name}>
-                  <td className="py-3 pr-6 font-semibold text-slate-900">
+
+                  <td className="font-semibold text-slate-900">
                     {product.name}
                   </td>
 
-                  {product.values.map((value, index) => (
-                    <td key={index}>
-                      <Cell value={value} />
+                  {product.suitability.map((value) => (
+
+                    <td
+                      key={`${product.name}-${value}`}
+                      className="text-center"
+                    >
+                      <Badge value={value} />
                     </td>
+
                   ))}
+
                 </tr>
+
               ))}
+
             </tbody>
+
           </table>
+
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-6">
-            <h3 className="text-lg font-bold text-slate-900">
-              Potensi Tinggi
+        <div className="mt-12 grid gap-8 lg:grid-cols-3">
+
+          <div className="card p-6">
+
+            <h3 className="text-lg font-semibold text-slate-900">
+              Sangat Sesuai
             </h3>
 
             <p className="mt-4 leading-8 text-slate-600">
-              Daily Needs, Beverage, dan Snack memiliki peluang terbesar pada
-              channel Kelontong serta Grosir karena frekuensi transaksi yang
-              tinggi.
+              Produk yang menjadi fokus utama pada saluran distribusi
+              tersebut karena memiliki karakteristik pelanggan yang paling
+              sesuai.
             </p>
+
           </div>
 
-          <div className="rounded-3xl border border-blue-200 bg-blue-50 p-6">
-            <h3 className="text-lg font-bold text-slate-900">
-              Potensi Menengah
+          <div className="card p-6">
+
+            <h3 className="text-lg font-semibold text-slate-900">
+              Sesuai
             </h3>
 
             <p className="mt-4 leading-8 text-slate-600">
-              Bakery dan Horeca lebih sesuai untuk kategori Bakery
-              Ingredients, Food Service, dan Bulk Product.
+              Produk layak dipasarkan sebagai bagian dari pengembangan
+              distribusi sesuai kebutuhan masing-masing channel.
             </p>
+
           </div>
 
-          <div className="rounded-3xl border border-amber-200 bg-amber-50 p-6">
-            <h3 className="text-lg font-bold text-slate-900">
-              Strategi Penempatan
+          <div className="card p-6">
+
+            <h3 className="text-lg font-semibold text-slate-900">
+              Pendukung
             </h3>
 
             <p className="mt-4 leading-8 text-slate-600">
-              Fokuskan produk fast moving pada channel dengan volume tinggi,
-              sedangkan produk spesifik diarahkan pada institusi dan Horeca
-              untuk meningkatkan nilai transaksi.
+              Produk bersifat pelengkap dan dapat dikembangkan apabila
+              terdapat peluang pada wilayah atau pelanggan tertentu.
             </p>
+
           </div>
+
         </div>
+
       </Container>
     </Section>
   );
