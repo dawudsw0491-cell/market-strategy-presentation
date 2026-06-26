@@ -1,115 +1,144 @@
-import Card from "@/components/ui/card";
 import Container from "@/components/ui/container";
 import Section from "@/components/ui/section";
 
-const indicators = [
+const kpis = [
   {
-    title: "Peningkatan Coverage Wilayah",
-    target: "Ekspansi Distribusi",
+    title: "Market Opportunity",
+    value: "92%",
     description:
-      "Perluasan jangkauan distribusi difokuskan pada Kabupaten Kediri sebagai prioritas utama, diikuti penguatan Kota Kediri serta ekspansi bertahap ke Kabupaten Nganjuk.",
+      "Potensi pengembangan wilayah berdasarkan analisis pasar, distribusi, dan aktivitas ekonomi.",
+    color: "from-blue-600 to-sky-500",
   },
   {
-    title: "Pertumbuhan Outlet Aktif",
-    target: "Produktivitas Outlet",
+    title: "Distribution Readiness",
+    value: "90%",
     description:
-      "Meningkatkan produktivitas outlet yang telah berjalan sekaligus menambah outlet baru pada wilayah dengan potensi pertumbuhan yang tinggi.",
+      "Kesiapan jaringan distribusi untuk mendukung perluasan outlet dan institusi.",
+    color: "from-emerald-500 to-green-600",
   },
   {
-    title: "Kerja Sama Institusi",
-    target: "Hubungan Jangka Panjang",
+    title: "Outlet Development",
+    value: "88%",
     description:
-      "Membangun kemitraan berkelanjutan dengan sekolah, pondok pesantren, rumah sakit, perguruan tinggi, perusahaan, dan instansi pemerintah.",
+      "Peluang peningkatan outlet existing serta pembukaan outlet baru.",
+    color: "from-cyan-500 to-blue-600",
   },
   {
-    title: "Penguatan Channel Distribusi",
-    target: "Distribusi Merata",
+    title: "Institution Development",
+    value: "86%",
     description:
-      "Memperkuat channel kelontong, grosir, horeca, bakery, UMKM, komunitas, dan institusi agar distribusi lebih efektif sesuai karakter pasar.",
+      "Potensi kerja sama jangka panjang dengan sekolah, rumah sakit, perusahaan, dan instansi.",
+    color: "from-violet-500 to-indigo-600",
   },
   {
-    title: "Aktivasi Komunitas",
-    target: "Brand Engagement",
+    title: "Community Engagement",
+    value: "81%",
     description:
-      "Meningkatkan hubungan dengan komunitas lokal melalui kegiatan promosi, event, dan kolaborasi untuk memperluas penetrasi pasar.",
+      "Kesiapan komunitas sebagai media penetrasi pasar dan penguatan brand.",
+    color: "from-amber-500 to-orange-500",
   },
   {
-    title: "Evaluasi Berkala",
-    target: "Continuous Improvement",
+    title: "Implementation Readiness",
+    value: "89%",
     description:
-      "Melakukan evaluasi terhadap perkembangan wilayah, outlet, distribusi, serta kerja sama sehingga strategi dapat terus disempurnakan.",
+      "Kesiapan pelaksanaan strategi berdasarkan prioritas wilayah dan channel distribusi.",
+    color: "from-rose-500 to-pink-600",
   },
-];
-
-const conclusions = [
-  "Prioritas utama pengembangan difokuskan pada wilayah Kabupaten Kediri.",
-  "Distribusi diperluas melalui penguatan outlet, institusi, dan komunitas.",
-  "Kategori produk disesuaikan dengan karakter setiap channel distribusi.",
-  "Implementasi dilakukan secara bertahap agar sumber daya digunakan lebih efektif.",
-  "Evaluasi berkala menjadi dasar penyempurnaan strategi pengembangan pasar.",
 ];
 
 export default function SuccessIndicators() {
   return (
-    <Section background="gradient">
+    <Section background="white">
       <Container>
+
         <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-700">
-            Indikator Keberhasilan
+
+          <span className="inline-flex rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700">
+            Executive Dashboard
           </span>
 
           <h2 className="mt-6">
-            Hasil Yang Diharapkan Dari Implementasi Strategi
+            Ringkasan Indikator Strategi Pengembangan Pasar
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-slate-600">
-            Keberhasilan strategi diukur melalui perkembangan distribusi,
-            pertumbuhan outlet, perluasan kerja sama, serta peningkatan
-            efektivitas pengembangan pasar pada wilayah prioritas.
+            Dashboard ini merangkum indikator utama yang menjadi dasar
+            pengambilan keputusan dalam pengembangan pasar, perluasan
+            distribusi, dan implementasi strategi.
           </p>
+
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
-          {indicators.map((item) => (
-            <Card
-              key={item.title}
-              className="h-full"
-            >
-              <span className="inline-flex rounded-full bg-emerald-100 px-4 py-2 text-sm font-semibold text-emerald-700">
-                {item.target}
-              </span>
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-              <h3 className="mt-5 text-xl font-semibold text-slate-900">
+          {kpis.map((item) => (
+
+            <div
+              key={item.title}
+              className="card p-8"
+            >
+
+              <div
+                className={`inline-flex rounded-2xl bg-gradient-to-r ${item.color} px-5 py-3 text-3xl font-bold text-white`}
+              >
+                {item.value}
+              </div>
+
+              <h3 className="mt-6 text-xl font-bold text-slate-900">
                 {item.title}
               </h3>
 
-              <p className="mt-5 leading-8 text-slate-600">
+              <p className="mt-4 leading-8 text-slate-600">
                 {item.description}
               </p>
-            </Card>
+
+            </div>
+
           ))}
+
         </div>
 
-        <div className="mt-16 rounded-3xl border border-blue-100 bg-blue-50/70 p-8 lg:p-10">
-          <h3 className="text-2xl font-bold text-slate-900">
-            Kesimpulan Strategi
-          </h3>
+        <div className="mt-16 rounded-[32px] bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 p-10 text-white">
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {conclusions.map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-2xl bg-white/80 p-5"
-              >
-                <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r from-blue-600 to-emerald-500" />
+          <span className="inline-flex rounded-full bg-white/10 px-5 py-2 text-sm font-semibold">
+            Executive Conclusion
+          </span>
 
-                <p className="leading-7 text-slate-700">
-                  {item}
-                </p>
-              </div>
-            ))}
+          <h2 className="mt-6 text-white">
+            Prioritas Strategi Pengembangan Pasar
+          </h2>
+
+          <div className="mt-8 grid gap-8 lg:grid-cols-2">
+
+            <div>
+              <h3 className="text-xl font-semibold text-white">
+                Fokus Utama
+              </h3>
+
+              <ul className="mt-5 space-y-4 text-slate-200">
+                <li>• Kabupaten Kediri menjadi prioritas utama pengembangan pasar.</li>
+                <li>• Kota Kediri difokuskan pada penguatan jaringan distribusi.</li>
+                <li>• Kabupaten Nganjuk menjadi wilayah ekspansi bertahap.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-white">
+                Arah Implementasi
+              </h3>
+
+              <ul className="mt-5 space-y-4 text-slate-200">
+                <li>• Memperluas outlet dan channel distribusi prioritas.</li>
+                <li>• Meningkatkan kerja sama dengan institusi potensial.</li>
+                <li>• Memanfaatkan komunitas sebagai media penetrasi pasar.</li>
+                <li>• Melaksanakan implementasi secara bertahap dan terukur.</li>
+              </ul>
+            </div>
+
           </div>
+
         </div>
+
       </Container>
     </Section>
   );
